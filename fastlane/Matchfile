@@ -1,0 +1,7 @@
+# Same private match repo as the other apps of the team: the Developer ID
+# certificate is per team, so one encrypted copy serves every app.
+git_url(ENV["MATCH_REPOSITORY_URL"])
+storage_mode("git")
+
+platform("macos")
+app_identifier(["cl.franciscosolis.openprocess"])

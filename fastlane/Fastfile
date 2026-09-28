@@ -1,0 +1,170 @@
+# OpenProcess — build, sign, notarize and package the macOS app.
+#
+# The Xcode project is generated from project.yml by XcodeGen and is not
+# committed, so every lane regenerates it first.
+# Pass signed:false where no signing certificate exists (CI without secrets).
+#
+# OpenProcess only ships outside the App Store (it can't be sandboxed), so the
+# one distribution shape is Developer ID + notarization, in a DMG.
+
+ROOT = File.expand_path("..", __dir__)
+PROJECT = "OpenProcess.xcodeproj"
+SCHEME = "OpenProcess"
+BUILD_DIR = "build"
+APP_NAME = "OpenProcess"
+TEAM_ID = File.read(File.join(ROOT, "project.yml"))[/DEVELOPMENT_TEAM:\s*(\S+)/, 1]
+
+default_platform(:mac)
+
+platform :mac do
+  before_all do
+    # A throwaway keychain on CI: match has nowhere to put the certificate
+    # otherwise, and the runner's login keychain is locked.
+    setup_ci if is_ci
+    sh("xcodegen", "generate", "--spec", "#{ROOT}/project.yml", "--project", ROOT)
+  end
+
+  # One App Store Connect key drives match and notarization.
+  # Locally it is the .p8 on disk; CI passes the same key base64-encoded.
+  private_lane :api_key do
+    key_id = ENV.fetch("ASC_KEY_ID")
+    key_content = ENV["ASC_KEY_CONTENT"]
+
+    if key_content.to_s.empty?
+      app_store_connect_api_key(
+        key_id: key_id,
+        issuer_id: ENV.fetch("ASC_ISSUER_ID"),
+        key_filepath: File.expand_path("~/.appstoreconnect/private_keys/AuthKey_#{key_id}.p8")
+      )
+    else
+      app_store_connect_api_key(
+        key_id: key_id,
+        issuer_id: ENV.fetch("ASC_ISSUER_ID"),
+        key_content: key_content,
+        is_key_content_base64: true
+      )
+    end
+  end
+
+  # The Developer ID certificate can't be created through the API (Account
+  # Holder only, interactively), so match only ever reads it here. No
+  # provisioning profile: the app uses no capability that needs one.
+  desc "Install the Developer ID certificate from the match repo"
+  lane :certificates do
+    match(
+      type: "developer_id",
+      api_key: api_key,
+      readonly: true,
+      skip_provisioning_profiles: true
+    )
+  end
+
+  desc "Run the unit tests"
+  lane :test do |options|
+    run_tests(
+      project: PROJECT,
+      scheme: SCHEME,
+      configuration: "Debug",
+      derived_data_path: "#{BUILD_DIR}/DerivedData",
+      output_directory: "#{BUILD_DIR}/test_output",
+      output_types: "junit",
+      xcargs: options[:signed] == false ? "CODE_SIGNING_ALLOWED=NO" : nil
+    )
+  end
+
+  desc "Archive and export a Developer ID–signed OpenProcess.app into build/"
+  lane :build do |options|
+    app = build_mac_app(
+      project: PROJECT,
+      scheme: SCHEME,
+      configuration: "Release",
+      export_method: "developer-id",
+      export_options: {
+        signingStyle: "manual",
+        signingCertificate: "Developer ID Application",
+        teamID: TEAM_ID
+      },
+      skip_package_pkg: true,
+      skip_codesigning: options[:signed] == false,
+      derived_data_path: "#{BUILD_DIR}/DerivedData",
+      output_directory: BUILD_DIR,
+      archive_path: "#{BUILD_DIR}/#{APP_NAME}.xcarchive",
+      xcargs: build_xcargs(options)
+    )
+    verify_signature(app) unless options[:signed] == false
+    app
+  end
+
+  desc "Package the already-built app into a DMG, without notarizing"
+  lane :dmg do
+    app = "#{BUILD_DIR}/#{APP_NAME}.app"
+    UI.user_error!("build first: no #{app}") unless File.exist?(File.join(ROOT, app))
+    UI.success("Packaged #{package_dmg(app)}")
+  end
+
+  desc "Build, notarize and package the DMG that ships on GitHub"
+  lane :release do |options|
+    key = api_key
+    certificates if is_ci
+
+    app = build(version: options[:version], build_number: options[:build_number])
+
+    # Notarize the app first so the ticket is stapled into what people actually
+    # run, then the disk image they download. Stapling both keeps a first
+    # launch working offline.
+    notarize(package: app, api_key: key, print_log: true)
+    dmg = package_dmg(app)
+    notarize(package: dmg, api_key: key, print_log: true)
+
+    UI.success("Notarized #{dmg}")
+    dmg
+  end
+end
+
+VOLUME = APP_NAME
+DMGBUILD_VERSION = "1.6.7"
+
+# A tag like 1.2.0+7 carries both version fields; with none, project.yml stands.
+def build_xcargs(options)
+  args = []
+  args << "CODE_SIGNING_ALLOWED=NO" if options[:signed] == false
+  args << "MARKETING_VERSION=#{options[:version]}" if options[:version]
+  args << "CURRENT_PROJECT_VERSION=#{options[:build_number]}" if options[:build_number]
+  args.join(" ") unless args.empty?
+end
+
+# The helper talks to the app over XPC and each side checks the other's
+# identifier and team, so a re-sign during export that changed either would only
+# show up at runtime. Fail the build instead.
+def verify_signature(app)
+  app_abs = File.expand_path(app, ROOT)
+  sh("codesign", "--verify", "--deep", "--strict", app_abs)
+  {
+    app_abs => "cl.franciscosolis.openprocess",
+    "#{app_abs}/Contents/MacOS/OpenProcessHelper" => "cl.franciscosolis.openprocess.helper"
+  }.each do |path, identifier|
+    requirement = %(anchor apple generic and identifier "#{identifier}" and certificate leaf[subject.OU] = "#{TEAM_ID}")
+    sh("codesign", "--verify", "-R=#{requirement}", path)
+  end
+end
+
+def package_dmg(app)
+  app_abs = File.expand_path(app, ROOT)
+  version = `plutil -extract CFBundleShortVersionString raw -o - "#{app_abs}/Contents/Info.plist"`.strip
+  UI.user_error!("no CFBundleShortVersionString in #{app_abs}") if version.empty?
+
+  dmg = File.join(ROOT, BUILD_DIR, "#{APP_NAME}-#{version}.dmg")
+  FileUtils.rm_f(dmg)
+
+  # uvx runs dmgbuild without installing anything permanently; the version is
+  # pinned so a release is reproducible. dmgbuild picks up the @2x next to the
+  # background (a symlink into assets/brand) for Retina.
+  sh("uvx", "dmgbuild@#{DMGBUILD_VERSION}",
+     "-s", File.join(ROOT, "packaging", "dmg-settings.py"),
+     "-D", "app=#{app_abs}",
+     "-D", "background=#{File.join(ROOT, 'packaging', 'dmg-background.png')}", # symlink, see assets/README.md
+     VOLUME, dmg)
+
+  sh("codesign", "--sign", "Developer ID Application", "--timestamp", dmg)
+  dmg
+end
