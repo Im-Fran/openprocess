@@ -46,16 +46,17 @@ platform :mac do
     end
   end
 
-  # The Developer ID certificate can't be created through the API (Account
-  # Holder only, interactively), so match only ever reads it here. No
-  # provisioning profile: the app uses no capability that needs one.
-  desc "Install the Developer ID certificate from the match repo"
-  lane :certificates do
+  # The Developer ID *certificate* can't be created through the API (Account
+  # Holder only, interactively); it is imported once with
+  # `bundle exec fastlane match import --type developer_id`. The Developer ID
+  # ("Direct") profile is ordinary: match creates it when run with readonly:false
+  # and CI only ever reads it.
+  desc "Sync the Developer ID certificate and Direct profile from the match repo"
+  lane :certificates do |options|
     match(
       type: "developer_id",
       api_key: api_key,
-      readonly: true,
-      skip_provisioning_profiles: true
+      readonly: options.fetch(:readonly, is_ci)
     )
   end
 
