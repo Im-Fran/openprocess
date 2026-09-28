@@ -1,0 +1,123 @@
+name: Release
+
+# Every tag builds OpenProcess.app with the Developer ID signature from the
+# match repo, notarizes the app and the DMG, and publishes a GitHub Release.
+#
+# Secrets (Settings → Secrets and variables → Actions):
+#   ASC_KEY_ID, ASC_ISSUER_ID       App Store Connect API key (role Developer)
+#   ASC_KEY_CONTENT                 the .p8, base64: `base64 -i AuthKey_XXXX.p8`
+#   MATCH_REPOSITORY_URL            private repo with the encrypted certificate
+#   MATCH_PASSWORD                  passphrase of that repo
+#   MATCH_GIT_BASIC_AUTHORIZATION   base64 of "user:token" with read access to it
+#
+# Tag format: <version>[+<build>], with an optional leading "v".
+#   v1.4.0+7  → version 1.4.0, build 7
+#   v1.4.0    → version 1.4.0, build = workflow run number
+on:
+  push:
+    tags: ["*"]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Existing tag to build, e.g. v1.0.0"
+        required: true
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Sign, notarize and publish
+    runs-on: macos-26
+    timeout-minutes: 60
+    env:
+      ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+      ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+      ASC_KEY_CONTENT: ${{ secrets.ASC_KEY_CONTENT }}
+      MATCH_REPOSITORY_URL: ${{ secrets.MATCH_REPOSITORY_URL }}
+      MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+      MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }}
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.tag || github.ref }}
+
+      # The tag reaches the shell through the environment, never interpolated
+      # into the script: a ref name is attacker-shaped input.
+      - name: Read version from the tag
+        id: version
+        env:
+          RAW_TAG: ${{ github.event.inputs.tag || github.ref_name }}
+        run: |
+          TAG="$RAW_TAG"
+          case "$TAG" in
+            *[!A-Za-z0-9.+_-]*)
+              echo "Refusing tag with unexpected characters: $TAG" >&2
+              exit 1
+              ;;
+          esac
+          VERSION="${TAG#v}"
+          BUILD="$GITHUB_RUN_NUMBER"
+          case "$VERSION" in
+            *+*)
+              BUILD="${VERSION##*+}"
+              VERSION="${VERSION%%+*}"
+              ;;
+          esac
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "build=$BUILD" >> "$GITHUB_OUTPUT"
+          echo "Building $VERSION ($BUILD) from $TAG"
+
+      # Ruby 4: Gemfile.lock is in bundler 4's format.
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "4.0"
+          bundler-cache: true
+
+      # xcodegen generates the project; uv provides uvx for dmgbuild.
+      - name: Install build tools
+        run: brew install xcodegen uv
+
+      - name: Show toolchain
+        run: |
+          sw_vers
+          xcodebuild -version
+          xcodegen --version
+
+      # The Debug test host signs with Apple Development, which the runner
+      # doesn't have; the release build below signs for real.
+      - name: Test
+        run: bundle exec fastlane test signed:false
+
+      # Installs the Developer ID certificate from match, archives, verifies the
+      # app/helper code requirements, notarizes the app, packages and notarizes
+      # the DMG.
+      - name: Build, sign, notarize and package
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+          BUILD: ${{ steps.version.outputs.build }}
+        run: bundle exec fastlane release version:"$VERSION" build_number:"$BUILD"
+
+      - name: Verify
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          spctl --assess --type execute --verbose build/OpenProcess.app
+          spctl --assess --type open --context context:primary-signature --verbose "build/OpenProcess-$VERSION.dmg"
+          xcrun stapler validate "build/OpenProcess-$VERSION.dmg"
+          (cd build && shasum -a 256 "OpenProcess-$VERSION.dmg" > checksums.txt)
+
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.version.outputs.tag }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          gh release create "$TAG" "build/OpenProcess-$VERSION.dmg" build/checksums.txt \
+            --title "OpenProcess $VERSION" --generate-notes --verify-tag
