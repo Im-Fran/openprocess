@@ -1,0 +1,79 @@
+name: OpenProcess
+options:
+  bundleIdPrefix: cl.franciscosolis
+  deploymentTarget:
+    macOS: "26.0"
+  createIntermediateGroups: true
+  developmentLanguage: es
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    DEVELOPMENT_TEAM: PX7HA29NR3
+    CODE_SIGN_STYLE: Manual
+    CODE_SIGN_IDENTITY: "Apple Development"
+    ENABLE_HARDENED_RUNTIME: YES
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1"
+  configs:
+    Release:
+      CODE_SIGN_IDENTITY: "Developer ID Application"
+targets:
+  OpenProcess:
+    type: application
+    platform: macOS
+    sources:
+      - path: OpenProcess
+      - path: OpenProcessHelper/cl.franciscosolis.openprocess.helper.plist
+        buildPhase:
+          copyFiles:
+            destination: wrapper
+            subpath: Contents/Library/LaunchDaemons
+    dependencies:
+      - target: OpenProcessHelper
+        copy:
+          destination: executables
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: cl.franciscosolis.openprocess
+        PRODUCT_NAME: OpenProcess
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: OpenProcess
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.utilities
+        INFOPLIST_KEY_NSHumanReadableCopyright: "© 2026 Francisco Solís"
+        CODE_SIGN_ENTITLEMENTS: OpenProcess/Resources/OpenProcess.entitlements
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        SWIFT_EMIT_LOC_STRINGS: YES
+  OpenProcessHelper:
+    type: tool
+    platform: macOS
+    sources:
+      - path: OpenProcessHelper
+        excludes: ["*.plist"]
+      - path: OpenProcess/Shared
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: cl.franciscosolis.openprocess.helper
+        PRODUCT_NAME: OpenProcessHelper
+        GENERATE_INFOPLIST_FILE: YES
+        CREATE_INFOPLIST_SECTION_IN_BINARY: YES
+        SKIP_INSTALL: YES
+        OTHER_CODE_SIGN_FLAGS: "--identifier cl.franciscosolis.openprocess.helper"
+  OpenProcessTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources: [OpenProcessTests]
+    dependencies:
+      - target: OpenProcess
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: cl.franciscosolis.openprocess.tests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/OpenProcess.app/Contents/MacOS/OpenProcess"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+schemes:
+  OpenProcess:
+    build:
+      targets:
+        OpenProcess: all
+    test:
+      targets: [OpenProcessTests]
