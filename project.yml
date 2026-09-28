@@ -23,6 +23,11 @@ targets:
     platform: macOS
     sources:
       - path: OpenProcess
+        excludes: ["Resources/AppIcon.icon"]
+      # Icon Composer bundle: one file to Xcode, compiled by actool into the app icon.
+      - path: OpenProcess/Resources/AppIcon.icon
+        type: file
+        buildPhase: resources
       - path: OpenProcessHelper/cl.franciscosolis.openprocess.helper.plist
         buildPhase:
           copyFiles:
@@ -42,6 +47,7 @@ targets:
         INFOPLIST_KEY_NSHumanReadableCopyright: "© 2026 Francisco Solís"
         CODE_SIGN_ENTITLEMENTS: OpenProcess/Resources/OpenProcess.entitlements
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
         SWIFT_EMIT_LOC_STRINGS: YES
   OpenProcessHelper:
     type: tool

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><meta name="design_doc_mode" content="canvas"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><style>body{margin:0;background:#eef0f4;font-family:Manrope,system-ui,sans-serif;color:#0d1120}a{color:#1e7be6}a:hover{color:#268cff}.dv-turn{padding:40px 44px 32px;border-bottom:1px solid rgba(0,0,0,.08);scroll-margin-top:16px}.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 20px}.dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#1a1a1a;color:#fff;border-radius:4px;text-decoration:none}.dv-tname{font:600 13px/1.2 system-ui,sans-serif;color:#1a1a1a}.dv-opts{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start}.dv-opt{flex:none;display:flex;flex-direction:column;gap:9px;scroll-margin-top:16px}.dv-oid{font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#1a1a1a;border-radius:5px;text-decoration:none}.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 11px/1.3 system-ui,sans-serif;color:rgba(0,0,0,.55)}.dv-card{max-width:100%;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);overflow:hidden}.dv-opt:target .dv-oid{background:#2a78d6;color:#fff}.dv-next{margin:22px 0 0;font:12px/1.5 system-ui,sans-serif;color:rgba(0,0,0,.5)}.dv-sub{font:600 11px/1 ui-monospace,Menlo,monospace;letter-spacing:.08em;text-transform:uppercase;color:rgba(0,0,0,.45);margin:36px 0 14px}</style></helmet>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="op-bg-dark" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A1F33"/><stop offset="1" stop-color="#05080F"/></linearGradient>
+    <linearGradient id="op-bg-glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9F1FF" stop-opacity=".92"/><stop offset="1" stop-color="#C9D9F2" stop-opacity=".82"/></linearGradient>
+    <linearGradient id="op-bg-glassdark" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A3350" stop-opacity=".9"/><stop offset="1" stop-color="#0B1020" stop-opacity=".92"/></linearGradient>
+    <linearGradient id="op-rim" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset=".5" stop-color="#fff" stop-opacity=".1"/><stop offset="1" stop-color="#fff" stop-opacity=".45"/></linearGradient>
+    <linearGradient id="op-bar-v" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#33D98C"/><stop offset="1" stop-color="#268CFF"/></linearGradient>
+    <filter id="op-glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="28" result="b"/><feComponentTransfer in="b" result="bb"><feFuncA type="linear" slope=".55"/></feComponentTransfer><feMerge><feMergeNode in="bb"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <pattern id="op-grid" width="103" height="103" patternUnits="userSpaceOnUse" x="100" y="100"><path d="M103 0H0V103" fill="none" stroke="#fff" stroke-opacity=".06" stroke-width="3"/></pattern>
+    <pattern id="op-grid-dark" width="103" height="103" patternUnits="userSpaceOnUse" x="100" y="100"><path d="M103 0H0V103" fill="none" stroke="#0D1120" stroke-opacity=".07" stroke-width="3"/></pattern>
+    <clipPath id="op-clip"><rect x="100" y="100" width="824" height="824" rx="186"/></clipPath>
+    <g id="op-bars"><rect x="210" y="406" width="84" height="270" rx="42" fill="#33D98C"/><rect x="340" y="226" width="84" height="450" rx="42" fill="#2FC7B0"/><rect x="470" y="496" width="84" height="180" rx="42" fill="#2AB0D0"/><rect x="600" y="286" width="84" height="390" rx="42" fill="#279CEA"/><rect x="730" y="376" width="84" height="300" rx="42" fill="#268CFF"/></g>
+    <g id="op-bars-mono"><rect x="210" y="406" width="84" height="270" rx="42"/><rect x="340" y="226" width="84" height="450" rx="42"/><rect x="470" y="496" width="84" height="180" rx="42"/><rect x="600" y="286" width="84" height="390" rx="42"/><rect x="730" y="376" width="84" height="300" rx="42"/></g>
+    <g id="op-shadow"><rect x="100" y="120" width="824" height="824" rx="186" fill="#000" opacity=".22" filter="url(#op-glow)"/></g>
+    <g id="op-dark"><use href="#op-shadow"/><rect x="100" y="100" width="824" height="824" rx="186" fill="url(#op-bg-dark)"/><rect x="100" y="100" width="824" height="824" rx="186" fill="none" stroke="#fff" stroke-opacity=".08" stroke-width="4"/><use href="#op-bars" filter="url(#op-glow)"/></g>
+    <g id="op-glass"><use href="#op-shadow"/><rect x="100" y="100" width="824" height="824" rx="186" fill="url(#op-bg-glass)"/><rect x="102" y="102" width="820" height="820" rx="184" fill="none" stroke="url(#op-rim)" stroke-width="5"/><use href="#op-bars"/></g>
+    <g id="op-glassdark"><use href="#op-shadow"/><rect x="100" y="100" width="824" height="824" rx="186" fill="url(#op-bg-glassdark)"/><rect x="102" y="102" width="820" height="820" rx="184" fill="none" stroke="url(#op-rim)" stroke-opacity=".5" stroke-width="5"/><use href="#op-bars" filter="url(#op-glow)"/></g>
+    <g id="op-gridicon"><use href="#op-shadow"/><rect x="100" y="100" width="824" height="824" rx="186" fill="url(#op-bg-dark)"/><rect x="100" y="100" width="824" height="824" rx="186" fill="url(#op-grid)"/><rect x="100" y="100" width="824" height="824" rx="186" fill="none" stroke="#fff" stroke-opacity=".08" stroke-width="4"/><use href="#op-bars" filter="url(#op-glow)"/></g>
+    <g id="op-glassgrid"><use href="#op-shadow"/><rect x="100" y="100" width="824" height="824" rx="186" fill="url(#op-bg-glass)"/><rect x="100" y="100" width="824" height="824" rx="186" fill="url(#op-grid-dark)"/><rect x="102" y="102" width="820" height="820" rx="184" fill="none" stroke="url(#op-rim)" stroke-width="5"/><use href="#op-bars"/></g>
+    <g id="op-glassdarkgrid"><use href="#op-shadow"/><rect x="100" y="100" width="824" height="824" rx="186" fill="url(#op-bg-glassdark)"/><rect x="100" y="100" width="824" height="824" rx="186" fill="url(#op-grid)"/><rect x="102" y="102" width="820" height="820" rx="184" fill="none" stroke="url(#op-rim)" stroke-opacity=".5" stroke-width="5"/><use href="#op-bars" filter="url(#op-glow)"/></g>
+    <g id="op-tintedgrid"><use href="#op-shadow"/><rect x="100" y="100" width="824" height="824" rx="186" fill="#3A3F4B"/><rect x="100" y="100" width="824" height="824" rx="186" fill="url(#op-grid)"/><rect x="102" y="102" width="820" height="820" rx="184" fill="none" stroke="url(#op-rim)" stroke-opacity=".35" stroke-width="5"/><use href="#op-bars-mono" fill="#fff" fill-opacity=".92"/></g>
+    <g id="op-tinted"><use href="#op-shadow"/><rect x="100" y="100" width="824" height="824" rx="186" fill="#3A3F4B"/><rect x="102" y="102" width="820" height="820" rx="184" fill="none" stroke="url(#op-rim)" stroke-opacity=".35" stroke-width="5"/><use href="#op-bars-mono" fill="#fff" fill-opacity=".92"/></g>
+  </defs>
+</svg>
+
+<section class="dv-turn" id="t1">
+<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">OpenProcess — sistema de marca. 5 barras irregulares, degradado verde→azul por barra, squircle macOS 26.</span></div>
+
+<div style="max-width:720px;font-size:12.5px;line-height:1.55;color:rgba(0,0,0,.6);margin:0 0 26px">
+  <strong style="color:#0d1120">Supuestos.</strong> Ícono elegido: <a class="dv-oid" href="#1c">1c</a> (rejilla); todo el sistema deriva de él. El squircle sigue la rejilla de 1024 con figura de 824 y margen de 100 (lo que Icon Composer espera). Las barras leen "núcleos trabajando" con perfil irregular (pulso vivo), nunca simétrico. El verde es el primario (actividad sana), el azul el secundario (sistema/CPU); el cian queda reservado a la GPU y el amarillo/rojo a estados. La marca vive en Manrope: <em>Open</em> ligero + <em>Process</em> pesado, sin espacio.
+</div>
+
+<div class="dv-sub">Ícono · 3 direcciones</div>
+<div class="dv-opts">
+  <div class="dv-opt" id="1a"><div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>Oscuro · azul marino, barras con brillo</div>
+    <div class="dv-card" style="width:300px;padding:24px;display:grid;place-items:center;background:linear-gradient(180deg,#f7f8fb,#e8ebf1)"><svg viewBox="0 0 1024 1024" width="252" height="252"><use href="#op-dark"/></svg></div></div>
+  <div class="dv-opt" id="1b"><div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>Vidrio · Liquid Glass claro, borde luminoso</div>
+    <div class="dv-card" style="width:300px;padding:24px;display:grid;place-items:center;background:linear-gradient(135deg,#dfe7f5,#c8d5ea)"><svg viewBox="0 0 1024 1024" width="252" height="252"><use href="#op-glass"/></svg></div></div>
+  <div class="dv-opt" id="1c"><div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a>Rejilla · oscuro con trama técnica (puente con OpenBattery)</div>
+    <div class="dv-card" style="width:300px;padding:24px;display:grid;place-items:center;background:linear-gradient(180deg,#f7f8fb,#e8ebf1)"><svg viewBox="0 0 1024 1024" width="252" height="252"><use href="#op-gridicon"/></svg></div></div>
+</div>
+
+<div class="dv-sub">Variantes de sistema · <a class="dv-oid" href="#1c">1c</a> como base</div>
+<div class="dv-opts">
+  <div class="dv-opt" id="1d"><div class="dv-olabel"><a class="dv-oid" href="#1d">1d</a>Clara · Oscura · Tintada</div>
+    <div class="dv-card" style="display:flex">
+      <div style="width:180px;height:180px;display:grid;place-items:center;background:#f2f4f8"><svg viewBox="0 0 1024 1024" width="136" height="136"><use href="#op-glassgrid"/></svg></div>
+      <div style="width:180px;height:180px;display:grid;place-items:center;background:#15181f"><svg viewBox="0 0 1024 1024" width="136" height="136"><use href="#op-glassdarkgrid"/></svg></div>
+      <div style="width:180px;height:180px;display:grid;place-items:center;background:#2b2e36"><svg viewBox="0 0 1024 1024" width="136" height="136"><use href="#op-tintedgrid"/></svg></div>
+    </div></div>
+  <div class="dv-opt" id="1e"><div class="dv-olabel"><a class="dv-oid" href="#1e">1e</a>Escala 16 → 256 px</div>
+    <div class="dv-card" style="padding:22px 26px;display:flex;align-items:flex-end;gap:22px;background:#f7f8fb">
+      <svg viewBox="0 0 1024 1024" width="16" height="16"><use href="#op-gridicon"/></svg>
+      <svg viewBox="0 0 1024 1024" width="32" height="32"><use href="#op-gridicon"/></svg>
+      <svg viewBox="0 0 1024 1024" width="64" height="64"><use href="#op-gridicon"/></svg>
+      <svg viewBox="0 0 1024 1024" width="128" height="128"><use href="#op-gridicon"/></svg>
+      <svg viewBox="0 0 1024 1024" width="256" height="256"><use href="#op-gridicon"/></svg>
+    </div></div>
+  <div class="dv-opt" id="1f"><div class="dv-olabel"><a class="dv-oid" href="#1f">1f</a>Capas para Icon Composer</div>
+    <div class="dv-card" style="display:flex;gap:0">
+      <div style="width:170px;padding:18px;display:flex;flex-direction:column;align-items:center;gap:10px;background:repeating-conic-gradient(#e6e8ee 0 25%,#f7f8fb 0 50%) 0 0/16px 16px"><svg viewBox="0 0 1024 1024" width="120" height="120"><rect x="100" y="100" width="824" height="824" rx="186" fill="url(#op-bg-dark)"/><rect x="100" y="100" width="824" height="824" rx="186" fill="url(#op-grid)"/></svg><span style="font:500 10px ui-monospace,Menlo,monospace;color:rgba(0,0,0,.55)">1 · Fondo</span></div>
+      <div style="width:170px;padding:18px;display:flex;flex-direction:column;align-items:center;gap:10px;background:repeating-conic-gradient(#e6e8ee 0 25%,#f7f8fb 0 50%) 0 0/16px 16px"><svg viewBox="0 0 1024 1024" width="120" height="120"><use href="#op-bars"/></svg><span style="font:500 10px ui-monospace,Menlo,monospace;color:rgba(0,0,0,.55)">2 · Figura</span></div>
+    </div></div>
+</div>
+
+<div class="dv-sub">Barra de menús · glifo vivo</div>
+<div class="dv-opts">
+  <div class="dv-opt" id="1g"><div class="dv-olabel"><a class="dv-oid" href="#1g">1g</a>Template monocromo 18 pt · alturas = carga por núcleo</div>
+    <div class="dv-card" style="width:560px">
+      <div style="height:38px;display:flex;align-items:center;justify-content:flex-end;gap:18px;padding:0 14px;background:linear-gradient(#fbfbfd,#eceef3);font:500 13px system-ui,sans-serif;color:#1a1d26">
+        <span style="opacity:.6">Wi-Fi</span>
+        <span style="display:inline-flex;align-items:center;gap:6px;padding:2px 6px;border-radius:5px;background:rgba(0,0,0,.06)">
+          <span style="display:inline-flex;align-items:flex-end;gap:2px;height:14px"><span style="width:3px;border-radius:1.5px;background:#1a1d26;height:{{ h1 }}"></span><span style="width:3px;border-radius:1.5px;background:#1a1d26;height:{{ h2 }}"></span><span style="width:3px;border-radius:1.5px;background:#1a1d26;height:{{ h3 }}"></span><span style="width:3px;border-radius:1.5px;background:#1a1d26;height:{{ h4 }}"></span><span style="width:3px;border-radius:1.5px;background:#1a1d26;height:{{ h5 }}"></span></span>
+          <span style="font-variant-numeric:tabular-nums">{{ cpuText }}</span>
+        </span>
+        <span>Vie 27 sep  10:24</span>
+      </div>
+      <div style="height:38px;display:flex;align-items:center;justify-content:flex-end;gap:18px;padding:0 14px;background:linear-gradient(#2a2d36,#1c1f27);font:500 13px system-ui,sans-serif;color:#f2f3f7">
+        <span style="opacity:.6">Wi-Fi</span>
+        <span style="display:inline-flex;align-items:center;gap:6px;padding:2px 6px;border-radius:5px;background:rgba(255,255,255,.1)">
+          <span style="display:inline-flex;align-items:flex-end;gap:2px;height:14px"><span style="width:3px;border-radius:1.5px;background:#f2f3f7;height:{{ h1 }}"></span><span style="width:3px;border-radius:1.5px;background:#f2f3f7;height:{{ h2 }}"></span><span style="width:3px;border-radius:1.5px;background:#f2f3f7;height:{{ h3 }}"></span><span style="width:3px;border-radius:1.5px;background:#f2f3f7;height:{{ h4 }}"></span><span style="width:3px;border-radius:1.5px;background:#f2f3f7;height:{{ h5 }}"></span></span>
+          <span style="font-variant-numeric:tabular-nums">{{ cpuText }}</span>
+        </span>
+        <span>Vie 27 sep  10:24</span>
+      </div>
+      <div style="padding:14px 16px;display:flex;align-items:center;gap:18px;font:400 11px/1.4 system-ui,sans-serif;color:rgba(0,0,0,.55)">
+        <svg viewBox="0 0 18 18" width="72" height="72" style="flex:none;background:#f2f4f8;border-radius:8px;padding:6px;box-sizing:border-box"><g fill="#1a1d26"><rect x="1" y="9" width="2.4" height="8" rx="1.2"/><rect x="4.4" y="3" width="2.4" height="14" rx="1.2"/><rect x="7.8" y="12" width="2.4" height="5" rx="1.2"/><rect x="11.2" y="5" width="2.4" height="12" rx="1.2"/><rect x="14.6" y="8" width="2.4" height="9" rx="1.2"/></g></svg>
+        <span>Glifo estático de referencia (template 18×18 pt, ancho 3 gap 1). En ejecución cada barra toma la carga de un cluster/núcleo, con mínimo de 2 pt para que nunca desaparezca; el texto va en dígitos tabulares.</span>
+      </div>
+    </div></div>
+</div>
+
+<div class="dv-sub">Paleta</div>
+<div class="dv-opts">
+  <div class="dv-opt" id="1h"><div class="dv-olabel"><a class="dv-oid" href="#1h">1h</a>Primario · Secundario · Acento · Neutros</div>
+    <div class="dv-card" style="width:820px;display:grid;grid-template-columns:repeat(4,1fr)">
+      <div style="padding:18px;background:#33D98C;color:#052014;min-height:150px;display:flex;flex-direction:column;justify-content:space-between"><div><div style="font:700 13px Manrope">Primario · Menta</div><div style="font:400 11px/1.5 Manrope;opacity:.75;margin-top:4px">Actividad, marca, positivo.</div></div><div style="font:500 11px/1.6 ui-monospace,Menlo,monospace">oscuro #33D98C<br>claro #1FA86A</div></div>
+      <div style="padding:18px;background:#268CFF;color:#fff;min-height:150px;display:flex;flex-direction:column;justify-content:space-between"><div><div style="font:700 13px Manrope">Secundario · Azul</div><div style="font:400 11px/1.5 Manrope;opacity:.8;margin-top:4px">CPU, enlaces, selección.</div></div><div style="font:500 11px/1.6 ui-monospace,Menlo,monospace">oscuro #268CFF<br>claro #1E7BE6</div></div>
+      <div style="padding:18px;background:#2FC7B0;color:#052018;min-height:150px;display:flex;flex-direction:column;justify-content:space-between"><div><div style="font:700 13px Manrope">Acento · Verde azulado</div><div style="font:400 11px/1.5 Manrope;opacity:.75;margin-top:4px">Punto medio del degradado. Gráficos, hover.</div></div><div style="font:500 11px/1.6 ui-monospace,Menlo,monospace">oscuro #2FC7B0<br>claro #1FA898</div></div>
+      <div style="padding:18px;background:linear-gradient(180deg,#1A1F33,#05080F);color:#fff;min-height:150px;display:flex;flex-direction:column;justify-content:space-between"><div><div style="font:700 13px Manrope">Neutros · Marino</div><div style="font:400 11px/1.5 Manrope;opacity:.75;margin-top:4px">Fondo del ícono y del hero oscuro.</div></div><div style="font:500 11px/1.6 ui-monospace,Menlo,monospace">#1A1F33 → #05080F<br>claro #F4F6F9 / tinta #0D1120</div></div>
+      <div style="grid-column:1/-1;padding:14px 18px;display:flex;gap:18px;align-items:center;font:400 11px/1.4 Manrope;color:rgba(0,0,0,.6);border-top:1px solid rgba(0,0,0,.06)">
+        <span style="font:600 10px ui-monospace,Menlo,monospace;letter-spacing:.06em;color:rgba(0,0,0,.45)">DEGRADADO</span>
+        <span style="display:inline-flex;gap:6px"><span style="width:22px;height:22px;border-radius:6px;background:#33D98C"></span><span style="width:22px;height:22px;border-radius:6px;background:#2FC7B0"></span><span style="width:22px;height:22px;border-radius:6px;background:#2AB0D0"></span><span style="width:22px;height:22px;border-radius:6px;background:#279CEA"></span><span style="width:22px;height:22px;border-radius:6px;background:#268CFF"></span></span>
+        <span>Cinco pasos fijos, uno por barra. Reservados: amarillo/rojo → presión de memoria; cian → GPU. Nunca como color de marca.</span>
+      </div>
+    </div></div>
+</div>
+
+<div class="dv-sub">Wordmark y lockup</div>
+<div class="dv-opts">
+  <div class="dv-opt" id="1i"><div class="dv-olabel"><a class="dv-oid" href="#1i">1i</a>Bitono · Manrope 300 + 700, tracking −0.02em</div>
+    <div class="dv-card" style="width:520px;padding:38px 40px;display:flex;flex-direction:column;gap:30px">
+      <div style="font:300 56px/1 Manrope;letter-spacing:-.02em;color:#0d1120">Open<span style="font-weight:700">Process</span></div>
+      <div style="display:flex;align-items:center;gap:14px"><svg viewBox="0 0 1024 1024" width="56" height="56" style="margin:-6px"><use href="#op-gridicon"/></svg><span style="font:300 30px/1 Manrope;letter-spacing:-.02em;color:#0d1120">Open<span style="font-weight:700">Process</span></span></div>
+      <div style="display:flex;align-items:center;gap:10px"><svg viewBox="0 0 1024 1024" width="28" height="28" style="margin:-3px"><use href="#op-gridicon"/></svg><span style="font:300 16px/1 Manrope;letter-spacing:-.01em;color:#0d1120">Open<span style="font-weight:700">Process</span></span></div>
+    </div></div>
+  <div class="dv-opt" id="1j"><div class="dv-olabel"><a class="dv-oid" href="#1j">1j</a>Sobre oscuro · vertical y familia</div>
+    <div class="dv-card" style="width:520px;padding:38px 40px;background:linear-gradient(180deg,#1A1F33,#05080F);display:flex;flex-direction:column;gap:34px">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px"><svg viewBox="0 0 1024 1024" width="112" height="112" style="margin:-10px"><use href="#op-gridicon"/></svg><span style="font:300 34px/1 Manrope;letter-spacing:-.02em;color:#fff">Open<span style="font-weight:700">Process</span></span></div>
+      <div style="display:flex;gap:28px;justify-content:center;font:300 18px/1 Manrope;letter-spacing:-.01em;color:rgba(255,255,255,.7)"><span>Open<span style="font-weight:700;color:#fff">Battery</span></span><span>Open<span style="font-weight:700;color:#fff">Process</span></span><span style="opacity:.4">Open<span style="font-weight:700">…</span></span></div>
+    </div></div>
+</div>
+
+<div class="dv-sub">Fondo del DMG · 800×500 pt</div>
+<div class="dv-opts">
+  <div class="dv-opt" id="1k"><div class="dv-olabel"><a class="dv-oid" href="#1k">1k</a>Claro con rejilla técnica · ícono en (200,230), Aplicaciones en (600,230)</div>
+    <div class="dv-card" style="width:800px;height:500px;position:relative;background-color:#F4F6F9;background-image:linear-gradient(rgba(13,17,32,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(13,17,32,.055) 1px,transparent 1px);background-size:40px 40px;background-position:-0.5px -0.5px">
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 45%,rgba(255,255,255,.9),rgba(255,255,255,0))"></div>
+      <div style="position:absolute;left:0;right:0;top:44px;text-align:center;font:300 22px/1 Manrope;letter-spacing:-.02em;color:#0d1120">Open<span style="font-weight:700">Process</span></div>
+      <div style="position:absolute;left:0;right:0;top:74px;text-align:center;font:400 11.5px/1 Manrope;color:rgba(13,17,32,.5)">Arrastra el ícono a la carpeta Aplicaciones para instalar</div>
+      <div style="position:absolute;left:300px;top:229px;width:200px;height:2px;background:linear-gradient(90deg,#33D98C,#268CFF);border-radius:1px"></div>
+      <div style="position:absolute;left:494px;top:222px;width:0;height:0;border-left:12px solid #268CFF;border-top:8px solid transparent;border-bottom:8px solid transparent"></div>
+      <sc-if value="{{ dmgShowIcons }}" hint-placeholder-val="{{ true }}">
+        <svg viewBox="0 0 1024 1024" width="160" height="160" style="position:absolute;left:120px;top:150px"><use href="#op-gridicon"/></svg>
+        <div style="position:absolute;left:536px;top:166px;width:128px;height:128px;display:grid;place-items:center"><div style="width:112px;height:88px;border-radius:12px;background:linear-gradient(180deg,#8FC4FF,#4E9BF5);box-shadow:inset 0 -2px 0 rgba(0,0,0,.08);position:relative"><div style="position:absolute;left:0;right:0;top:-8px;height:14px;width:48px;border-radius:6px 6px 0 0;background:#6FB0FA"></div><div style="position:absolute;inset:0;display:grid;place-items:center;font:600 34px system-ui;color:rgba(255,255,255,.85)">A</div></div></div>
+      </sc-if>
+      <sc-if value="{{ dmgHideIcons }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;left:136px;top:166px;width:128px;height:128px;border:1.5px dashed rgba(38,140,255,.45);border-radius:30px"></div>
+        <div style="position:absolute;left:536px;top:166px;width:128px;height:128px;border:1.5px dashed rgba(38,140,255,.45);border-radius:30px"></div>
+      </sc-if>
+      <div style="position:absolute;left:0;right:0;bottom:22px;text-align:center;font:500 10px/1 ui-monospace,Menlo,monospace;letter-spacing:.06em;color:rgba(13,17,32,.35)">MACOS 26+ · APPLE SILICON · CÓDIGO ABIERTO · cl.franciscosolis.openprocess</div>
+    </div></div>
+</div>
+
+<div class="dv-sub">Hero para README · 1280×640</div>
+<div class="dv-opts">
+  <div class="dv-opt" id="1l"><div class="dv-olabel"><a class="dv-oid" href="#1l">1l</a>Oscuro</div>
+    <div class="dv-card" style="width:1280px;height:640px;position:relative;overflow:hidden;background:linear-gradient(180deg,#1A1F33,#05080F);color:#fff">
+      <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:48px 48px"></div>
+      <div style="position:absolute;left:-200px;bottom:-300px;width:800px;height:600px;background:radial-gradient(closest-side,rgba(51,217,140,.22),transparent)"></div>
+      <div style="position:absolute;right:-100px;top:-250px;width:700px;height:600px;background:radial-gradient(closest-side,rgba(38,140,255,.25),transparent)"></div>
+      <div style="position:absolute;left:80px;top:80px;width:480px;display:flex;flex-direction:column;gap:28px">
+        <svg viewBox="0 0 1024 1024" width="160" height="160" style="margin:-16px"><use href="#op-gridicon"/></svg>
+        <div style="font:300 58px/1 Manrope;letter-spacing:-.025em">Open<span style="font-weight:700">Process</span></div>
+        <div style="font:400 22px/1.35 Manrope;color:rgba(255,255,255,.72);text-wrap:pretty">Todo lo que hace tu Mac, en tiempo real.</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;font:600 11.5px/1 Manrope;letter-spacing:.02em">
+          <span style="padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.85)">macOS 26+</span>
+          <span style="padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.85)">Apple Silicon</span>
+          <span style="padding:8px 12px;border-radius:999px;border:1px solid rgba(51,217,140,.5);color:#33D98C">Código abierto</span>
+        </div>
+      </div>
+      <div style="position:absolute;left:600px;top:96px;width:900px;height:600px;border-radius:14px;background:rgba(20,26,44,.85);border:1px solid rgba(255,255,255,.12);box-shadow:0 40px 80px rgba(0,0,0,.5);overflow:hidden">
+        <div style="height:44px;display:flex;align-items:center;gap:8px;padding:0 16px;border-bottom:1px solid rgba(255,255,255,.08)"><span style="width:12px;height:12px;border-radius:50%;background:#ff5f57"></span><span style="width:12px;height:12px;border-radius:50%;background:#febc2e"></span><span style="width:12px;height:12px;border-radius:50%;background:#28c840"></span><span style="margin-left:14px;font:600 12.5px Manrope;color:rgba(255,255,255,.6)">OpenProcess — CPU</span></div>
+        <img src="assets/app-cpu-dark.png" alt="OpenProcess, pestaña CPU en modo oscuro" style="position:absolute;inset:44px 0 0 0;width:100%;display:block;object-fit:cover;object-position:top left">
+      </div>
+    </div></div>
+</div>
+<div class="dv-opts" style="margin-top:28px">
+  <div class="dv-opt" id="1m"><div class="dv-olabel"><a class="dv-oid" href="#1m">1m</a>Claro</div>
+    <div class="dv-card" style="width:1280px;height:640px;position:relative;overflow:hidden;background:linear-gradient(180deg,#FBFCFE,#EEF2F8);color:#0d1120">
+      <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(13,17,32,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(13,17,32,.05) 1px,transparent 1px);background-size:48px 48px"></div>
+      <div style="position:absolute;left:-200px;bottom:-300px;width:800px;height:600px;background:radial-gradient(closest-side,rgba(51,217,140,.22),transparent)"></div>
+      <div style="position:absolute;right:-100px;top:-250px;width:700px;height:600px;background:radial-gradient(closest-side,rgba(38,140,255,.2),transparent)"></div>
+      <div style="position:absolute;left:80px;top:80px;width:480px;display:flex;flex-direction:column;gap:28px">
+        <svg viewBox="0 0 1024 1024" width="160" height="160" style="margin:-16px"><use href="#op-glassgrid"/></svg>
+        <div style="font:300 58px/1 Manrope;letter-spacing:-.025em">Open<span style="font-weight:700">Process</span></div>
+        <div style="font:400 22px/1.35 Manrope;color:rgba(13,17,32,.68);text-wrap:pretty">Todo lo que hace tu Mac, en tiempo real.</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;font:600 11.5px/1 Manrope;letter-spacing:.02em">
+          <span style="padding:8px 12px;border-radius:999px;border:1px solid rgba(13,17,32,.18);color:rgba(13,17,32,.8)">macOS 26+</span>
+          <span style="padding:8px 12px;border-radius:999px;border:1px solid rgba(13,17,32,.18);color:rgba(13,17,32,.8)">Apple Silicon</span>
+          <span style="padding:8px 12px;border-radius:999px;border:1px solid rgba(31,168,106,.6);color:#1FA86A">Código abierto</span>
+        </div>
+      </div>
+      <div style="position:absolute;left:600px;top:96px;width:900px;height:600px;border-radius:14px;background:rgba(255,255,255,.8);border:1px solid rgba(13,17,32,.1);box-shadow:0 40px 80px rgba(13,17,32,.18);overflow:hidden">
+        <div style="height:44px;display:flex;align-items:center;gap:8px;padding:0 16px;border-bottom:1px solid rgba(13,17,32,.08)"><span style="width:12px;height:12px;border-radius:50%;background:#ff5f57"></span><span style="width:12px;height:12px;border-radius:50%;background:#febc2e"></span><span style="width:12px;height:12px;border-radius:50%;background:#28c840"></span><span style="margin-left:14px;font:600 12.5px Manrope;color:rgba(13,17,32,.55)">OpenProcess — Resumen</span></div>
+        <img src="assets/app-resumen-light.png" alt="OpenProcess, Resumen en modo claro" style="position:absolute;inset:44px 0 0 0;width:100%;display:block;object-fit:cover;object-position:top left">
+      </div>
+    </div></div>
+</div>
+
+<div class="dv-sub">Redes · 1200×630</div>
+<div class="dv-opts">
+  <div class="dv-opt" id="1n"><div class="dv-olabel"><a class="dv-oid" href="#1n">1n</a>Open Graph · oscuro</div>
+    <div class="dv-card" style="width:1200px;height:630px;position:relative;overflow:hidden;background:linear-gradient(180deg,#1A1F33,#05080F);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px">
+      <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:48px 48px"></div>
+      <div style="position:absolute;left:50%;top:50%;width:900px;height:700px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(38,140,255,.22),transparent)"></div>
+      <svg viewBox="0 0 1024 1024" width="220" height="220" style="margin:-22px;position:relative"><use href="#op-gridicon"/></svg>
+      <div style="font:300 72px/1 Manrope;letter-spacing:-.025em;position:relative">Open<span style="font-weight:700">Process</span></div>
+      <div style="font:400 26px/1.3 Manrope;color:rgba(255,255,255,.72);position:relative">Todo lo que hace tu Mac, en tiempo real.</div>
+      <div style="position:absolute;bottom:34px;font:600 12px/1 ui-monospace,Menlo,monospace;letter-spacing:.1em;color:rgba(255,255,255,.4)">MACOS 26+ · APPLE SILICON · CÓDIGO ABIERTO</div>
+    </div></div>
+</div>
+
+<p class="dv-next">Prueba: "quédate con <a class="dv-oid" href="#1b">1b</a> como ícono principal" · "barras más gruesas en <a class="dv-oid" href="#1a">1a</a> para que lean mejor a 16 px" · "hero con la captura real que te subo"</p>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;dmgShowIcons&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;DMG&quot;},&quot;liveMeter&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Barra de menús&quot;}}">
+class Component extends DCLogic {
+  state = { loads: [0.45, 0.85, 0.25, 0.7, 0.55] };
+  componentDidMount() {
+    this._t = setInterval(() => {
+      if (this.props.liveMeter === false) return;
+      this.setState(s => ({ loads: s.loads.map(v => Math.min(1, Math.max(0.12, v + (Math.random() - 0.5) * 0.35))) }));
+    }, 900);
+  }
+  componentWillUnmount() { clearInterval(this._t); }
+  renderVals() {
+    const L = this.state.loads;
+    const px = v => Math.round(2 + v * 12) + 'px';
+    const avg = L.reduce((a, b) => a + b, 0) / L.length;
+    const show = this.props.dmgShowIcons ?? true;
+    return { h1: px(L[0]), h2: px(L[1]), h3: px(L[2]), h4: px(L[3]), h5: px(L[4]), cpuText: Math.round(avg * 100) + ' %', dmgShowIcons: show, dmgHideIcons: !show };
+  }
+}
+</script>
+</body>
+</html>
