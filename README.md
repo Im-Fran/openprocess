@@ -198,6 +198,32 @@ El branding (ícono, glifo de la barra de menús, paleta y fondo del DMG) está 
 
 ---
 
+## 🕸 Grafo de conocimiento (graphify)
+
+[graphify](https://github.com/safishamsi/graphify) convierte el repositorio en un grafo de conocimiento: extrae los símbolos del código por AST, los conceptos y decisiones de diseño de la documentación y el contenido de las imágenes, y los agrupa en comunidades. Lo usamos para orientarnos en la arquitectura y para que los asistentes de IA consulten el grafo en vez de leer todo el código en cada pregunta.
+
+El resultado se versiona en `graphify-out/`:
+
+| Archivo | Contenido |
+|---------|-----------|
+| [`GRAPH_REPORT.md`](graphify-out/GRAPH_REPORT.md) | Nodos más conectados, comunidades, conexiones sorprendentes y aristas ambiguas |
+| `graph.html` | Visualización interactiva; se abre en el navegador, sin servidor |
+| `graph.json` | El grafo completo, para consultas |
+
+Se usa como skill de Claude Code (`pip install graphifyy`):
+
+```bash
+/graphify .                       # genera el grafo completo
+/graphify . --update              # vuelve a extraer solo los archivos que cambiaron
+/graphify query "¿cómo llega una muestra de CPU a la tabla de procesos?"
+/graphify path "NetworkSampler" "ProcessTable"
+/graphify explain "SystemMonitor"
+```
+
+Cada relación está marcada como `EXTRACTED` (explícita en el código), `INFERRED` (deducida por el modelo) o `AMBIGUOUS` (por revisar). Después de cambiar código o documentación, ejecuta `/graphify . --update` e incluye los tres archivos en el commit. La caché y el registro de costos (`graphify-out/cache/`, `cost.json`, `manifest.json`) son locales y están en `.gitignore`.
+
+---
+
 ## ⚠️ Limitaciones conocidas
 
 - La energía de GPU (IOReport), el consumo total del sistema (SMC) y las temperaturas (`IOHIDEventSystemClient`) usan **APIs privadas de Apple**. Si fallan en una versión futura de macOS, esa información se oculta y el resto de la app sigue funcionando.
