@@ -71,6 +71,13 @@ struct CoreTile: View {
     }
 }
 
+/// Explains "Purgar memoria" next to the button and in its tooltips.
+enum PurgeHelp {
+    static var enabled: LocalizedStringKey { "Vaciar la caché de disco y la memoria purgable (ejecuta purge como administrador)" }
+    static var disabled: LocalizedStringKey { "Requiere el asistente privilegiado. Instálalo en Ajustes" }
+    static var detail: LocalizedStringKey { "“Purgar memoria” vacía la caché de archivos y la memoria purgable, igual que el comando purge. No cierra apps ni borra datos, pero lo que estaba en caché se volverá a leer del disco, así que el Mac puede ir algo más lento durante unos segundos. macOS ya libera esta memoria solo cuando hace falta; úsalo para medir o diagnosticar, no como mantenimiento." }
+}
+
 struct MemoryView: View {
     @Environment(SystemMonitor.self) private var monitor
     @Environment(UIState.self) private var ui
@@ -86,8 +93,12 @@ struct MemoryView: View {
                         Task { if let error = await monitor.purgeMemory() { ui.errorMessage = error } }
                     }
                     .disabled(!monitor.helper.isEnabled)
-                    .help(monitor.helper.isEnabled ? "Libera la memoria caché y purgable" : "Requiere el asistente privilegiado")
+                    .help(monitor.helper.isEnabled ? PurgeHelp.enabled : PurgeHelp.disabled)
                 }
+                Text(PurgeHelp.detail)
+                    .font(.callout)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
                 Chart(monitor.history.points) { p in
                     AreaMark(x: .value("Hora", p.date), y: .value("Presión", p.value.memoryPressure))
                         .foregroundStyle(m.pressure.color.gradient)

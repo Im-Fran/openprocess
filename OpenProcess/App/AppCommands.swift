@@ -80,6 +80,7 @@ struct AppCommands: Commands {
                 Task { if let error = await monitor.purgeMemory() { ui.errorMessage = error } }
             }
             .disabled(!monitor.helper.isEnabled)
+            .help(monitor.helper.isEnabled ? PurgeHelp.enabled : PurgeHelp.disabled)
             Divider()
             Button("Abrir Consola") { openApp("com.apple.Console") }
             Button("Abrir Información del Sistema") { openApp("com.apple.SystemProfiler") }
