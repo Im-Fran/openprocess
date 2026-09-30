@@ -7,9 +7,5 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/.env
 
-# graphify: solo se versionan graph.json, graph.html y GRAPH_REPORT.md
-graphify-out/cache/
-graphify-out/cost.json
-graphify-out/manifest.json
-graphify-out/.graphify_*
-graphify-out/20*/
+# graphify: el grafo es local, cada uno lo genera
+graphify-out/

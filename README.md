@@ -202,11 +202,11 @@ El branding (ícono, glifo de la barra de menús, paleta y fondo del DMG) está 
 
 [graphify](https://github.com/safishamsi/graphify) convierte el repositorio en un grafo de conocimiento: extrae los símbolos del código por AST, los conceptos y decisiones de diseño de la documentación y el contenido de las imágenes, y los agrupa en comunidades. Lo usamos para orientarnos en la arquitectura y para que los asistentes de IA consulten el grafo en vez de leer todo el código en cada pregunta.
 
-El resultado se versiona en `graphify-out/`:
+El grafo es local: no se versiona y cada uno lo genera en `graphify-out/` (ignorado en `.gitignore`):
 
 | Archivo | Contenido |
 |---------|-----------|
-| [`GRAPH_REPORT.md`](graphify-out/GRAPH_REPORT.md) | Nodos más conectados, comunidades, conexiones sorprendentes y aristas ambiguas |
+| `GRAPH_REPORT.md` | Nodos más conectados, comunidades, conexiones sorprendentes y aristas ambiguas |
 | `graph.html` | Visualización interactiva; se abre en el navegador, sin servidor |
 | `graph.json` | El grafo completo, para consultas |
 
@@ -220,7 +220,7 @@ Se usa como skill de Claude Code (`pip install graphifyy`):
 /graphify explain "SystemMonitor"
 ```
 
-Cada relación está marcada como `EXTRACTED` (explícita en el código), `INFERRED` (deducida por el modelo) o `AMBIGUOUS` (por revisar). Después de cambiar código o documentación, ejecuta `/graphify . --update` e incluye los tres archivos en el commit. La caché y el registro de costos (`graphify-out/cache/`, `cost.json`, `manifest.json`) son locales y están en `.gitignore`.
+Cada relación está marcada como `EXTRACTED` (explícita en el código), `INFERRED` (deducida por el modelo) o `AMBIGUOUS` (por revisar). Después de cambiar código o documentación, ejecuta `/graphify . --update` para mantener tu grafo al día.
 
 ---
 
