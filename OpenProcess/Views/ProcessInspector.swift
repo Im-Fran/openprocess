@@ -44,7 +44,9 @@ struct ProcessInspector: View {
                     }
                     HStack {
                         Button("Salir…") { ui.request(SIGTERM, [pid]) }
+                            .help("Pedir al proceso que se cierre (SIGTERM); puede guardar sus datos antes")
                         Button("Forzar salida…") { ui.request(SIGKILL, [pid]) }
+                            .help("Terminar el proceso de inmediato (SIGKILL); se pierden los cambios sin guardar")
                         Spacer()
                         Button {
                             ui.sample(pid, monitor: monitor)
@@ -86,6 +88,7 @@ struct ProcessInspector: View {
                     LabeledContent("Proceso padre") {
                         if let parent = monitor.process(p.ppid) {
                             Button("\(parent.name) (\(String(parent.pid)))") { ui.selection = [parent.pid] }
+                                .help("Seleccionar el proceso padre")
                                 .buttonStyle(.link)
                         } else {
                             Text(String(p.ppid))
@@ -122,6 +125,7 @@ struct ProcessInspector: View {
                             ProgressView("Leyendo archivos abiertos…").controlSize(.small)
                         } else {
                             Button("Mostrar archivos y puertos") { loadOpenFiles() }
+                                .help("Listar los archivos abiertos y las conexiones de red del proceso")
                         }
                     }
                 }
