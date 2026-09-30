@@ -110,6 +110,7 @@ struct MenuBarView: View {
             Divider()
             HStack {
                 Button("Abrir OpenProcess") {
+                    NSApp.setActivationPolicy(.regular)
                     if let window = NSApp.windows.first(where: { $0.isVisible && $0.canBecomeMain }) {
                         window.makeKeyAndOrderFront(nil)
                     } else {
@@ -117,9 +118,12 @@ struct MenuBarView: View {
                     }
                     NSApp.activate()
                 }
+                .help("Mostrar la ventana principal de OpenProcess")
                 Spacer()
                 SettingsLink { Text("Ajustes…") }
+                    .help("Abrir los ajustes de OpenProcess")
                 Button("Salir") { NSApp.terminate(nil) }
+                    .help("Cerrar OpenProcess por completo, incluido el ícono de la barra de menús")
             }
         }
         .padding()

@@ -3,6 +3,22 @@ import SwiftUI
 final class AppDelegate: NSObject, NSApplicationDelegate {
     /// Keep sampling for the menu bar extra after the main window closes.
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool { false }
+
+    /// "Solo en la barra de menús": drop the Dock icon once the last regular window closes.
+    /// ContentView and the menu bar's "Abrir OpenProcess" bring it back.
+    func applicationDidFinishLaunching(_ notification: Notification) {
+        NotificationCenter.default.addObserver(self, selector: #selector(windowWillClose), name: NSWindow.willCloseNotification, object: nil)
+    }
+
+    @objc private func windowWillClose(_ note: Notification) {
+        let defaults = UserDefaults.standard
+        // Without the menu bar extra there would be no way back to the app.
+        guard defaults.bool(forKey: "menuBarOnly"), defaults.object(forKey: "showMenuBarExtra") as? Bool ?? true,
+              let closing = note.object as? NSWindow, closing.canBecomeMain,
+              !NSApp.windows.contains(where: { $0 !== closing && $0.isVisible && $0.canBecomeMain })
+        else { return }
+        NSApp.setActivationPolicy(.accessory)
+    }
 }
 
 @main
@@ -29,6 +45,9 @@ struct OpenProcessApp: App {
         .commands {
             CommandGroup(replacing: .newItem) {} // single-window app
             AppCommands(monitor: monitor, ui: ui)
+            CommandGroup(replacing: .help) {
+                Button("Bienvenida a OpenProcess") { UserDefaults.standard.set(false, forKey: "hasSeenOnboarding") }
+            }
         }
 
         Settings {
@@ -49,6 +68,7 @@ struct OpenProcessApp: App {
 struct ContentView: View {
     @Environment(SystemMonitor.self) private var monitor
     @Environment(UIState.self) private var ui
+    @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding = false
 
     var body: some View {
         @Bindable var ui = ui
@@ -104,6 +124,8 @@ struct ContentView: View {
             }
         }
         .sheet(item: $ui.sampleReport) { SampleReportView(report: $0) }
+        .sheet(isPresented: Binding { !hasSeenOnboarding } set: { hasSeenOnboarding = !$0 }) { OnboardingView() }
+        .onAppear { NSApp.setActivationPolicy(.regular) } // undo "solo en la barra de menús"
     }
 
     private var signalTitle: String {
@@ -136,7 +158,9 @@ struct SampleReportView: View {
                 Text("Muestra de \(report.name)").foregroundStyle(.secondary)
                 Spacer()
                 Button("Guardar…", action: save)
+                    .help("Guardar la muestra como archivo de texto")
                 Button("Cerrar") { dismiss() }.keyboardShortcut(.defaultAction)
+                    .help("Cerrar la muestra sin guardarla")
             }
             .padding()
         }
