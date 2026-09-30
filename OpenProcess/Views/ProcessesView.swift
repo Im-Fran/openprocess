@@ -86,17 +86,24 @@ struct ProcessesView: View {
         @Bindable var ui = ui
         ToolbarItemGroup(placement: .primaryAction) {
             Button("Salir del proceso", systemImage: "xmark.octagon") { ui.request(SIGTERM, ui.selection) }
-            .help("Salir de los procesos seleccionados (⌥⌘Q)")
+            .help("Pedir a los procesos seleccionados que se cierren; se pide confirmación antes (⌥⌘Q)")
             .disabled(ui.selection.isEmpty)
-            Picker("Mostrar", selection: $ui.scope) {
-                ForEach(ProcessScope.allCases) { Text($0.title).tag($0) }
+            // A Menu, not a menu-style Picker: the toolbar draws the picker's current value blank.
+            Menu {
+                Picker("Mostrar", selection: $ui.scope) {
+                    ForEach(ProcessScope.allCases) { Text($0.title).tag($0) }
+                }
+                .pickerStyle(.inline)
+                .labelsHidden()
+            } label: {
+                Label(ui.scope.title, systemImage: "line.3.horizontal.decrease")
+                    .labelStyle(.titleAndIcon)
             }
-            .pickerStyle(.menu)
-            .help("Filtrar procesos")
+            .help("Elegir qué procesos se muestran: todos, los tuyos, los del sistema, los de otros usuarios o solo apps con ventanas")
             Toggle("Árbol", systemImage: "list.bullet.indent", isOn: $ui.treeMode)
-                .help("Mostrar jerarquía de procesos")
+                .help("Agrupar cada proceso bajo el proceso que lo inició. Solo con “Todos los procesos” y sin búsqueda")
             Button("Información", systemImage: "info.circle") { ui.showInspector.toggle() }
-                .help("Mostrar información del proceso (⌘I)")
+                .help("Mostrar u ocultar el panel con los detalles del proceso seleccionado (⌘I)")
         }
     }
 
