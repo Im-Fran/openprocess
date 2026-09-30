@@ -1,17 +1,17 @@
 # Graph Report - openprocess  (2026-09-30)
 
 ## Corpus Check
-- 38 files · ~180,260 words
+- 38 files · ~180,264 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 10 file(s) not represented in the graph (top: (none) 7, .entitlements 1, .plist 1)
 
 ## Summary
-- 665 nodes · 1633 edges · 19 communities (15 shown, 4 thin omitted)
-- Extraction: 86% EXTRACTED · 14% INFERRED · 0% AMBIGUOUS · INFERRED: 230 edges (avg confidence: 0.85)
+- 687 nodes · 1633 edges · 29 communities (14 shown, 15 thin omitted)
+- Extraction: 86% EXTRACTED · 14% INFERRED · 0% AMBIGUOUS · INFERRED: 232 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `634bb91f`
+- Built from commit: `dd263920`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -25,24 +25,25 @@
 - OpenProcess icon, dark, 1024px (master)
 - View
 - SMC
-- Darwin
-- .build
-- Foundation
-- .sample
 - SamplingTests
+- .build
+- .sample
+- Sampler
+- .sample
 - ProcessRow
+- .sample
 - RawProcStats
-- .value
+- .sample
 - OpenProcess
 
 ## God Nodes (most connected - your core abstractions)
-1. `SystemMonitor` - 46 edges
-2. `ProcessRow` - 33 edges
-3. `UIState` - 30 edges
+1. `SystemMonitor` - 43 edges
+2. `ProcessRow` - 32 edges
+3. `UIState` - 27 edges
 4. `AppSection` - 23 edges
 5. `get()` - 23 edges
-6. `ProcessTable` - 22 edges
-7. `Coordinator` - 22 edges
+6. `Coordinator` - 22 edges
+7. `ProcessTable` - 22 edges
 8. `createRuntime()` - 22 edges
 9. `ProcessColumn` - 19 edges
 10. `OpenProcess README (native open-source Activity Monitor replacement)` - 18 edges
@@ -50,14 +51,14 @@
 ## Surprising Connections (you probably didn't know these)
 - `Optional privileged helper (SMAppService launch daemon + XPC)` --references--> `SettingsView`  [INFERRED]
   README.md → OpenProcess/App/SettingsView.swift
-- `Optional privileged helper (SMAppService launch daemon + XPC)` --rationale_for--> `HelperClient`  [INFERRED]
-  README.md → OpenProcess/Helper/HelperClient.swift
 - `Per-process network via nettop once per cycle` --rationale_for--> `NetworkSampler`  [INFERRED]
   README.md → OpenProcess/Sampling/NetworkSampler.swift
-- `CPU energy estimated from per-process energy` --rationale_for--> `PowerSampler`  [INFERRED]
-  README.md → OpenProcess/Sampling/PowerSampler.swift
+- `Optional privileged helper (SMAppService launch daemon + XPC)` --rationale_for--> `HelperClient`  [INFERRED]
+  README.md → OpenProcess/Helper/HelperClient.swift
 - `Repository structure (App, Model, Sampling, Helper, Shared, Views, Resources)` --references--> `SystemMonitor`  [EXTRACTED]
   README.md → OpenProcess/Model/SystemMonitor.swift
+- `Private Apple APIs with graceful degradation (IOReport, SMC, IOHIDEventSystemClient)` --rationale_for--> `IOReportEnergy`  [INFERRED]
+  README.md → OpenProcess/Sampling/PowerSampler.swift
 
 ## Import Cycles
 - None detected.
@@ -77,23 +78,23 @@
 - **App + privileged helper sharing XPC protocol under same-team signing** — readme_privileged_helper, project_openprocess_target, project_openprocesshelper_target, openprocess_helper_helperclient_helperclient, openprocess_shared_helperprotocol [INFERRED 0.85]
 - **AppIcon.icon Icon Composer layers** — openprocess_resources_appicon_icon_assets_01_rejilla, openprocess_resources_appicon_icon_assets_02_figura, concept_layered_icon_composition [INFERRED 0.95]
 
-## Communities (19 total, 4 thin omitted)
+## Communities (29 total, 15 thin omitted)
 
 ### Community 0 - "String"
-Cohesion: 0.08
-Nodes (33): .body, SystemMonitor, .inspectedPID, String, Card, .body, HistoryChart, .body (+25 more)
+Cohesion: 0.09
+Nodes (37): MemoryPressure, critical, normal, warning, Metrics, SystemMonitor, String, Card (+29 more)
 
 ### Community 1 - "support.js"
 Cohesion: 0.06
 Nodes (74): boot(), bundledBlob(), cdnScriptFor(), collectProps(), compileAttr(), compileTemplate(), contentKey(), createComponentFactory() (+66 more)
 
 ### Community 2 - "UIState"
-Cohesion: 0.06
-Nodes (32): AppSection, cpu, disk, energy, gpu, .id, memory, network (+24 more)
+Cohesion: 0.05
+Nodes (37): AppCommands, .body, SignalMenu, .body, AppSection, cpu, disk, energy (+29 more)
 
 ### Community 3 - "OpenProcess README (native open-source Activity Monitor replacement)"
-Cohesion: 0.07
-Nodes (36): AccentColor colorset (light #1E7BE6, dark #268CFF), MenuBar Template (SVG), Menu bar template icon @2x (36px), MenuBar Template (PNG), App Screenshot: Resumen (Light), OpenProcess Branding design canvas (HTML visual reference, options 1a-1n), Branding handoff spec (Claude Design), support.js: generated dc-runtime bundle that renders the x-dc design canvas (+28 more)
+Cohesion: 0.08
+Nodes (34): AccentColor colorset (light #1E7BE6, dark #268CFF), MenuBar Template (SVG), Menu bar template icon @2x (36px), MenuBar Template (PNG), App Screenshot: Resumen (Light), OpenProcess Branding design canvas (HTML visual reference, options 1a-1n), Branding handoff spec (Claude Design), support.js: generated dc-runtime bundle that renders the x-dc design canvas (+26 more)
 
 ### Community 4 - "HelperClient"
 Cohesion: 0.07
@@ -101,7 +102,7 @@ Nodes (12): .body, HelperClient, .isEnabled, ResumeOnce, State, enabled, notInst
 
 ### Community 5 - "Coordinator"
 Cohesion: 0.07
-Nodes (5): AppKit, ClosureMenuItem, Coordinator, Item, ProcessTable
+Nodes (4): ClosureMenuItem, Coordinator, Item, ProcessTable
 
 ### Community 6 - "OpenProcess icon, dark, 1024px (master)"
 Cohesion: 0.06
@@ -109,35 +110,31 @@ Nodes (39): OpenProcess icon, dark, 1024px (master), OpenProcess icon, dark, 128
 
 ### Community 7 - "View"
 Cohesion: 0.06
-Nodes (33): Charts, AppCommands, SignalMenu, .body, AppDelegate, ContentView, .body, .signalTitle (+25 more)
+Nodes (28): Charts, AppDelegate, ContentView, .body, .signalTitle, OpenProcessApp, .body, SampleReportView (+20 more)
 
 ### Community 8 - "SMC"
-Cohesion: 0.10
-Nodes (7): IOKit.ps, HIDTemperatures, IOReportEnergy, KeyInfo, Param, PowerSampler, SMC
+Cohesion: 0.09
+Nodes (9): Foundation, IOKit, IOKit.ps, HIDTemperatures, IOReportEnergy, KeyInfo, Param, PowerSampler (+1 more)
 
-### Community 9 - "Darwin"
-Cohesion: 0.29
-Nodes (3): Darwin, OpenProcess, XCTest
+### Community 9 - "SamplingTests"
+Cohesion: 0.20
+Nodes (4): Darwin, OpenProcess, SamplingTests, XCTest
 
 ### Community 10 - ".build"
-Cohesion: 0.27
+Cohesion: 0.26
 Nodes (4): BSDProcess, Previous, ProcessDetails, ProcessSampler
 
-### Community 11 - "Foundation"
-Cohesion: 0.16
-Nodes (5): Foundation, IOKit, DiskSampler, GPUSampler, IOKitRegistry
+### Community 12 - "Sampler"
+Cohesion: 0.29
+Nodes (5): AppKit, Sampler, .topology, CPUSampler, Ticks
 
-### Community 12 - ".sample"
-Cohesion: 0.23
-Nodes (4): Sampler, .topology, CPUSampler, Ticks
-
-### Community 13 - "SamplingTests"
-Cohesion: 0.17
-Nodes (3): Nettop, NetworkSampler, SamplingTests
+### Community 13 - ".sample"
+Cohesion: 0.15
+Nodes (4): Nettop, NetworkSampler, OpenFile, ProcessInspector
 
 ### Community 14 - "ProcessRow"
-Cohesion: 0.07
-Nodes (29): History, Point, BatteryInfo, CoreLoad, .total, CPUSnapshot, GPUSnapshot, IOSnapshot (+21 more)
+Cohesion: 0.08
+Nodes (24): History, Point, BatteryInfo, CoreLoad, .total, CPUSnapshot, .total, GPUSnapshot (+16 more)
 
 ## Ambiguous Edges - Review These
 - `.sample()` → `.sample()`  [AMBIGUOUS]
@@ -146,9 +143,9 @@ Nodes (29): History, Point, BatteryInfo, CoreLoad, .total, CPUSnapshot, GPUSnaps
   assets/brand/assets/icon/glassdark/OpenProcess-glassdark-1024.png · relation: references
 
 ## Knowledge Gaps
-- **60 isolated node(s):** `notInstalled`, `requiresApproval`, `enabled`, `unavailable`, `.id` (+55 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 156 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **60 isolated node(s):** `.enabled`, `.detail`, `.body`, `.body`, `.body` (+55 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 173 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **15 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
@@ -157,13 +154,13 @@ _Questions this graph is uniquely positioned to answer:_
   _Edge tagged AMBIGUOUS (relation: semantically_similar_to) - confidence is low._
 - **What is the exact relationship between `Icon background layer, dark (01-fondo-oscuro)` and `OpenProcess icon, glass dark, 1024px (master)`?**
   _Edge tagged AMBIGUOUS (relation: references) - confidence is low._
-- **Why does `String` connect `String` to `UIState`, `HelperClient`, `Coordinator`, `View`, `SMC`, `Darwin`, `.build`, `Foundation`, `.sample`, `SamplingTests`, `ProcessRow`, `.value`?**
-  _High betweenness centrality (0.257) - this node is a cross-community bridge._
+- **Why does `parseDcDocument()` connect `OpenProcess README (native open-source Activity Monitor replacement)` to `support.js`?**
+  _High betweenness centrality (0.215) - this node is a cross-community bridge._
 - **Are the 3 inferred relationships involving `SystemMonitor` (e.g. with `.body` and `HistoryChart`) actually correct?**
   _`SystemMonitor` has 3 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 3 inferred relationships involving `ProcessRow` (e.g. with `RawProcStats` and `.body`) actually correct?**
   _`ProcessRow` has 3 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 6 inferred relationships involving `UIState` (e.g. with `.body` and `OpenProcessApp`) actually correct?**
-  _`UIState` has 6 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `notInstalled`, `requiresApproval`, `enabled` to the rest of the system?**
+- **Are the 5 inferred relationships involving `UIState` (e.g. with `.body` and `.body`) actually correct?**
+  _`UIState` has 5 INFERRED edges - model-reasoned connections that need verification._
+- **What connects `.enabled`, `.detail`, `.body` to the rest of the system?**
   _60 weakly-connected nodes found - possible documentation gaps or missing edges._

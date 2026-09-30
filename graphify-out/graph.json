@@ -215,6 +215,32 @@
   },
   "nodes": [
     {
+      "id": "openprocess_model_snapshots_memorypressure",
+      "label": "MemoryPressure",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "String",
+      "file_type": "code",
+      "norm_label": "memorypressure",
+      "source_file": "OpenProcess/Model/Snapshots.swift",
+      "source_location": "L51"
+    },
+    {
+      "id": "openprocess_model_systemmonitor_metrics",
+      "label": "Metrics",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "String",
+      "file_type": "code",
+      "norm_label": "metrics",
+      "source_file": "OpenProcess/Model/SystemMonitor.swift",
+      "source_location": "L5"
+    },
+    {
       "id": "openprocess_model_systemmonitor_systemmonitor",
       "label": "SystemMonitor",
       "_callable": true,
@@ -446,26 +472,13 @@
       "source_location": "L34"
     },
     {
-      "id": "openprocess_sampling_iokitsamplers_disksampler",
-      "label": "DiskSampler",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "Foundation",
-      "file_type": "code",
-      "norm_label": "disksampler",
-      "source_file": "OpenProcess/Sampling/IOKitSamplers.swift",
-      "source_location": "L64"
-    },
-    {
       "id": "openprocess_sampling_iokitsamplers_gpusampler",
       "label": "GPUSampler",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 11,
-      "community_name": "Foundation",
+      "community_name": ".sample",
       "file_type": "code",
       "norm_label": "gpusampler",
       "source_file": "OpenProcess/Sampling/IOKitSamplers.swift",
@@ -478,7 +491,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 11,
-      "community_name": "Foundation",
+      "community_name": ".sample",
       "file_type": "code",
       "norm_label": "iokitregistry",
       "source_file": "OpenProcess/Sampling/IOKitSamplers.swift",
@@ -491,7 +504,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 12,
-      "community_name": ".sample",
+      "community_name": "Sampler",
       "file_type": "code",
       "norm_label": "sampler",
       "source_file": "OpenProcess/Model/SystemMonitor.swift",
@@ -504,7 +517,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 12,
-      "community_name": ".sample",
+      "community_name": "Sampler",
       "file_type": "code",
       "norm_label": "cpusampler",
       "source_file": "OpenProcess/Sampling/CPUSampler.swift",
@@ -517,7 +530,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 12,
-      "community_name": ".sample",
+      "community_name": "Sampler",
       "file_type": "code",
       "norm_label": "ticks",
       "source_file": "OpenProcess/Sampling/CPUSampler.swift",
@@ -530,7 +543,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "SamplingTests",
+      "community_name": ".sample",
       "file_type": "code",
       "norm_label": "nettop",
       "source_file": "OpenProcess/Sampling/NetworkSampler.swift",
@@ -543,24 +556,37 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "SamplingTests",
+      "community_name": ".sample",
       "file_type": "code",
       "norm_label": "networksampler",
       "source_file": "OpenProcess/Sampling/NetworkSampler.swift",
       "source_location": "L4"
     },
     {
-      "id": "openprocesstests_openprocesstests_samplingtests",
-      "label": "SamplingTests",
+      "id": "openprocess_views_processinspector_openfile",
+      "label": "OpenFile",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "SamplingTests",
+      "community_name": ".sample",
       "file_type": "code",
-      "norm_label": "samplingtests",
-      "source_file": "OpenProcessTests/OpenProcessTests.swift",
-      "source_location": "L5"
+      "norm_label": "openfile",
+      "source_file": "OpenProcess/Views/ProcessInspector.swift",
+      "source_location": "L4"
+    },
+    {
+      "id": "openprocess_views_processinspector_processinspector",
+      "label": "ProcessInspector",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": ".sample",
+      "file_type": "code",
+      "norm_label": "processinspector",
+      "source_file": "OpenProcess/Views/ProcessInspector.swift",
+      "source_location": "L24"
     },
     {
       "id": "openprocess_model_history_history",
@@ -654,19 +680,6 @@
       "source_location": "L78"
     },
     {
-      "id": "openprocess_model_snapshots_memorypressure",
-      "label": "MemoryPressure",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "ProcessRow",
-      "file_type": "code",
-      "norm_label": "memorypressure",
-      "source_file": "OpenProcess/Model/Snapshots.swift",
-      "source_location": "L51"
-    },
-    {
       "id": "openprocess_model_snapshots_memorysnapshot",
       "label": "MemorySnapshot",
       "_callable": true,
@@ -745,43 +758,17 @@
       "source_location": "L96"
     },
     {
-      "id": "openprocess_model_systemmonitor_metrics",
-      "label": "Metrics",
+      "id": "openprocess_sampling_iokitsamplers_disksampler",
+      "label": "DiskSampler",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 14,
-      "community_name": "ProcessRow",
+      "community": 15,
+      "community_name": ".sample",
       "file_type": "code",
-      "norm_label": "metrics",
-      "source_file": "OpenProcess/Model/SystemMonitor.swift",
-      "source_location": "L5"
-    },
-    {
-      "id": "openprocess_sampling_memorysampler_memorysampler",
-      "label": "MemorySampler",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "ProcessRow",
-      "file_type": "code",
-      "norm_label": "memorysampler",
-      "source_file": "OpenProcess/Sampling/MemorySampler.swift",
-      "source_location": "L3"
-    },
-    {
-      "id": "openprocess_views_processinspector_openfile",
-      "label": "OpenFile",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "ProcessRow",
-      "file_type": "code",
-      "norm_label": "openfile",
-      "source_file": "OpenProcess/Views/ProcessInspector.swift",
-      "source_location": "L4"
+      "norm_label": "disksampler",
+      "source_file": "OpenProcess/Sampling/IOKitSamplers.swift",
+      "source_location": "L64"
     },
     {
       "id": "openprocess_shared_rawprocstats_rawprocstats",
@@ -797,17 +784,56 @@
       "source_location": "L4"
     },
     {
+      "id": "openprocess_sampling_memorysampler_memorysampler",
+      "label": "MemorySampler",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": ".sample",
+      "file_type": "code",
+      "norm_label": "memorysampler",
+      "source_file": "OpenProcess/Sampling/MemorySampler.swift",
+      "source_location": "L3"
+    },
+    {
       "id": "openprocess_sampling_sysctl_sysctl",
       "label": "Sysctl",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 17,
-      "community_name": ".value",
+      "community_name": ".sample",
       "file_type": "code",
       "norm_label": "sysctl",
       "source_file": "OpenProcess/Sampling/Sysctl.swift",
       "source_location": "L3"
+    },
+    {
+      "id": "openprocess_app_appcommands_appcommands",
+      "label": "AppCommands",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "UIState",
+      "file_type": "code",
+      "norm_label": "appcommands",
+      "source_file": "OpenProcess/App/AppCommands.swift",
+      "source_location": "L3"
+    },
+    {
+      "id": "openprocess_app_appcommands_signalmenu",
+      "label": "SignalMenu",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "UIState",
+      "file_type": "code",
+      "norm_label": "signalmenu",
+      "source_file": "OpenProcess/App/AppCommands.swift",
+      "source_location": "L98"
     },
     {
       "id": "openprocess_model_uistate_appsection",
@@ -834,6 +860,19 @@
       "norm_label": "processscope",
       "source_file": "OpenProcess/Model/UIState.swift",
       "source_location": "L37"
+    },
+    {
+      "id": "openprocess_model_uistate_samplereport",
+      "label": "SampleReport",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "UIState",
+      "file_type": "code",
+      "norm_label": "samplereport",
+      "source_file": "OpenProcess/Model/UIState.swift",
+      "source_location": "L57"
     },
     {
       "id": "openprocess_model_uistate_signalrequest",
@@ -1025,32 +1064,6 @@
       "source_location": "L54"
     },
     {
-      "id": "openprocess_app_appcommands_appcommands",
-      "label": "AppCommands",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "View",
-      "file_type": "code",
-      "norm_label": "appcommands",
-      "source_file": "OpenProcess/App/AppCommands.swift",
-      "source_location": "L3"
-    },
-    {
-      "id": "openprocess_app_appcommands_signalmenu",
-      "label": "SignalMenu",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "View",
-      "file_type": "code",
-      "norm_label": "signalmenu",
-      "source_file": "OpenProcess/App/AppCommands.swift",
-      "source_location": "L98"
-    },
-    {
       "id": "openprocess_app_openprocessapp_appdelegate",
       "label": "AppDelegate",
       "_callable": true,
@@ -1116,19 +1129,6 @@
       "source_location": "L4"
     },
     {
-      "id": "openprocess_model_uistate_samplereport",
-      "label": "SampleReport",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "View",
-      "file_type": "code",
-      "norm_label": "samplereport",
-      "source_file": "OpenProcess/Model/UIState.swift",
-      "source_location": "L57"
-    },
-    {
       "id": "openprocess_views_menubarview_menubarlabel",
       "label": "MenuBarLabel",
       "_callable": true,
@@ -1179,19 +1179,6 @@
       "norm_label": "overviewview",
       "source_file": "OpenProcess/Views/OverviewView.swift",
       "source_location": "L4"
-    },
-    {
-      "id": "openprocess_views_processinspector_processinspector",
-      "label": "ProcessInspector",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "View",
-      "file_type": "code",
-      "norm_label": "processinspector",
-      "source_file": "OpenProcess/Views/ProcessInspector.swift",
-      "source_location": "L24"
     },
     {
       "id": "openprocess_views_sectionviews_coretile",
@@ -1376,44 +1363,17 @@
       "source_location": "L9"
     },
     {
-      "id": "openprocess_app_appcommands_appcommands_openapp",
-      "label": ".openApp()",
+      "id": "openprocesstests_openprocesstests_samplingtests",
+      "label": "SamplingTests",
       "_callable": true,
+      "_callable_class": true,
       "_origin": "ast",
-      "community": 0,
-      "community_name": "String",
+      "community": 9,
+      "community_name": "SamplingTests",
       "file_type": "code",
-      "metadata": {
-        "unresolved_calls": [
-          {
-            "callee": "urlForApplication",
-            "receiver_type": "NSWorkspace",
-            "lang": "swift",
-            "line": "L92"
-          },
-          {
-            "callee": "openApplication",
-            "receiver_type": "NSWorkspace",
-            "lang": "swift",
-            "line": "L93"
-          }
-        ]
-      },
-      "norm_label": ".openapp()",
-      "source_file": "OpenProcess/App/AppCommands.swift",
-      "source_location": "L91"
-    },
-    {
-      "id": "openprocess_model_systemmonitor_systemmonitor_process",
-      "label": ".process()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "String",
-      "file_type": "code",
-      "norm_label": ".process()",
-      "source_file": "OpenProcess/Model/SystemMonitor.swift",
-      "source_location": "L126"
+      "norm_label": "samplingtests",
+      "source_file": "OpenProcessTests/OpenProcessTests.swift",
+      "source_location": "L5"
     },
     {
       "id": "openprocess_model_systemmonitor_systemmonitor_purgememory",
@@ -1428,160 +1388,16 @@
       "source_location": "L143"
     },
     {
-      "id": "openprocess_model_systemmonitor_systemmonitor_send",
-      "label": ".send()",
+      "id": "openprocess_sampling_processsampler_processdetails_arguments",
+      "label": ".arguments()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
       "community_name": "String",
       "file_type": "code",
-      "norm_label": ".send()",
-      "source_file": "OpenProcess/Model/SystemMonitor.swift",
-      "source_location": "L130"
-    },
-    {
-      "id": "openprocess_model_uistate_uistate_copyinfo",
-      "label": ".copyInfo()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "String",
-      "file_type": "code",
-      "metadata": {
-        "unresolved_calls": [
-          {
-            "callee": "compactMap",
-            "receiver_type": "Collection",
-            "lang": "swift",
-            "line": "L124"
-          },
-          {
-            "callee": "clearContents",
-            "receiver_type": "NSPasteboard",
-            "lang": "swift",
-            "line": "L127"
-          },
-          {
-            "callee": "setString",
-            "receiver_type": "NSPasteboard",
-            "lang": "swift",
-            "line": "L128"
-          }
-        ]
-      },
-      "norm_label": ".copyinfo()",
-      "source_file": "OpenProcess/Model/UIState.swift",
-      "source_location": "L123"
-    },
-    {
-      "id": "openprocess_model_uistate_uistate_init",
-      "label": ".init()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "String",
-      "file_type": "code",
-      "norm_label": ".init()",
-      "source_file": "OpenProcess/Model/UIState.swift",
-      "source_location": "L91"
-    },
-    {
-      "id": "openprocess_model_uistate_uistate_request",
-      "label": ".request()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "String",
-      "file_type": "code",
-      "norm_label": ".request()",
-      "source_file": "OpenProcess/Model/UIState.swift",
-      "source_location": "L100"
-    },
-    {
-      "id": "openprocess_model_uistate_uistate_revealinfinder",
-      "label": ".revealInFinder()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "String",
-      "file_type": "code",
-      "metadata": {
-        "unresolved_calls": [
-          {
-            "callee": "compactMap",
-            "receiver_type": "Collection",
-            "lang": "swift",
-            "line": "L119"
-          },
-          {
-            "callee": "activateFileViewerSelecting",
-            "receiver_type": "NSWorkspace",
-            "lang": "swift",
-            "line": "L120"
-          }
-        ]
-      },
-      "norm_label": ".revealinfinder()",
-      "source_file": "OpenProcess/Model/UIState.swift",
-      "source_location": "L118"
-    },
-    {
-      "id": "openprocess_model_uistate_uistate_sample",
-      "label": ".sample()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "String",
-      "file_type": "code",
-      "metadata": {
-        "unresolved_calls": [
-          {
-            "callee": "detached",
-            "receiver_type": "Task",
-            "lang": "swift",
-            "line": "L137"
-          },
-          {
-            "callee": "run",
-            "receiver_type": "Process",
-            "lang": "swift",
-            "line": "L145"
-          },
-          {
-            "callee": "waitUntilExit",
-            "receiver_type": "Process",
-            "lang": "swift",
-            "line": "L146"
-          }
-        ]
-      },
-      "norm_label": ".sample()",
-      "source_file": "OpenProcess/Model/UIState.swift",
-      "source_location": "L132"
-    },
-    {
-      "id": "openprocess_model_uistate_uistate_signal",
-      "label": ".signal()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "String",
-      "file_type": "code",
-      "norm_label": ".signal()",
-      "source_file": "OpenProcess/Model/UIState.swift",
-      "source_location": "L105"
-    },
-    {
-      "id": "openprocess_sampling_sysctl_sysctl_string",
-      "label": ".string()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "String",
-      "file_type": "code",
-      "norm_label": ".string()",
-      "source_file": "OpenProcess/Sampling/Sysctl.swift",
-      "source_location": "L12"
+      "norm_label": ".arguments()",
+      "source_file": "OpenProcess/Sampling/ProcessSampler.swift",
+      "source_location": "L120"
     },
     {
       "id": "openprocess_views_components_historychart_maxvalue",
@@ -1744,30 +1560,6 @@
       "norm_label": ".image()",
       "source_file": "OpenProcess/Views/Format.swift",
       "source_location": "L52"
-    },
-    {
-      "id": "openprocess_views_menubarview_menubarview_coresummary",
-      "label": ".coreSummary()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "String",
-      "file_type": "code",
-      "norm_label": ".coresummary()",
-      "source_file": "OpenProcess/Views/MenuBarView.swift",
-      "source_location": "L133"
-    },
-    {
-      "id": "openprocess_views_sectionviews_cpuview_clusters",
-      "label": ".clusters()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "String",
-      "file_type": "code",
-      "norm_label": ".clusters()",
-      "source_file": "OpenProcess/Views/SectionViews.swift",
-      "source_location": "L36"
     },
     {
       "id": "assets_brand_support_boot",
@@ -2790,18 +2582,6 @@
       "source_location": "L563"
     },
     {
-      "id": "openprocess_sampling_processsampler_processdetails_arguments",
-      "label": ".arguments()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 10,
-      "community_name": ".build",
-      "file_type": "code",
-      "norm_label": ".arguments()",
-      "source_file": "OpenProcess/Sampling/ProcessSampler.swift",
-      "source_location": "L120"
-    },
-    {
       "id": "openprocess_sampling_processsampler_processsampler_build",
       "label": ".build()",
       "_callable": true,
@@ -2824,6 +2604,18 @@
       "norm_label": ".path()",
       "source_file": "OpenProcess/Sampling/ProcessSampler.swift",
       "source_location": "L102"
+    },
+    {
+      "id": "openprocess_sampling_processsampler_processsampler_rate",
+      "label": ".rate()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": ".build",
+      "file_type": "code",
+      "norm_label": ".rate()",
+      "source_file": "OpenProcess/Sampling/ProcessSampler.swift",
+      "source_location": "L47"
     },
     {
       "id": "openprocess_sampling_processsampler_processsampler_user",
@@ -2867,7 +2659,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 11,
-      "community_name": "Foundation",
+      "community_name": ".sample",
       "file_type": "code",
       "norm_label": ".parsepid()",
       "source_file": "OpenProcess/Sampling/IOKitSamplers.swift",
@@ -2879,7 +2671,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 11,
-      "community_name": "Foundation",
+      "community_name": ".sample",
       "file_type": "code",
       "norm_label": ".sample()",
       "source_file": "OpenProcess/Sampling/IOKitSamplers.swift",
@@ -2891,7 +2683,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 11,
-      "community_name": "Foundation",
+      "community_name": ".sample",
       "file_type": "code",
       "norm_label": ".foreach()",
       "source_file": "OpenProcess/Sampling/IOKitSamplers.swift",
@@ -2903,7 +2695,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 11,
-      "community_name": "Foundation",
+      "community_name": ".sample",
       "file_type": "code",
       "norm_label": ".foreachchild()",
       "source_file": "OpenProcess/Sampling/IOKitSamplers.swift",
@@ -2915,7 +2707,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 11,
-      "community_name": "Foundation",
+      "community_name": ".sample",
       "file_type": "code",
       "norm_label": ".properties()",
       "source_file": "OpenProcess/Sampling/IOKitSamplers.swift",
@@ -2927,51 +2719,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 11,
-      "community_name": "Foundation",
+      "community_name": ".sample",
       "file_type": "code",
       "norm_label": ".battery()",
       "source_file": "OpenProcess/Sampling/PowerSampler.swift",
       "source_location": "L167"
-    },
-    {
-      "id": "openprocess_model_systemmonitor_sampler_sample",
-      "label": ".sample()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 12,
-      "community_name": ".sample",
-      "file_type": "code",
-      "metadata": {
-        "unresolved_calls": [
-          {
-            "callee": "map",
-            "receiver_type": "ContinuousClock",
-            "lang": "swift",
-            "line": "L36"
-          },
-          {
-            "callee": "detached",
-            "receiver_type": "Task",
-            "lang": "swift",
-            "line": "L47"
-          }
-        ]
-      },
-      "norm_label": ".sample()",
-      "source_file": "OpenProcess/Model/SystemMonitor.swift",
-      "source_location": "L34"
-    },
-    {
-      "id": "openprocess_sampling_cpusampler_cpusampler_localizedcluster",
-      "label": ".localizedCluster()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 12,
-      "community_name": ".sample",
-      "file_type": "code",
-      "norm_label": ".localizedcluster()",
-      "source_file": "OpenProcess/Sampling/CPUSampler.swift",
-      "source_location": "L50"
     },
     {
       "id": "openprocess_sampling_cpusampler_cpusampler_readticks",
@@ -2979,23 +2731,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 12,
-      "community_name": ".sample",
+      "community_name": "Sampler",
       "file_type": "code",
       "norm_label": ".readticks()",
       "source_file": "OpenProcess/Sampling/CPUSampler.swift",
       "source_location": "L36"
-    },
-    {
-      "id": "openprocess_sampling_cpusampler_cpusampler_readtopology",
-      "label": ".readTopology()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 12,
-      "community_name": ".sample",
-      "file_type": "code",
-      "norm_label": ".readtopology()",
-      "source_file": "OpenProcess/Sampling/CPUSampler.swift",
-      "source_location": "L60"
     },
     {
       "id": "openprocess_sampling_cpusampler_cpusampler_sample",
@@ -3003,35 +2743,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 12,
-      "community_name": ".sample",
+      "community_name": "Sampler",
       "file_type": "code",
       "norm_label": ".sample()",
       "source_file": "OpenProcess/Sampling/CPUSampler.swift",
       "source_location": "L10"
-    },
-    {
-      "id": "openprocess_sampling_sysctl_sysctl_integer",
-      "label": ".integer()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 12,
-      "community_name": ".sample",
-      "file_type": "code",
-      "norm_label": ".integer()",
-      "source_file": "OpenProcess/Sampling/Sysctl.swift",
-      "source_location": "L4"
-    },
-    {
-      "id": "openprocesstests_openprocesstests_samplingtests_testtopologymatcheslogicalcpucount",
-      "label": ".testTopologyMatchesLogicalCPUCount()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 12,
-      "community_name": ".sample",
-      "file_type": "code",
-      "norm_label": ".testtopologymatcheslogicalcpucount()",
-      "source_file": "OpenProcessTests/OpenProcessTests.swift",
-      "source_location": "L83"
     },
     {
       "id": "openprocess_sampling_networksampler_nettop_parse",
@@ -3039,7 +2755,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "SamplingTests",
+      "community_name": ".sample",
       "file_type": "code",
       "norm_label": ".parse()",
       "source_file": "OpenProcess/Sampling/NetworkSampler.swift",
@@ -3051,7 +2767,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "SamplingTests",
+      "community_name": ".sample",
       "file_type": "code",
       "metadata": {
         "unresolved_calls": [
@@ -3085,7 +2801,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "SamplingTests",
+      "community_name": ".sample",
       "file_type": "code",
       "norm_label": ".parse()",
       "source_file": "OpenProcess/Views/ProcessInspector.swift",
@@ -3097,7 +2813,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "SamplingTests",
+      "community_name": ".sample",
       "file_type": "code",
       "metadata": {
         "unresolved_calls": [
@@ -3132,24 +2848,12 @@
       "source_location": "L144"
     },
     {
-      "id": "openprocesstests_openprocesstests_samplingtests_testparsesgpuclientcreator",
-      "label": ".testParsesGPUClientCreator()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "SamplingTests",
-      "file_type": "code",
-      "norm_label": ".testparsesgpuclientcreator()",
-      "source_file": "OpenProcessTests/OpenProcessTests.swift",
-      "source_location": "L59"
-    },
-    {
       "id": "openprocesstests_openprocesstests_samplingtests_testparseslsof",
       "label": ".testParsesLsof()",
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "SamplingTests",
+      "community_name": ".sample",
       "file_type": "code",
       "norm_label": ".testparseslsof()",
       "source_file": "OpenProcessTests/OpenProcessTests.swift",
@@ -3161,7 +2865,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "SamplingTests",
+      "community_name": ".sample",
       "file_type": "code",
       "norm_label": ".testparsesnettoplines()",
       "source_file": "OpenProcessTests/OpenProcessTests.swift",
@@ -3216,16 +2920,28 @@
       "source_location": "L30"
     },
     {
-      "id": "openprocess_sampling_memorysampler_memorysampler_sample",
-      "label": ".sample()",
+      "id": "openprocess_views_menubarview_menubarglyph_buckets",
+      "label": ".buckets()",
       "_callable": true,
       "_origin": "ast",
       "community": 14,
       "community_name": "ProcessRow",
       "file_type": "code",
-      "norm_label": ".sample()",
-      "source_file": "OpenProcess/Sampling/MemorySampler.swift",
-      "source_location": "L6"
+      "norm_label": ".buckets()",
+      "source_file": "OpenProcess/Views/MenuBarView.swift",
+      "source_location": "L39"
+    },
+    {
+      "id": "openprocess_views_menubarview_menubarview_coresummary",
+      "label": ".coreSummary()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "ProcessRow",
+      "file_type": "code",
+      "norm_label": ".coresummary()",
+      "source_file": "OpenProcess/Views/MenuBarView.swift",
+      "source_location": "L133"
     },
     {
       "id": "openprocesstests_openprocesstests_samplingtests_testmemorybreakdown",
@@ -3238,6 +2954,18 @@
       "norm_label": ".testmemorybreakdown()",
       "source_file": "OpenProcessTests/OpenProcessTests.swift",
       "source_location": "L39"
+    },
+    {
+      "id": "openprocesstests_openprocesstests_samplingtests_testmenubarglyphbucketscoresintofive",
+      "label": ".testMenuBarGlyphBucketsCoresIntoFive()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "ProcessRow",
+      "file_type": "code",
+      "norm_label": ".testmenubarglyphbucketscoresintofive()",
+      "source_file": "OpenProcessTests/OpenProcessTests.swift",
+      "source_location": "L93"
     },
     {
       "id": "openprocess_sampling_iokitsamplers_disksampler_sample",
@@ -3264,30 +2992,6 @@
       "source_location": "L8"
     },
     {
-      "id": "openprocess_sampling_processsampler_processsampler_rate",
-      "label": ".rate()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": ".sample",
-      "file_type": "code",
-      "norm_label": ".rate()",
-      "source_file": "OpenProcess/Sampling/ProcessSampler.swift",
-      "source_location": "L47"
-    },
-    {
-      "id": "openprocesstests_openprocesstests_samplingtests_testratehandlesmissingandbackwardscounters",
-      "label": ".testRateHandlesMissingAndBackwardsCounters()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": ".sample",
-      "file_type": "code",
-      "norm_label": ".testratehandlesmissingandbackwardscounters()",
-      "source_file": "OpenProcessTests/OpenProcessTests.swift",
-      "source_location": "L6"
-    },
-    {
       "id": "openprocess_shared_rawprocstats_rawprocstats_ns",
       "label": ".ns()",
       "_callable": true,
@@ -3312,12 +3016,76 @@
       "source_location": "L23"
     },
     {
+      "id": "openprocess_model_systemmonitor_sampler_sample",
+      "label": ".sample()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": ".sample",
+      "file_type": "code",
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "map",
+            "receiver_type": "ContinuousClock",
+            "lang": "swift",
+            "line": "L36"
+          },
+          {
+            "callee": "detached",
+            "receiver_type": "Task",
+            "lang": "swift",
+            "line": "L47"
+          }
+        ]
+      },
+      "norm_label": ".sample()",
+      "source_file": "OpenProcess/Model/SystemMonitor.swift",
+      "source_location": "L34"
+    },
+    {
+      "id": "openprocess_sampling_cpusampler_cpusampler_localizedcluster",
+      "label": ".localizedCluster()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": ".sample",
+      "file_type": "code",
+      "norm_label": ".localizedcluster()",
+      "source_file": "OpenProcess/Sampling/CPUSampler.swift",
+      "source_location": "L50"
+    },
+    {
+      "id": "openprocess_sampling_cpusampler_cpusampler_readtopology",
+      "label": ".readTopology()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": ".sample",
+      "file_type": "code",
+      "norm_label": ".readtopology()",
+      "source_file": "OpenProcess/Sampling/CPUSampler.swift",
+      "source_location": "L60"
+    },
+    {
+      "id": "openprocess_sampling_memorysampler_memorysampler_sample",
+      "label": ".sample()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": ".sample",
+      "file_type": "code",
+      "norm_label": ".sample()",
+      "source_file": "OpenProcess/Sampling/MemorySampler.swift",
+      "source_location": "L6"
+    },
+    {
       "id": "openprocess_sampling_processsampler_bsdprocess_all",
       "label": ".all()",
       "_callable": true,
       "_origin": "ast",
       "community": 17,
-      "community_name": ".value",
+      "community_name": ".sample",
       "file_type": "code",
       "norm_label": ".all()",
       "source_file": "OpenProcess/Sampling/ProcessSampler.swift",
@@ -3329,7 +3097,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 17,
-      "community_name": ".value",
+      "community_name": ".sample",
       "file_type": "code",
       "metadata": {
         "unresolved_calls": [
@@ -3351,11 +3119,35 @@
       "_callable": true,
       "_origin": "ast",
       "community": 17,
-      "community_name": ".value",
+      "community_name": ".sample",
       "file_type": "code",
       "norm_label": ".data()",
       "source_file": "OpenProcess/Sampling/Sysctl.swift",
       "source_location": "L29"
+    },
+    {
+      "id": "openprocess_sampling_sysctl_sysctl_integer",
+      "label": ".integer()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": ".sample",
+      "file_type": "code",
+      "norm_label": ".integer()",
+      "source_file": "OpenProcess/Sampling/Sysctl.swift",
+      "source_location": "L4"
+    },
+    {
+      "id": "openprocess_sampling_sysctl_sysctl_string",
+      "label": ".string()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": ".sample",
+      "file_type": "code",
+      "norm_label": ".string()",
+      "source_file": "OpenProcess/Sampling/Sysctl.swift",
+      "source_location": "L12"
     },
     {
       "id": "openprocess_sampling_sysctl_sysctl_value",
@@ -3363,7 +3155,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 17,
-      "community_name": ".value",
+      "community_name": ".sample",
       "file_type": "code",
       "norm_label": ".value()",
       "source_file": "OpenProcess/Sampling/Sysctl.swift",
@@ -3375,11 +3167,207 @@
       "_callable": true,
       "_origin": "ast",
       "community": 17,
-      "community_name": ".value",
+      "community_name": ".sample",
       "file_type": "code",
       "norm_label": ".testlistsallprocessesincludingroot()",
       "source_file": "OpenProcessTests/OpenProcessTests.swift",
       "source_location": "L87"
+    },
+    {
+      "id": "openprocesstests_openprocesstests_samplingtests_testtopologymatcheslogicalcpucount",
+      "label": ".testTopologyMatchesLogicalCPUCount()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": ".sample",
+      "file_type": "code",
+      "norm_label": ".testtopologymatcheslogicalcpucount()",
+      "source_file": "OpenProcessTests/OpenProcessTests.swift",
+      "source_location": "L83"
+    },
+    {
+      "id": "openprocess_app_appcommands_appcommands_openapp",
+      "label": ".openApp()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "UIState",
+      "file_type": "code",
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "urlForApplication",
+            "receiver_type": "NSWorkspace",
+            "lang": "swift",
+            "line": "L92"
+          },
+          {
+            "callee": "openApplication",
+            "receiver_type": "NSWorkspace",
+            "lang": "swift",
+            "line": "L93"
+          }
+        ]
+      },
+      "norm_label": ".openapp()",
+      "source_file": "OpenProcess/App/AppCommands.swift",
+      "source_location": "L91"
+    },
+    {
+      "id": "openprocess_app_appcommands_signalmenu_name",
+      "label": ".name()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "UIState",
+      "file_type": "code",
+      "norm_label": ".name()",
+      "source_file": "OpenProcess/App/AppCommands.swift",
+      "source_location": "L108"
+    },
+    {
+      "id": "openprocess_model_systemmonitor_systemmonitor_process",
+      "label": ".process()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "UIState",
+      "file_type": "code",
+      "norm_label": ".process()",
+      "source_file": "OpenProcess/Model/SystemMonitor.swift",
+      "source_location": "L126"
+    },
+    {
+      "id": "openprocess_model_uistate_uistate_copyinfo",
+      "label": ".copyInfo()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "UIState",
+      "file_type": "code",
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "compactMap",
+            "receiver_type": "Collection",
+            "lang": "swift",
+            "line": "L124"
+          },
+          {
+            "callee": "clearContents",
+            "receiver_type": "NSPasteboard",
+            "lang": "swift",
+            "line": "L127"
+          },
+          {
+            "callee": "setString",
+            "receiver_type": "NSPasteboard",
+            "lang": "swift",
+            "line": "L128"
+          }
+        ]
+      },
+      "norm_label": ".copyinfo()",
+      "source_file": "OpenProcess/Model/UIState.swift",
+      "source_location": "L123"
+    },
+    {
+      "id": "openprocess_model_uistate_uistate_init",
+      "label": ".init()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "UIState",
+      "file_type": "code",
+      "norm_label": ".init()",
+      "source_file": "OpenProcess/Model/UIState.swift",
+      "source_location": "L91"
+    },
+    {
+      "id": "openprocess_model_uistate_uistate_request",
+      "label": ".request()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "UIState",
+      "file_type": "code",
+      "norm_label": ".request()",
+      "source_file": "OpenProcess/Model/UIState.swift",
+      "source_location": "L100"
+    },
+    {
+      "id": "openprocess_model_uistate_uistate_revealinfinder",
+      "label": ".revealInFinder()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "UIState",
+      "file_type": "code",
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "compactMap",
+            "receiver_type": "Collection",
+            "lang": "swift",
+            "line": "L119"
+          },
+          {
+            "callee": "activateFileViewerSelecting",
+            "receiver_type": "NSWorkspace",
+            "lang": "swift",
+            "line": "L120"
+          }
+        ]
+      },
+      "norm_label": ".revealinfinder()",
+      "source_file": "OpenProcess/Model/UIState.swift",
+      "source_location": "L118"
+    },
+    {
+      "id": "openprocess_model_uistate_uistate_sample",
+      "label": ".sample()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "UIState",
+      "file_type": "code",
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "detached",
+            "receiver_type": "Task",
+            "lang": "swift",
+            "line": "L137"
+          },
+          {
+            "callee": "run",
+            "receiver_type": "Process",
+            "lang": "swift",
+            "line": "L145"
+          },
+          {
+            "callee": "waitUntilExit",
+            "receiver_type": "Process",
+            "lang": "swift",
+            "line": "L146"
+          }
+        ]
+      },
+      "norm_label": ".sample()",
+      "source_file": "OpenProcess/Model/UIState.swift",
+      "source_location": "L132"
+    },
+    {
+      "id": "openprocess_model_uistate_uistate_signal",
+      "label": ".signal()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "UIState",
+      "file_type": "code",
+      "norm_label": ".signal()",
+      "source_file": "OpenProcess/Model/UIState.swift",
+      "source_location": "L105"
     },
     {
       "id": "openprocess_views_overviewview_overviewview_tile",
@@ -3434,18 +3422,6 @@
       "source_location": "L24"
     },
     {
-      "id": "openprocess_views_menubarview_menubarglyph_buckets",
-      "label": ".buckets()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "OpenProcess README (native open-source Activity Monitor replacement)",
-      "file_type": "code",
-      "norm_label": ".buckets()",
-      "source_file": "OpenProcess/Views/MenuBarView.swift",
-      "source_location": "L39"
-    },
-    {
       "id": "openprocess_views_menubarview_menubarglyph_image",
       "label": ".image()",
       "_callable": true,
@@ -3466,18 +3442,6 @@
       "norm_label": ".image()",
       "source_file": "OpenProcess/Views/MenuBarView.swift",
       "source_location": "L24"
-    },
-    {
-      "id": "openprocesstests_openprocesstests_samplingtests_testmenubarglyphbucketscoresintofive",
-      "label": ".testMenuBarGlyphBucketsCoresIntoFive()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "OpenProcess README (native open-source Activity Monitor replacement)",
-      "file_type": "code",
-      "norm_label": ".testmenubarglyphbucketscoresintofive()",
-      "source_file": "OpenProcessTests/OpenProcessTests.swift",
-      "source_location": "L93"
     },
     {
       "id": "openprocess_app_openprocessapp_openprocessapp_init",
@@ -3670,6 +3634,18 @@
       "norm_label": ".init()",
       "source_file": "OpenProcess/Model/SystemMonitor.swift",
       "source_location": "L88"
+    },
+    {
+      "id": "openprocess_model_systemmonitor_systemmonitor_send",
+      "label": ".send()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "HelperClient",
+      "file_type": "code",
+      "norm_label": ".send()",
+      "source_file": "OpenProcess/Model/SystemMonitor.swift",
+      "source_location": "L130"
     },
     {
       "id": "openprocess_model_systemmonitor_systemmonitor_start",
@@ -4202,18 +4178,6 @@
       "source_location": "L116"
     },
     {
-      "id": "openprocess_app_appcommands_signalmenu_name",
-      "label": ".name()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "View",
-      "file_type": "code",
-      "norm_label": ".name()",
-      "source_file": "OpenProcess/App/AppCommands.swift",
-      "source_location": "L108"
-    },
-    {
       "id": "openprocess_app_openprocessapp_appdelegate_applicationdidfinishlaunching",
       "label": ".applicationDidFinishLaunching()",
       "_callable": true,
@@ -4280,6 +4244,18 @@
       "norm_label": ".save()",
       "source_file": "OpenProcess/App/OpenProcessApp.swift",
       "source_location": "L170"
+    },
+    {
+      "id": "openprocess_views_sectionviews_cpuview_clusters",
+      "label": ".clusters()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "View",
+      "file_type": "code",
+      "norm_label": ".clusters()",
+      "source_file": "OpenProcess/Views/SectionViews.swift",
+      "source_location": "L36"
     },
     {
       "id": "openprocess_sampling_powersampler_hidtemperatures_init",
@@ -4390,6 +4366,30 @@
       "source_location": "L24"
     },
     {
+      "id": "openprocesstests_openprocesstests_samplingtests_testparsesgpuclientcreator",
+      "label": ".testParsesGPUClientCreator()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "SamplingTests",
+      "file_type": "code",
+      "norm_label": ".testparsesgpuclientcreator()",
+      "source_file": "OpenProcessTests/OpenProcessTests.swift",
+      "source_location": "L59"
+    },
+    {
+      "id": "openprocesstests_openprocesstests_samplingtests_testratehandlesmissingandbackwardscounters",
+      "label": ".testRateHandlesMissingAndBackwardsCounters()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "SamplingTests",
+      "file_type": "code",
+      "norm_label": ".testratehandlesmissingandbackwardscounters()",
+      "source_file": "OpenProcessTests/OpenProcessTests.swift",
+      "source_location": "L6"
+    },
+    {
       "id": "closedrange",
       "label": "ClosedRange",
       "_origin": "ast",
@@ -4397,17 +4397,6 @@
       "community_name": "String",
       "file_type": "code",
       "norm_label": "closedrange",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "collection",
-      "label": "Collection",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "String",
-      "file_type": "code",
-      "norm_label": "collection",
       "source_file": "",
       "source_location": ""
     },
@@ -4434,24 +4423,46 @@
       "source_location": ""
     },
     {
-      "id": "openprocess_app_appcommands_appcommands_body",
-      "label": ".body",
+      "id": "openprocess_model_snapshots_memorypressure_critical",
+      "label": "critical",
       "_origin": "ast",
       "community": 0,
       "community_name": "String",
       "file_type": "code",
-      "norm_label": ".body",
-      "source_file": "OpenProcess/App/AppCommands.swift",
-      "source_location": "L8"
+      "norm_label": "critical",
+      "source_file": "OpenProcess/Model/Snapshots.swift",
+      "source_location": "L52"
     },
     {
-      "id": "openprocess_model_systemmonitor_swift_int32",
-      "label": "Int32",
+      "id": "openprocess_model_snapshots_memorypressure_normal",
+      "label": "normal",
       "_origin": "ast",
       "community": 0,
       "community_name": "String",
       "file_type": "code",
-      "norm_label": "int32",
+      "norm_label": "normal",
+      "source_file": "OpenProcess/Model/Snapshots.swift",
+      "source_location": "L52"
+    },
+    {
+      "id": "openprocess_model_snapshots_memorypressure_warning",
+      "label": "warning",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "String",
+      "file_type": "code",
+      "norm_label": "warning",
+      "source_file": "OpenProcess/Model/Snapshots.swift",
+      "source_location": "L52"
+    },
+    {
+      "id": "openprocess_model_systemmonitor_swift_double",
+      "label": "Double",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "String",
+      "file_type": "code",
+      "norm_label": "double",
       "source_file": "",
       "source_location": ""
     },
@@ -4474,28 +4485,6 @@
       "community_name": "String",
       "file_type": "code",
       "norm_label": "void",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "openprocess_model_systemmonitor_systemmonitor_inspectedpid",
-      "label": ".inspectedPID",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "String",
-      "file_type": "code",
-      "norm_label": ".inspectedpid",
-      "source_file": "OpenProcess/Model/SystemMonitor.swift",
-      "source_location": "L73"
-    },
-    {
-      "id": "openprocess_model_uistate_swift_int32",
-      "label": "Int32",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "String",
-      "file_type": "code",
-      "norm_label": "int32",
       "source_file": "",
       "source_location": ""
     },
@@ -4562,6 +4551,28 @@
       "norm_label": ".color",
       "source_file": "OpenProcess/Views/Components.swift",
       "source_location": "L167"
+    },
+    {
+      "id": "openprocess_views_components_memorypressure_symbol",
+      "label": ".symbol",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "String",
+      "file_type": "code",
+      "norm_label": ".symbol",
+      "source_file": "OpenProcess/Views/Components.swift",
+      "source_location": "L183"
+    },
+    {
+      "id": "openprocess_views_components_memorypressure_title",
+      "label": ".title",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "String",
+      "file_type": "code",
+      "norm_label": ".title",
+      "source_file": "OpenProcess/Views/Components.swift",
+      "source_location": "L175"
     },
     {
       "id": "openprocess_views_components_pressurelabel_body",
@@ -4801,17 +4812,6 @@
       "source_location": ""
     },
     {
-      "id": "openprocess_views_sectionviews_coretile_body",
-      "label": ".body",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "String",
-      "file_type": "code",
-      "norm_label": ".body",
-      "source_file": "OpenProcess/Views/SectionViews.swift",
-      "source_location": "L49"
-    },
-    {
       "id": "openprocess_views_sectionviews_cpuview_body",
       "label": ".body",
       "_origin": "ast",
@@ -4933,6 +4933,17 @@
       "source_location": ""
     },
     {
+      "id": "openprocess_sampling_processsampler_swift_double",
+      "label": "Double",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": ".build",
+      "file_type": "code",
+      "norm_label": "double",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "openprocess_sampling_processsampler_swift_int32",
       "label": "Int32",
       "_origin": "ast",
@@ -4966,23 +4977,11 @@
       "source_location": ""
     },
     {
-      "id": "foundation",
-      "label": "Foundation",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "Foundation",
-      "file_type": "code",
-      "norm_label": "foundation",
-      "source_file": "OpenProcessHelper/main.swift",
-      "source_location": "L1",
-      "type": "module"
-    },
-    {
       "id": "io_object_t",
       "label": "io_object_t",
       "_origin": "ast",
       "community": 11,
-      "community_name": "Foundation",
+      "community_name": ".sample",
       "file_type": "code",
       "norm_label": "io_object_t",
       "source_file": "",
@@ -4993,52 +4992,18 @@
       "label": "io_registry_entry_t",
       "_origin": "ast",
       "community": 11,
-      "community_name": "Foundation",
+      "community_name": ".sample",
       "file_type": "code",
       "norm_label": "io_registry_entry_t",
       "source_file": "",
       "source_location": ""
     },
     {
-      "id": "iokit",
-      "label": "IOKit",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "Foundation",
-      "file_type": "code",
-      "norm_label": "iokit",
-      "source_file": "OpenProcess/Sampling/PowerSampler.swift",
-      "source_location": "L2",
-      "type": "module"
-    },
-    {
-      "id": "openprocess_sampling_cpusampler",
-      "label": "CPUSampler.swift",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "Foundation",
-      "file_type": "code",
-      "norm_label": "cpusampler.swift",
-      "source_file": "OpenProcess/Sampling/CPUSampler.swift",
-      "source_location": "L1"
-    },
-    {
-      "id": "openprocess_sampling_iokitsamplers",
-      "label": "IOKitSamplers.swift",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "Foundation",
-      "file_type": "code",
-      "norm_label": "iokitsamplers.swift",
-      "source_file": "OpenProcess/Sampling/IOKitSamplers.swift",
-      "source_location": "L1"
-    },
-    {
       "id": "openprocess_sampling_iokitsamplers_swift_any",
       "label": "Any",
       "_origin": "ast",
       "community": 11,
-      "community_name": "Foundation",
+      "community_name": ".sample",
       "file_type": "code",
       "norm_label": "any",
       "source_file": "",
@@ -5049,20 +5014,9 @@
       "label": "Int32",
       "_origin": "ast",
       "community": 11,
-      "community_name": "Foundation",
+      "community_name": ".sample",
       "file_type": "code",
       "norm_label": "int32",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "openprocess_sampling_iokitsamplers_swift_uint64",
-      "label": "UInt64",
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "Foundation",
-      "file_type": "code",
-      "norm_label": "uint64",
       "source_file": "",
       "source_location": ""
     },
@@ -5071,29 +5025,52 @@
       "label": "Void",
       "_origin": "ast",
       "community": 11,
-      "community_name": "Foundation",
+      "community_name": ".sample",
       "file_type": "code",
       "norm_label": "void",
       "source_file": "",
       "source_location": ""
     },
     {
+      "id": "appkit",
+      "label": "AppKit",
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "Sampler",
+      "file_type": "code",
+      "norm_label": "appkit",
+      "source_file": "OpenProcess/Views/ProcessTable.swift",
+      "source_location": "L1",
+      "type": "module"
+    },
+    {
       "id": "continuousclock",
       "label": "ContinuousClock",
       "_origin": "ast",
       "community": 12,
-      "community_name": ".sample",
+      "community_name": "Sampler",
       "file_type": "code",
       "norm_label": "continuousclock",
       "source_file": "",
       "source_location": ""
     },
     {
+      "id": "openprocess_model_systemmonitor",
+      "label": "SystemMonitor.swift",
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "Sampler",
+      "file_type": "code",
+      "norm_label": "systemmonitor.swift",
+      "source_file": "OpenProcess/Model/SystemMonitor.swift",
+      "source_location": "L1"
+    },
+    {
       "id": "openprocess_model_systemmonitor_sampler_topology",
       "label": ".topology",
       "_origin": "ast",
       "community": 12,
-      "community_name": ".sample",
+      "community_name": "Sampler",
       "file_type": "code",
       "norm_label": ".topology",
       "source_file": "OpenProcess/Model/SystemMonitor.swift",
@@ -5104,17 +5081,28 @@
       "label": "UInt64",
       "_origin": "ast",
       "community": 12,
-      "community_name": ".sample",
+      "community_name": "Sampler",
       "file_type": "code",
       "norm_label": "uint64",
       "source_file": "",
       "source_location": ""
     },
     {
-      "id": "openprocess_sampling_sysctl_swift_int",
+      "id": "hashable",
+      "label": "Hashable",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": ".sample",
+      "file_type": "code",
+      "norm_label": "hashable",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "int",
       "label": "Int",
       "_origin": "ast",
-      "community": 12,
+      "community": 13,
       "community_name": ".sample",
       "file_type": "code",
       "norm_label": "int",
@@ -5126,7 +5114,7 @@
       "label": "NetworkSampler.swift",
       "_origin": "ast",
       "community": 13,
-      "community_name": "SamplingTests",
+      "community_name": ".sample",
       "file_type": "code",
       "norm_label": "networksampler.swift",
       "source_file": "OpenProcess/Sampling/NetworkSampler.swift",
@@ -5137,7 +5125,7 @@
       "label": "Int32",
       "_origin": "ast",
       "community": 13,
-      "community_name": "SamplingTests",
+      "community_name": ".sample",
       "file_type": "code",
       "norm_label": "int32",
       "source_file": "",
@@ -5148,42 +5136,31 @@
       "label": "UInt64",
       "_origin": "ast",
       "community": 13,
-      "community_name": "SamplingTests",
+      "community_name": ".sample",
       "file_type": "code",
       "norm_label": "uint64",
       "source_file": "",
       "source_location": ""
     },
     {
-      "id": "xctestcase",
-      "label": "XCTestCase",
+      "id": "openprocess_views_processinspector_swift_int32",
+      "label": "Int32",
       "_origin": "ast",
       "community": 13,
-      "community_name": "SamplingTests",
+      "community_name": ".sample",
       "file_type": "code",
-      "norm_label": "xctestcase",
+      "norm_label": "int32",
       "source_file": "",
       "source_location": ""
     },
     {
-      "id": "hashable",
-      "label": "Hashable",
+      "id": "openprocess_views_processinspector_swift_string",
+      "label": "String",
       "_origin": "ast",
-      "community": 14,
-      "community_name": "ProcessRow",
+      "community": 13,
+      "community_name": ".sample",
       "file_type": "code",
-      "norm_label": "hashable",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "identifiable",
-      "label": "Identifiable",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "ProcessRow",
-      "file_type": "code",
-      "norm_label": "identifiable",
+      "norm_label": "string",
       "source_file": "",
       "source_location": ""
     },
@@ -5243,37 +5220,15 @@
       "source_location": "L40"
     },
     {
-      "id": "openprocess_model_snapshots_memorypressure_critical",
-      "label": "critical",
+      "id": "openprocess_model_snapshots_cpusnapshot_total",
+      "label": ".total",
       "_origin": "ast",
       "community": 14,
       "community_name": "ProcessRow",
       "file_type": "code",
-      "norm_label": "critical",
+      "norm_label": ".total",
       "source_file": "OpenProcess/Model/Snapshots.swift",
-      "source_location": "L52"
-    },
-    {
-      "id": "openprocess_model_snapshots_memorypressure_normal",
-      "label": "normal",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "ProcessRow",
-      "file_type": "code",
-      "norm_label": "normal",
-      "source_file": "OpenProcess/Model/Snapshots.swift",
-      "source_location": "L52"
-    },
-    {
-      "id": "openprocess_model_snapshots_memorypressure_warning",
-      "label": "warning",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "ProcessRow",
-      "file_type": "code",
-      "norm_label": "warning",
-      "source_file": "OpenProcess/Model/Snapshots.swift",
-      "source_location": "L52"
+      "source_location": "L46"
     },
     {
       "id": "openprocess_model_snapshots_memorysnapshot_used",
@@ -5419,15 +5374,15 @@
       "source_location": "L97"
     },
     {
-      "id": "openprocess_model_systemmonitor_swift_double",
-      "label": "Double",
+      "id": "openprocess_model_systemmonitor_systemmonitor_inspectedpid",
+      "label": ".inspectedPID",
       "_origin": "ast",
       "community": 14,
       "community_name": "ProcessRow",
       "file_type": "code",
-      "norm_label": "double",
-      "source_file": "",
-      "source_location": ""
+      "norm_label": ".inspectedpid",
+      "source_file": "OpenProcess/Model/SystemMonitor.swift",
+      "source_location": "L73"
     },
     {
       "id": "openprocess_sampling_memorysampler_swift_uint64",
@@ -5441,35 +5396,35 @@
       "source_location": ""
     },
     {
-      "id": "openprocess_views_components_memorypressure_symbol",
-      "label": ".symbol",
+      "id": "openprocess_views_menubarview_menubarlabel_body",
+      "label": ".body",
       "_origin": "ast",
       "community": 14,
       "community_name": "ProcessRow",
       "file_type": "code",
-      "norm_label": ".symbol",
-      "source_file": "OpenProcess/Views/Components.swift",
-      "source_location": "L183"
+      "norm_label": ".body",
+      "source_file": "OpenProcess/Views/MenuBarView.swift",
+      "source_location": "L5"
     },
     {
-      "id": "openprocess_views_components_memorypressure_title",
-      "label": ".title",
+      "id": "openprocess_views_menubarview_swift_coreload",
+      "label": "CoreLoad",
       "_origin": "ast",
       "community": 14,
       "community_name": "ProcessRow",
       "file_type": "code",
-      "norm_label": ".title",
-      "source_file": "OpenProcess/Views/Components.swift",
-      "source_location": "L175"
+      "norm_label": "coreload",
+      "source_file": "",
+      "source_location": ""
     },
     {
-      "id": "openprocess_views_processinspector_swift_int",
-      "label": "Int",
+      "id": "openprocess_views_menubarview_swift_string",
+      "label": "String",
       "_origin": "ast",
       "community": 14,
       "community_name": "ProcessRow",
       "file_type": "code",
-      "norm_label": "int",
+      "norm_label": "string",
       "source_file": "",
       "source_location": ""
     },
@@ -5494,6 +5449,17 @@
       "norm_label": "double",
       "source_file": "",
       "source_location": ""
+    },
+    {
+      "id": "openprocess_views_sectionviews_coretile_body",
+      "label": ".body",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "ProcessRow",
+      "file_type": "code",
+      "norm_label": ".body",
+      "source_file": "OpenProcess/Views/SectionViews.swift",
+      "source_location": "L49"
     },
     {
       "id": "sendable",
@@ -5540,18 +5506,18 @@
       "source_location": ""
     },
     {
-      "id": "openprocess_sampling_networksampler_swift_double",
-      "label": "Double",
+      "id": "openprocess_sampling_iokitsamplers_swift_uint64",
+      "label": "UInt64",
       "_origin": "ast",
       "community": 15,
       "community_name": ".sample",
       "file_type": "code",
-      "norm_label": "double",
+      "norm_label": "uint64",
       "source_file": "",
       "source_location": ""
     },
     {
-      "id": "openprocess_sampling_processsampler_swift_double",
+      "id": "openprocess_sampling_networksampler_swift_double",
       "label": "Double",
       "_origin": "ast",
       "community": 15,
@@ -5599,9 +5565,31 @@
       "label": "CChar",
       "_origin": "ast",
       "community": 17,
-      "community_name": ".value",
+      "community_name": ".sample",
       "file_type": "code",
       "norm_label": "cchar",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "openprocess_sampling_memorysampler",
+      "label": "MemorySampler.swift",
+      "_origin": "ast",
+      "community": 17,
+      "community_name": ".sample",
+      "file_type": "code",
+      "norm_label": "memorysampler.swift",
+      "source_file": "OpenProcess/Sampling/MemorySampler.swift",
+      "source_location": "L1"
+    },
+    {
+      "id": "openprocess_sampling_sysctl_swift_int",
+      "label": "Int",
+      "_origin": "ast",
+      "community": 17,
+      "community_name": ".sample",
+      "file_type": "code",
+      "norm_label": "int",
       "source_file": "",
       "source_location": ""
     },
@@ -5610,7 +5598,7 @@
       "label": "Int32",
       "_origin": "ast",
       "community": 17,
-      "community_name": ".value",
+      "community_name": ".sample",
       "file_type": "code",
       "norm_label": "int32",
       "source_file": "",
@@ -5621,7 +5609,7 @@
       "label": "T",
       "_origin": "ast",
       "community": 17,
-      "community_name": ".value",
+      "community_name": ".sample",
       "file_type": "code",
       "norm_label": "t",
       "source_file": "",
@@ -5632,7 +5620,7 @@
       "label": "UInt8",
       "_origin": "ast",
       "community": 17,
-      "community_name": ".value",
+      "community_name": ".sample",
       "file_type": "code",
       "norm_label": "uint8",
       "source_file": "",
@@ -5675,6 +5663,17 @@
       "source_location": "L1"
     },
     {
+      "id": "openprocess_app_openprocessapp_swift_bool",
+      "label": "Bool",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "Bool",
+      "file_type": "code",
+      "norm_label": "bool",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "caseiterable",
       "label": "CaseIterable",
       "_origin": "ast",
@@ -5686,6 +5685,50 @@
       "source_location": ""
     },
     {
+      "id": "collection",
+      "label": "Collection",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "UIState",
+      "file_type": "code",
+      "norm_label": "collection",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "commands",
+      "label": "Commands",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "UIState",
+      "file_type": "code",
+      "norm_label": "commands",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "identifiable",
+      "label": "Identifiable",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "UIState",
+      "file_type": "code",
+      "norm_label": "identifiable",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "int32",
+      "label": "Int32",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "UIState",
+      "file_type": "code",
+      "norm_label": "int32",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "keyequivalent",
       "label": "KeyEquivalent",
       "_origin": "ast",
@@ -5693,6 +5736,83 @@
       "community_name": "UIState",
       "file_type": "code",
       "norm_label": "keyequivalent",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "nsmenu",
+      "label": "NSMenu",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "UIState",
+      "file_type": "code",
+      "norm_label": "nsmenu",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "openprocess_app_appcommands",
+      "label": "AppCommands.swift",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "UIState",
+      "file_type": "code",
+      "norm_label": "appcommands.swift",
+      "source_file": "OpenProcess/App/AppCommands.swift",
+      "source_location": "L1"
+    },
+    {
+      "id": "openprocess_app_appcommands_appcommands_body",
+      "label": ".body",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "UIState",
+      "file_type": "code",
+      "norm_label": ".body",
+      "source_file": "OpenProcess/App/AppCommands.swift",
+      "source_location": "L8"
+    },
+    {
+      "id": "openprocess_app_appcommands_signalmenu_body",
+      "label": ".body",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "UIState",
+      "file_type": "code",
+      "norm_label": ".body",
+      "source_file": "OpenProcess/App/AppCommands.swift",
+      "source_location": "L112"
+    },
+    {
+      "id": "openprocess_app_appcommands_swift_int32",
+      "label": "Int32",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "UIState",
+      "file_type": "code",
+      "norm_label": "int32",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "openprocess_app_appcommands_swift_string",
+      "label": "String",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "UIState",
+      "file_type": "code",
+      "norm_label": "string",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "openprocess_app_appcommands_swift_systemmonitor",
+      "label": "SystemMonitor",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "UIState",
+      "file_type": "code",
+      "norm_label": "systemmonitor",
       "source_file": "",
       "source_location": ""
     },
@@ -5938,6 +6058,17 @@
       "source_location": ""
     },
     {
+      "id": "openprocess_model_uistate_swift_int32",
+      "label": "Int32",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "UIState",
+      "file_type": "code",
+      "norm_label": "int32",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "openprocess_model_uistate_swift_localizedstringkey",
       "label": "LocalizedStringKey",
       "_origin": "ast",
@@ -6069,35 +6200,13 @@
       "source_location": "L85"
     },
     {
-      "id": "openprocess_views_processesview_swift_int32",
-      "label": "Int32",
+      "id": "processrow",
+      "label": "ProcessRow",
       "_origin": "ast",
       "community": 2,
       "community_name": "UIState",
       "file_type": "code",
-      "norm_label": "int32",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "openprocess_views_processesview_swift_nsmenu",
-      "label": "NSMenu",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "UIState",
-      "file_type": "code",
-      "norm_label": "nsmenu",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "openprocess_views_processesview_swift_set",
-      "label": "Set",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "UIState",
-      "file_type": "code",
-      "norm_label": "set",
+      "norm_label": "processrow",
       "source_file": "",
       "source_location": ""
     },
@@ -6113,6 +6222,17 @@
       "source_location": ""
     },
     {
+      "id": "set",
+      "label": "Set",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "UIState",
+      "file_type": "code",
+      "norm_label": "set",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "toolbarcontent",
       "label": "ToolbarContent",
       "_origin": "ast",
@@ -6124,15 +6244,147 @@
       "source_location": ""
     },
     {
-      "id": "openprocess_model_snapshots_cpusnapshot_total",
-      "label": ".total",
+      "id": "uistate",
+      "label": "UIState",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "UIState",
+      "file_type": "code",
+      "norm_label": "uistate",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "openprocess_app_openprocessapp_swift_notification",
+      "label": "Notification",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "Notification",
+      "file_type": "code",
+      "norm_label": "notification",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "openprocess_app_appcommands_swift_set",
+      "label": "Set",
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "Set",
+      "file_type": "code",
+      "norm_label": "set",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "openprocess_views_menubarview_swift_cgfloat",
+      "label": "CGFloat",
+      "_origin": "ast",
+      "community": 22,
+      "community_name": "CGFloat",
+      "file_type": "code",
+      "norm_label": "cgfloat",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "openprocess_views_processesview_swift_int32",
+      "label": "Int32",
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "Int32",
+      "file_type": "code",
+      "norm_label": "int32",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "openprocess_views_processesview_swift_nsmenu",
+      "label": "NSMenu",
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "NSMenu",
+      "file_type": "code",
+      "norm_label": "nsmenu",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "openprocess_views_processesview_swift_set",
+      "label": "Set",
+      "_origin": "ast",
+      "community": 25,
+      "community_name": "Set",
+      "file_type": "code",
+      "norm_label": "set",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "openprocess_views_menubarview_swift_double",
+      "label": "Double",
+      "_origin": "ast",
+      "community": 26,
+      "community_name": "Double",
+      "file_type": "code",
+      "norm_label": "double",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "openprocess_views_menubarview_swift_nsimage",
+      "label": "NSImage",
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "NSImage",
+      "file_type": "code",
+      "norm_label": "nsimage",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "openprocess_views_processinspector_swift_int",
+      "label": "Int",
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "Int",
+      "file_type": "code",
+      "norm_label": "int",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "cgfloat",
+      "label": "CGFloat",
       "_origin": "ast",
       "community": 3,
       "community_name": "OpenProcess README (native open-source Activity Monitor replacement)",
       "file_type": "code",
-      "norm_label": ".total",
-      "source_file": "OpenProcess/Model/Snapshots.swift",
-      "source_location": "L46"
+      "norm_label": "cgfloat",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "double",
+      "label": "Double",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "OpenProcess README (native open-source Activity Monitor replacement)",
+      "file_type": "code",
+      "norm_label": "double",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "nsimage",
+      "label": "NSImage",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "OpenProcess README (native open-source Activity Monitor replacement)",
+      "file_type": "code",
+      "norm_label": "nsimage",
+      "source_file": "",
+      "source_location": ""
     },
     {
       "id": "openprocess_shared_helperprotocol",
@@ -6144,50 +6396,6 @@
       "norm_label": "helperprotocol.swift",
       "source_file": "OpenProcess/Shared/HelperProtocol.swift",
       "source_location": "L1"
-    },
-    {
-      "id": "openprocess_views_menubarview_menubarlabel_body",
-      "label": ".body",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "OpenProcess README (native open-source Activity Monitor replacement)",
-      "file_type": "code",
-      "norm_label": ".body",
-      "source_file": "OpenProcess/Views/MenuBarView.swift",
-      "source_location": "L5"
-    },
-    {
-      "id": "openprocess_views_menubarview_swift_cgfloat",
-      "label": "CGFloat",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "OpenProcess README (native open-source Activity Monitor replacement)",
-      "file_type": "code",
-      "norm_label": "cgfloat",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "openprocess_views_menubarview_swift_double",
-      "label": "Double",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "OpenProcess README (native open-source Activity Monitor replacement)",
-      "file_type": "code",
-      "norm_label": "double",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "openprocess_views_menubarview_swift_nsimage",
-      "label": "NSImage",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "OpenProcess README (native open-source Activity Monitor replacement)",
-      "file_type": "code",
-      "norm_label": "nsimage",
-      "source_file": "",
-      "source_location": ""
     },
     {
       "id": "packaging_dmg_settings",
@@ -6409,6 +6617,17 @@
       "source_location": ""
     },
     {
+      "id": "openprocess_model_systemmonitor_swift_int32",
+      "label": "Int32",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "HelperClient",
+      "file_type": "code",
+      "norm_label": "int32",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "openprocess_model_systemmonitor_systemmonitor_interval",
       "label": ".interval",
       "_origin": "ast",
@@ -6495,18 +6714,6 @@
       "norm_label": "sendable",
       "source_file": "",
       "source_location": ""
-    },
-    {
-      "id": "appkit",
-      "label": "AppKit",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Coordinator",
-      "file_type": "code",
-      "norm_label": "appkit",
-      "source_file": "OpenProcess/Views/ProcessTable.swift",
-      "source_location": "L1",
-      "type": "module"
     },
     {
       "id": "context",
@@ -6685,17 +6892,6 @@
       "source_location": ""
     },
     {
-      "id": "openprocess_model_systemmonitor",
-      "label": "SystemMonitor.swift",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Coordinator",
-      "file_type": "code",
-      "norm_label": "systemmonitor.swift",
-      "source_file": "OpenProcess/Model/SystemMonitor.swift",
-      "source_location": "L1"
-    },
-    {
       "id": "openprocess_views_processtable",
       "label": "ProcessTable.swift",
       "_origin": "ast",
@@ -6817,6 +7013,17 @@
       "source_location": ""
     },
     {
+      "id": "bool",
+      "label": "Bool",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "View",
+      "file_type": "code",
+      "norm_label": "bool",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "charts",
       "label": "Charts",
       "_origin": "ast",
@@ -6824,18 +7031,18 @@
       "community_name": "View",
       "file_type": "code",
       "norm_label": "charts",
-      "source_file": "OpenProcess/Views/SectionViews.swift",
+      "source_file": "OpenProcess/Views/ProcessInspector.swift",
       "source_location": "L1",
       "type": "module"
     },
     {
-      "id": "commands",
-      "label": "Commands",
+      "id": "notification",
+      "label": "Notification",
       "_origin": "ast",
       "community": 7,
       "community_name": "View",
       "file_type": "code",
-      "norm_label": "commands",
+      "norm_label": "notification",
       "source_file": "",
       "source_location": ""
     },
@@ -6858,50 +7065,6 @@
       "community_name": "View",
       "file_type": "code",
       "norm_label": "nsapplicationdelegate",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "openprocess_app_appcommands",
-      "label": "AppCommands.swift",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "View",
-      "file_type": "code",
-      "norm_label": "appcommands.swift",
-      "source_file": "OpenProcess/App/AppCommands.swift",
-      "source_location": "L1"
-    },
-    {
-      "id": "openprocess_app_appcommands_signalmenu_body",
-      "label": ".body",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "View",
-      "file_type": "code",
-      "norm_label": ".body",
-      "source_file": "OpenProcess/App/AppCommands.swift",
-      "source_location": "L112"
-    },
-    {
-      "id": "openprocess_app_appcommands_swift_int32",
-      "label": "Int32",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "View",
-      "file_type": "code",
-      "norm_label": "int32",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "openprocess_app_appcommands_swift_set",
-      "label": "Set",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "View",
-      "file_type": "code",
-      "norm_label": "set",
       "source_file": "",
       "source_location": ""
     },
@@ -6971,24 +7134,24 @@
       "source_location": "L147"
     },
     {
-      "id": "openprocess_app_openprocessapp_swift_bool",
-      "label": "Bool",
+      "id": "openprocess_app_openprocessapp_swift_string",
+      "label": "String",
       "_origin": "ast",
       "community": 7,
       "community_name": "View",
       "file_type": "code",
-      "norm_label": "bool",
+      "norm_label": "string",
       "source_file": "",
       "source_location": ""
     },
     {
-      "id": "openprocess_app_openprocessapp_swift_notification",
-      "label": "Notification",
+      "id": "openprocess_app_openprocessapp_swift_systemmonitor",
+      "label": "SystemMonitor",
       "_origin": "ast",
       "community": 7,
       "community_name": "View",
       "file_type": "code",
-      "norm_label": "notification",
+      "norm_label": "systemmonitor",
       "source_file": "",
       "source_location": ""
     },
@@ -7026,6 +7189,17 @@
       "source_location": "L1"
     },
     {
+      "id": "openprocess_views_menubarview_swift_systemmonitor",
+      "label": "SystemMonitor",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "View",
+      "file_type": "code",
+      "norm_label": "systemmonitor",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "openprocess_views_onboardingview",
       "label": "OnboardingView.swift",
       "_origin": "ast",
@@ -7059,6 +7233,17 @@
       "source_location": ""
     },
     {
+      "id": "openprocess_views_onboardingview_swift_string",
+      "label": "String",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "View",
+      "file_type": "code",
+      "norm_label": "string",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "openprocess_views_overviewview",
       "label": "OverviewView.swift",
       "_origin": "ast",
@@ -7079,17 +7264,6 @@
       "norm_label": "processinspector.swift",
       "source_file": "OpenProcess/Views/ProcessInspector.swift",
       "source_location": "L1"
-    },
-    {
-      "id": "openprocess_views_processinspector_swift_int32",
-      "label": "Int32",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "View",
-      "file_type": "code",
-      "norm_label": "int32",
-      "source_file": "",
-      "source_location": ""
     },
     {
       "id": "openprocess_views_sectionviews",
@@ -7136,6 +7310,17 @@
       "source_location": "L76"
     },
     {
+      "id": "openprocess_views_sectionviews_swift_coreload",
+      "label": "CoreLoad",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "View",
+      "file_type": "code",
+      "norm_label": "coreload",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "openprocess_views_sectionviews_swift_localizedstringkey",
       "label": "LocalizedStringKey",
       "_origin": "ast",
@@ -7143,6 +7328,28 @@
       "community_name": "View",
       "file_type": "code",
       "norm_label": "localizedstringkey",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "openprocess_views_sectionviews_swift_string",
+      "label": "String",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "View",
+      "file_type": "code",
+      "norm_label": "string",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "samplereport",
+      "label": "SampleReport",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "View",
+      "file_type": "code",
+      "norm_label": "samplereport",
       "source_file": "",
       "source_location": ""
     },
@@ -7165,8 +7372,8 @@
       "community_name": "View",
       "file_type": "code",
       "norm_label": "servicemanagement",
-      "source_file": "OpenProcess/Helper/HelperClient.swift",
-      "source_location": "L2",
+      "source_file": "OpenProcess/App/SettingsView.swift",
+      "source_location": "L1",
       "type": "module"
     },
     {
@@ -7177,8 +7384,8 @@
       "community_name": "View",
       "file_type": "code",
       "norm_label": "swiftui",
-      "source_file": "OpenProcess/Views/SectionViews.swift",
-      "source_location": "L2",
+      "source_file": "OpenProcess/Views/OnboardingView.swift",
+      "source_location": "L1",
       "type": "module"
     },
     {
@@ -7248,6 +7455,18 @@
       "source_location": ""
     },
     {
+      "id": "foundation",
+      "label": "Foundation",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "SMC",
+      "file_type": "code",
+      "norm_label": "foundation",
+      "source_file": "OpenProcessHelper/main.swift",
+      "source_location": "L1",
+      "type": "module"
+    },
+    {
       "id": "getstring",
       "label": "GetString",
       "_origin": "ast",
@@ -7281,6 +7500,18 @@
       "source_location": ""
     },
     {
+      "id": "iokit",
+      "label": "IOKit",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "SMC",
+      "file_type": "code",
+      "norm_label": "iokit",
+      "source_file": "OpenProcess/Sampling/PowerSampler.swift",
+      "source_location": "L2",
+      "type": "module"
+    },
+    {
       "id": "iokit_ps",
       "label": "IOKit.ps",
       "_origin": "ast",
@@ -7302,6 +7533,28 @@
       "norm_label": "opaquepointer",
       "source_file": "",
       "source_location": ""
+    },
+    {
+      "id": "openprocess_sampling_cpusampler",
+      "label": "CPUSampler.swift",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "SMC",
+      "file_type": "code",
+      "norm_label": "cpusampler.swift",
+      "source_file": "OpenProcess/Sampling/CPUSampler.swift",
+      "source_location": "L1"
+    },
+    {
+      "id": "openprocess_sampling_iokitsamplers",
+      "label": "IOKitSamplers.swift",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "SMC",
+      "file_type": "code",
+      "norm_label": "iokitsamplers.swift",
+      "source_file": "OpenProcess/Sampling/IOKitSamplers.swift",
+      "source_location": "L1"
     },
     {
       "id": "openprocess_sampling_powersampler",
@@ -7374,7 +7627,7 @@
       "label": "Darwin",
       "_origin": "ast",
       "community": 9,
-      "community_name": "Darwin",
+      "community_name": "SamplingTests",
       "file_type": "code",
       "norm_label": "darwin",
       "source_file": "OpenProcessTests/OpenProcessTests.swift",
@@ -7386,7 +7639,7 @@
       "label": "OpenProcess",
       "_origin": "ast",
       "community": 9,
-      "community_name": "Darwin",
+      "community_name": "SamplingTests",
       "file_type": "code",
       "norm_label": "openprocess",
       "source_file": "OpenProcessTests/OpenProcessTests.swift",
@@ -7394,22 +7647,11 @@
       "type": "module"
     },
     {
-      "id": "openprocess_sampling_memorysampler",
-      "label": "MemorySampler.swift",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "Darwin",
-      "file_type": "code",
-      "norm_label": "memorysampler.swift",
-      "source_file": "OpenProcess/Sampling/MemorySampler.swift",
-      "source_location": "L1"
-    },
-    {
       "id": "openprocess_sampling_sysctl",
       "label": "Sysctl.swift",
       "_origin": "ast",
       "community": 9,
-      "community_name": "Darwin",
+      "community_name": "SamplingTests",
       "file_type": "code",
       "norm_label": "sysctl.swift",
       "source_file": "OpenProcess/Sampling/Sysctl.swift",
@@ -7420,7 +7662,7 @@
       "label": "RawProcStats.swift",
       "_origin": "ast",
       "community": 9,
-      "community_name": "Darwin",
+      "community_name": "SamplingTests",
       "file_type": "code",
       "norm_label": "rawprocstats.swift",
       "source_file": "OpenProcess/Shared/RawProcStats.swift",
@@ -7431,7 +7673,7 @@
       "label": "OpenProcessTests.swift",
       "_origin": "ast",
       "community": 9,
-      "community_name": "Darwin",
+      "community_name": "SamplingTests",
       "file_type": "code",
       "norm_label": "openprocesstests.swift",
       "source_file": "OpenProcessTests/OpenProcessTests.swift",
@@ -7442,12 +7684,23 @@
       "label": "XCTest",
       "_origin": "ast",
       "community": 9,
-      "community_name": "Darwin",
+      "community_name": "SamplingTests",
       "file_type": "code",
       "norm_label": "xctest",
       "source_file": "OpenProcessTests/OpenProcessTests.swift",
       "source_location": "L2",
       "type": "module"
+    },
+    {
+      "id": "xctestcase",
+      "label": "XCTestCase",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "SamplingTests",
+      "file_type": "code",
+      "norm_label": "xctestcase",
+      "source_file": "",
+      "source_location": ""
     },
     {
       "id": "openprocess_sampling_networksampler_nettop_one_shot_polling",
@@ -7456,7 +7709,7 @@
       "author": null,
       "captured_at": null,
       "community": 13,
-      "community_name": "SamplingTests",
+      "community_name": ".sample",
       "contributor": null,
       "file_type": "rationale",
       "norm_label": "nettop one-shot polling per tick",
@@ -7472,7 +7725,7 @@
       "author": null,
       "captured_at": null,
       "community": 13,
-      "community_name": "SamplingTests",
+      "community_name": ".sample",
       "contributor": null,
       "file_type": "rationale",
       "norm_label": "per-process network via nettop once per cycle",
@@ -8115,38 +8368,6 @@
       "source_url": null
     },
     {
-      "id": "openprocess_views_menubarview_glyph_redraw_without_animation",
-      "label": "Menu bar glyph redrawn per tick without easing",
-      "_origin": "semantic",
-      "author": null,
-      "captured_at": null,
-      "community": 3,
-      "community_name": "OpenProcess README (native open-source Activity Monitor replacement)",
-      "contributor": null,
-      "file_type": "rationale",
-      "norm_label": "menu bar glyph redrawn per tick without easing",
-      "rationale": "The five-bar template glyph is redrawn every tick without the 0.3 s ease the brand spec suggests because an NSImage label can't animate; a custom NSStatusItem view would be needed if motion matters. Bars never go below 2 pt and fall back to the static template heights before the first sample.",
-      "source_file": "OpenProcess/Views/MenuBarView.swift",
-      "source_location": null,
-      "source_url": null
-    },
-    {
-      "id": "readme_cpu_energy_estimation",
-      "label": "CPU energy estimated from per-process energy",
-      "_origin": "semantic",
-      "author": null,
-      "captured_at": null,
-      "community": 3,
-      "community_name": "OpenProcess README (native open-source Activity Monitor replacement)",
-      "contributor": null,
-      "file_type": "rationale",
-      "norm_label": "cpu energy estimated from per-process energy",
-      "rationale": "Recent chips do not expose CPU energy without privileges, so it is estimated by summing the energy reported by each readable process; with the helper installed the sum includes system processes.",
-      "source_file": "README.md",
-      "source_location": null,
-      "source_url": null
-    },
-    {
       "id": "readme_distribution_outside_app_store",
       "label": "Distribution outside the App Store (Developer ID signed, notarized DMG)",
       "_origin": "semantic",
@@ -8783,6 +9004,22 @@
       "norm_label": "private api graceful degradation (smc / ioreport / iohid)",
       "rationale": "IOReport, IOHIDEventSystemClient and SMC keys are private/undocumented and may change between macOS releases or chips; every source has a failable init and degrades to nil so the UI shows the metric as unavailable instead of crashing.",
       "source_file": "OpenProcess/Sampling/PowerSampler.swift",
+      "source_location": null,
+      "source_url": null
+    },
+    {
+      "id": "readme_cpu_energy_estimation",
+      "label": "CPU energy estimated from per-process energy",
+      "_origin": "semantic",
+      "author": null,
+      "captured_at": null,
+      "community": 8,
+      "community_name": "SMC",
+      "contributor": null,
+      "file_type": "rationale",
+      "norm_label": "cpu energy estimated from per-process energy",
+      "rationale": "Recent chips do not expose CPU energy without privileges, so it is estimated by summing the energy reported by each readable process; with the helper installed the sum includes system processes.",
+      "source_file": "README.md",
       "source_location": null,
       "source_url": null
     },
@@ -12638,7 +12875,7 @@
     },
     {
       "source": "openprocess_app_appcommands_appcommands",
-      "target": "openprocess_model_systemmonitor_systemmonitor",
+      "target": "openprocess_app_appcommands_swift_systemmonitor",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -12650,7 +12887,7 @@
     },
     {
       "source": "openprocess_app_appcommands_appcommands",
-      "target": "openprocess_model_uistate_uistate",
+      "target": "uistate",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -12662,7 +12899,7 @@
     },
     {
       "source": "openprocess_app_appcommands_signalmenu",
-      "target": "openprocess_model_uistate_uistate",
+      "target": "uistate",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -12686,7 +12923,7 @@
     },
     {
       "source": "openprocess_app_appcommands_signalmenu",
-      "target": "openprocess_sampling_sysctl_string",
+      "target": "openprocess_app_appcommands_swift_string",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -12698,7 +12935,7 @@
     },
     {
       "source": "openprocess_app_appcommands_signalmenu",
-      "target": "openprocess_app_appcommands_swift_set",
+      "target": "set",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -12710,7 +12947,7 @@
     },
     {
       "source": "openprocess_app_openprocessapp_contentview",
-      "target": "openprocess_sampling_sysctl_string",
+      "target": "openprocess_app_openprocessapp_swift_string",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -12734,7 +12971,7 @@
     },
     {
       "source": "openprocess_app_openprocessapp_openprocessapp",
-      "target": "openprocess_model_systemmonitor_systemmonitor",
+      "target": "openprocess_app_openprocessapp_swift_systemmonitor",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -12758,7 +12995,7 @@
     },
     {
       "source": "openprocess_app_openprocessapp_samplereportview",
-      "target": "openprocess_model_uistate_samplereport",
+      "target": "samplereport",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14198,7 +14435,7 @@
     },
     {
       "source": "openprocess_views_menubarview_menubarglyph",
-      "target": "openprocess_views_menubarview_swift_cgfloat",
+      "target": "cgfloat",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14210,7 +14447,7 @@
     },
     {
       "source": "openprocess_views_menubarview_menubarglyph",
-      "target": "openprocess_views_menubarview_swift_double",
+      "target": "double",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14222,7 +14459,7 @@
     },
     {
       "source": "openprocess_views_menubarview_menubarlabel",
-      "target": "openprocess_model_systemmonitor_systemmonitor",
+      "target": "openprocess_views_menubarview_swift_systemmonitor",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14230,18 +14467,6 @@
       "context": "field",
       "source_file": "OpenProcess/Views/MenuBarView.swift",
       "source_location": "L4",
-      "weight": 1.0
-    },
-    {
-      "source": "openprocess_views_onboardingview_onboardingview",
-      "target": "openprocess_sampling_sysctl_string",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "field",
-      "source_file": "OpenProcess/Views/OnboardingView.swift",
-      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -14257,8 +14482,20 @@
       "weight": 1.0
     },
     {
+      "source": "openprocess_views_onboardingview_onboardingview",
+      "target": "openprocess_views_onboardingview_swift_string",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "OpenProcess/Views/OnboardingView.swift",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
       "source": "openprocess_views_processesview_processesview",
-      "target": "openprocess_model_snapshots_processrow",
+      "target": "processrow",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14282,7 +14519,7 @@
     },
     {
       "source": "openprocess_views_processinspector_openfile",
-      "target": "openprocess_views_processinspector_swift_int",
+      "target": "int",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14294,7 +14531,7 @@
     },
     {
       "source": "openprocess_views_processinspector_openfile",
-      "target": "openprocess_sampling_sysctl_string",
+      "target": "openprocess_views_processinspector_swift_string",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14318,7 +14555,7 @@
     },
     {
       "source": "openprocess_views_processinspector_processinspector",
-      "target": "openprocess_sampling_sysctl_string",
+      "target": "openprocess_views_processinspector_swift_string",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14534,7 +14771,7 @@
     },
     {
       "source": "openprocess_views_sectionviews_coretile",
-      "target": "openprocess_model_snapshots_coreload",
+      "target": "openprocess_views_sectionviews_swift_coreload",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14690,7 +14927,7 @@
     },
     {
       "source": "openprocess_views_processesview_processesview_contextmenu",
-      "target": "openprocess_views_processesview_swift_int32",
+      "target": "int32",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -15308,7 +15545,7 @@
     },
     {
       "source": "openprocess_app_appcommands_appcommands_openapp",
-      "target": "openprocess_sampling_sysctl_string",
+      "target": "openprocess_app_appcommands_swift_string",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -15332,7 +15569,7 @@
     },
     {
       "source": "openprocess_app_openprocessapp_appdelegate_applicationdidfinishlaunching",
-      "target": "openprocess_app_openprocessapp_swift_notification",
+      "target": "notification",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -15356,7 +15593,7 @@
     },
     {
       "source": "openprocess_app_openprocessapp_appdelegate_windowwillclose",
-      "target": "openprocess_app_openprocessapp_swift_notification",
+      "target": "notification",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -16244,7 +16481,7 @@
     },
     {
       "source": "openprocess_views_menubarview_menubarglyph_buckets",
-      "target": "openprocess_model_snapshots_coreload",
+      "target": "openprocess_views_menubarview_swift_coreload",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -16256,7 +16493,7 @@
     },
     {
       "source": "openprocess_views_menubarview_menubarglyph_image",
-      "target": "openprocess_views_menubarview_swift_double",
+      "target": "double",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -16268,7 +16505,7 @@
     },
     {
       "source": "openprocess_views_menubarview_menubarview_coresummary",
-      "target": "openprocess_model_snapshots_coreload",
+      "target": "openprocess_views_menubarview_swift_coreload",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -16304,7 +16541,7 @@
     },
     {
       "source": "openprocess_views_processesview_processesview_contextmenu",
-      "target": "openprocess_views_processesview_swift_set",
+      "target": "set",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -16316,7 +16553,7 @@
     },
     {
       "source": "openprocess_views_processinspector_openfile_parse",
-      "target": "openprocess_sampling_sysctl_string",
+      "target": "openprocess_views_processinspector_swift_string",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -16676,7 +16913,7 @@
     },
     {
       "source": "openprocess_app_appcommands_signalmenu_name",
-      "target": "openprocess_sampling_sysctl_string",
+      "target": "openprocess_app_appcommands_swift_string",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -16691,7 +16928,7 @@
     },
     {
       "source": "openprocess_app_openprocessapp_appdelegate_applicationshouldterminateafterlastwindowclosed",
-      "target": "openprocess_app_openprocessapp_swift_bool",
+      "target": "bool",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17006,7 +17243,7 @@
     },
     {
       "source": "openprocess_views_menubarview_menubarglyph_image",
-      "target": "openprocess_views_menubarview_swift_nsimage",
+      "target": "nsimage",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17021,7 +17258,7 @@
     },
     {
       "source": "openprocess_views_menubarview_menubarview_coresummary",
-      "target": "openprocess_sampling_sysctl_string",
+      "target": "openprocess_views_menubarview_swift_string",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17036,7 +17273,7 @@
     },
     {
       "source": "openprocess_views_processesview_processesview_contextmenu",
-      "target": "openprocess_views_processesview_swift_nsmenu",
+      "target": "nsmenu",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17483,7 +17720,7 @@
     },
     {
       "source": "openprocess_views_menubarview_menubarglyph_buckets",
-      "target": "openprocess_views_menubarview_swift_double",
+      "target": "double",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17543,7 +17780,7 @@
     },
     {
       "source": "openprocess_views_sectionviews_cpuview_clusters",
-      "target": "openprocess_model_snapshots_coreload",
+      "target": "openprocess_views_sectionviews_swift_coreload",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17555,7 +17792,7 @@
     },
     {
       "source": "openprocess_views_sectionviews_cpuview_clusters",
-      "target": "openprocess_sampling_sysctl_string",
+      "target": "openprocess_views_sectionviews_swift_string",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -22752,6 +22989,30 @@
       "weight": 1.0
     },
     {
+      "source": "openprocess_views_menubarview_menubarglyph_buckets",
+      "target": "openprocess_model_snapshots_coreload",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "context": "call",
+      "source_file": "OpenProcess/Views/MenuBarView.swift",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "openprocess_views_menubarview_menubarview_coresummary",
+      "target": "openprocess_model_snapshots_coreload",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "context": "call",
+      "source_file": "OpenProcess/Views/MenuBarView.swift",
+      "source_location": "L134",
+      "weight": 1.0
+    },
+    {
       "source": "openprocess_views_processesview_processesview_body",
       "target": "openprocess_model_uistate_uistate",
       "relation": "references",
@@ -22881,6 +23142,18 @@
       "context": "call",
       "source_file": "OpenProcess/Views/ProcessTable.swift",
       "source_location": "L185",
+      "weight": 1.0
+    },
+    {
+      "source": "openprocess_views_sectionviews_cpuview_clusters",
+      "target": "openprocess_model_snapshots_coreload",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "context": "call",
+      "source_file": "OpenProcess/Views/SectionViews.swift",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -23049,18 +23322,6 @@
       "context": "call",
       "source_file": "OpenProcess/App/OpenProcessApp.swift",
       "source_location": "L90",
-      "weight": 1.0
-    },
-    {
-      "source": "openprocess_app_openprocessapp_openprocessapp",
-      "target": "openprocess_model_uistate_uistate",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "context": "call",
-      "source_file": "OpenProcess/App/OpenProcessApp.swift",
-      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -24721,28 +24982,6 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "OpenProcess/Sampling/PowerSampler.swift",
-      "source_location": null,
-      "weight": 1.0
-    },
-    {
-      "source": "openprocess_views_menubarview_glyph_redraw_without_animation",
-      "target": "openprocess_views_menubarview_menubarglyph",
-      "relation": "rationale_for",
-      "_origin": "semantic",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "OpenProcess/Views/MenuBarView.swift",
-      "source_location": null,
-      "weight": 1.0
-    },
-    {
-      "source": "openprocess_views_menubarview_glyph_redraw_without_animation",
-      "target": "openprocess_views_menubarview_menubarglyph_image",
-      "relation": "rationale_for",
-      "_origin": "semantic",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "OpenProcess/Views/MenuBarView.swift",
       "source_location": null,
       "weight": 1.0
     },
@@ -28051,5 +28290,5 @@
       "source_file": "OpenProcess/Resources/AppIcon.icon/icon.json"
     }
   ],
-  "built_at_commit": "634bb91fd681f1429622afe6170e5f3d412d28bd"
+  "built_at_commit": "dd2639205c931a4b01ea7b90a5a78d55c0aa1043"
 }
