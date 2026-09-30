@@ -7,14 +7,14 @@ enum AppSection: String, CaseIterable, Identifiable {
 
     var title: LocalizedStringKey {
         switch self {
-        case .overview: "Resumen"
-        case .processes: "Procesos"
+        case .overview: "Overview"
+        case .processes: "Processes"
         case .cpu: "CPU"
         case .gpu: "GPU"
-        case .memory: "Memoria"
-        case .energy: "Energía"
-        case .disk: "Disco"
-        case .network: "Red"
+        case .memory: "Memory"
+        case .energy: "Energy"
+        case .disk: "Disk"
+        case .network: "Network"
         }
     }
 
@@ -39,11 +39,11 @@ enum ProcessScope: String, CaseIterable, Identifiable {
     var id: Self { self }
     var title: LocalizedStringKey {
         switch self {
-        case .all: "Todos los procesos"
-        case .mine: "Mis procesos"
-        case .system: "Procesos del sistema"
-        case .others: "Otros usuarios"
-        case .apps: "Apps con ventanas"
+        case .all: "All Processes"
+        case .mine: "My Processes"
+        case .system: "System Processes"
+        case .others: "Other Users"
+        case .apps: "Windowed Apps"
         }
     }
 }
@@ -151,7 +151,7 @@ final class UIState {
             samplingPID = nil
             switch result {
             case .success(let text): sampleReport = SampleReport(name: name, text: text)
-            case .failure: errorMessage = String(localized: "No se pudo muestrear \(name). Los procesos de otros usuarios requieren privilegios.")
+            case .failure: errorMessage = String(localized: "Couldn’t sample \(name). Other users’ processes require privileges.")
             }
         }
     }

@@ -48,6 +48,7 @@ Está escrita en **SwiftUI** con un `NSOutlineView` nativo para la lista de proc
 - **Energía** — Consumo total del sistema (SMC), GPU en vatios (IOReport), CPU estimada a partir de cada proceso, temperatura del SoC, todos los sensores térmicos y estado de la batería (carga, ciclos, capacidad máxima).
 - **Disco y red** — Tasas en vivo, totales desde el arranque y los procesos que más leen, escriben, descargan o suben.
 - **Barra de menús** — Un glifo de 5 barras que refleja la carga de los núcleos en vivo, junto al % de CPU. Al abrirlo muestra un panel compacto con CPU, GPU, memoria, presión, red, energía, barras por núcleo y los procesos que más consumen. La app sigue midiendo aunque cierres la ventana.
+- **Idiomas** — Inglés (predeterminado) y español latinoamericano. Sigue el idioma del sistema; se puede cambiar solo para la app en *Ajustes del Sistema ▸ General ▸ Idioma y región*. Los textos viven en `OpenProcess/Resources/Localizable.xcstrings`, con el inglés como idioma base.
 - **Asistente privilegiado (opcional)** — Un helper del sistema, instalado con `SMAppService`, que permite ver las métricas de los procesos de root y de otros usuarios, terminarlos y purgar la memoria. La app y el helper solo aceptan hablar entre sí si ambos están firmados por el mismo equipo.
 
 <p align="center">

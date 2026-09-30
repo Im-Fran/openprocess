@@ -10,7 +10,7 @@ struct AppCommands: Commands {
         InspectorCommands()
 
         CommandGroup(after: .textEditing) {
-            Button("Buscar…") {
+            Button("Find…") {
                 ui.section = .processes
                 ui.searchFocused = true
             }
@@ -23,11 +23,11 @@ struct AppCommands: Commands {
                     .keyboardShortcut(section.shortcut)
             }
             Divider()
-            Picker("Mostrar", selection: Binding { ui.scope } set: { ui.scope = $0 }) {
+            Picker("Show", selection: Binding { ui.scope } set: { ui.scope = $0 }) {
                 ForEach(ProcessScope.allCases) { Text($0.title).tag($0) }
             }
-            Toggle("Mostrar como árbol", isOn: Binding { ui.treeMode } set: { ui.treeMode = $0 })
-            Menu("Columnas") {
+            Toggle("Show as Tree", isOn: Binding { ui.treeMode } set: { ui.treeMode = $0 })
+            Menu("Columns") {
                 ForEach(ProcessColumn.all.dropFirst(), id: \.id) { column in
                     Toggle(column.title, isOn: Binding {
                         !ui.hiddenColumns.contains(column.id)
@@ -36,55 +36,55 @@ struct AppCommands: Commands {
                     })
                 }
             }
-            Picker("Ordenar por", selection: Binding { ui.sortKey } set: { ui.sortKey = $0 }) {
+            Picker("Sort By", selection: Binding { ui.sortKey } set: { ui.sortKey = $0 }) {
                 ForEach(ProcessColumn.all, id: \.id) { Text($0.title).tag($0.id) }
             }
-            Toggle("Orden ascendente", isOn: Binding { ui.sortAscending } set: { ui.sortAscending = $0 })
-            Picker("Frecuencia de actualización", selection: Binding { monitor.interval } set: { monitor.interval = $0 }) {
-                Text("Muy frecuente (1 s)").tag(1.0)
-                Text("Frecuente (2 s)").tag(2.0)
-                Text("Normal (5 s)").tag(5.0)
+            Toggle("Ascending Order", isOn: Binding { ui.sortAscending } set: { ui.sortAscending = $0 })
+            Picker("Update Frequency", selection: Binding { monitor.interval } set: { monitor.interval = $0 }) {
+                Text("Very Often (1 s)").tag(1.0)
+                Text("Often (2 s)").tag(2.0)
+                Text("Normally (5 s)").tag(5.0)
             }
             Divider()
         }
 
-        CommandMenu("Proceso") {
+        CommandMenu("Process") {
             let pids = ui.selection
             let one = ui.selectedPID
-            Button("Salir del proceso…") { ui.request(SIGTERM, pids) }
+            Button("Quit Process…") { ui.request(SIGTERM, pids) }
                 .keyboardShortcut("q", modifiers: [.command, .option])
                 .disabled(pids.isEmpty)
-            Button("Forzar salida…") { ui.request(SIGKILL, pids) }
+            Button("Force Quit…") { ui.request(SIGKILL, pids) }
                 .disabled(pids.isEmpty)
             SignalMenu(pids: pids, ui: ui)
             Divider()
-            Button("Mostrar información") {
+            Button("Get Info") {
                 ui.section = .processes
                 ui.showInspector = true
             }
             .keyboardShortcut("i")
             .disabled(one == nil)
-            Button("Muestrear proceso") { if let one { ui.sample(one, monitor: monitor) } }
+            Button("Sample Process") { if let one { ui.sample(one, monitor: monitor) } }
                 .keyboardShortcut("s", modifiers: [.command, .option])
                 .disabled(one == nil || ui.samplingPID != nil)
-            Button("Mostrar en Finder") { ui.revealInFinder(pids, monitor: monitor) }
+            Button("Show in Finder") { ui.revealInFinder(pids, monitor: monitor) }
                 .keyboardShortcut("r", modifiers: [.command, .shift])
                 .disabled(pids.isEmpty)
-            Button("Copiar información del proceso") { ui.copyInfo(pids, monitor: monitor) }
+            Button("Copy Process Info") { ui.copyInfo(pids, monitor: monitor) }
                 .keyboardShortcut("c", modifiers: [.command, .shift])
                 .disabled(pids.isEmpty)
         }
 
-        CommandMenu("Utilidades") {
-            Button("Purgar memoria") {
+        CommandMenu("Utilities") {
+            Button("Purge Memory") {
                 Task { if let error = await monitor.purgeMemory() { ui.errorMessage = error } }
             }
             .disabled(!monitor.helper.isEnabled)
             .help(monitor.helper.isEnabled ? PurgeHelp.enabled : PurgeHelp.disabled)
             Divider()
-            Button("Abrir Consola") { openApp("com.apple.Console") }
-            Button("Abrir Información del Sistema") { openApp("com.apple.SystemProfiler") }
-            Button("Abrir Utilidad de Discos") { openApp("com.apple.DiskUtility") }
+            Button("Open Console") { openApp("com.apple.Console") }
+            Button("Open System Information") { openApp("com.apple.SystemProfiler") }
+            Button("Open Disk Utility") { openApp("com.apple.DiskUtility") }
         }
     }
 
@@ -94,15 +94,15 @@ struct AppCommands: Commands {
     }
 }
 
-/// "Enviar señal" submenu, shared by the menu bar and context menus.
+/// "Send Signal" submenu, shared by the menu bar and context menus.
 struct SignalMenu: View {
     let pids: Set<Int32>
     let ui: UIState
 
-    static let signals: [(title: String, name: String, signal: Int32)] = [
-        ("Interrumpir", "SIGINT", SIGINT), ("Colgar", "SIGHUP", SIGHUP), ("Terminar", "SIGTERM", SIGTERM),
-        ("Salir", "SIGQUIT", SIGQUIT), ("Pausar", "SIGSTOP", SIGSTOP), ("Continuar", "SIGCONT", SIGCONT),
-        ("Usuario 1", "SIGUSR1", SIGUSR1), ("Usuario 2", "SIGUSR2", SIGUSR2), ("Matar", "SIGKILL", SIGKILL),
+    static let signals: [(title: LocalizedStringResource, name: String, signal: Int32)] = [
+        ("Interrupt", "SIGINT", SIGINT), ("Hang Up", "SIGHUP", SIGHUP), ("Terminate", "SIGTERM", SIGTERM),
+        ("Quit", "SIGQUIT", SIGQUIT), ("Stop", "SIGSTOP", SIGSTOP), ("Continue", "SIGCONT", SIGCONT),
+        ("User 1", "SIGUSR1", SIGUSR1), ("User 2", "SIGUSR2", SIGUSR2), ("Kill", "SIGKILL", SIGKILL),
     ]
 
     static func name(of signal: Int32) -> String {
@@ -110,9 +110,9 @@ struct SignalMenu: View {
     }
 
     var body: some View {
-        Menu("Enviar señal") {
+        Menu("Send Signal") {
             ForEach(Self.signals, id: \.signal) { entry in
-                Button("\(String(localized: String.LocalizationValue(entry.title))) (\(entry.name))…") { ui.request(entry.signal, pids) }
+                Button("\(String(localized: entry.title)) (\(entry.name))…") { ui.request(entry.signal, pids) }
             }
         }
         .disabled(pids.isEmpty)

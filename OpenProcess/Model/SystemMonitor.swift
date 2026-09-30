@@ -135,15 +135,15 @@ final class SystemMonitor {
             if code == 0 { return nil }
         }
         if code == EPERM && !helper.isEnabled {
-            return String(localized: "Permiso denegado. Instala el asistente en Ajustes para gestionar procesos de otros usuarios.")
+            return String(localized: "Permission denied. Install the helper in Settings to manage other users’ processes.")
         }
         return String(cString: strerror(code))
     }
 
     func purgeMemory() async -> String? {
         guard let status = await helper.purgeMemory() else {
-            return String(localized: "Purgar la memoria requiere el asistente privilegiado. Instálalo en Ajustes.")
+            return String(localized: "Purging memory requires the privileged helper. Install it in Settings.")
         }
-        return status == 0 ? nil : String(localized: "purge terminó con el código \(status).")
+        return status == 0 ? nil : String(localized: "purge exited with code \(status).")
     }
 }

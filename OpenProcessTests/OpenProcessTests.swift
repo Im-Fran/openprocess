@@ -98,4 +98,13 @@ final class SamplingTests: XCTestCase {
         XCTAssert(abs(buckets[4] - 0.85) < 1e-9) // cores 8 and 9
         XCTAssert(MenuBarGlyph.buckets(Array(cores.prefix(3))).isEmpty)
     }
+
+    func testSpanishLocalizationShipsWithPlurals() throws {
+        let path = try XCTUnwrap(Bundle.main.path(forResource: "es-419", ofType: "lproj"))
+        let es = try XCTUnwrap(Bundle(path: path))
+        XCTAssertEqual(es.localizedString(forKey: "Quit Process…", value: nil, table: nil), "Salir del proceso…")
+        let format = es.localizedString(forKey: "%lld processes", value: nil, table: nil)
+        XCTAssertEqual(String.localizedStringWithFormat(format, 1), "1 proceso")
+        XCTAssertEqual(String.localizedStringWithFormat(format, 3), "3 procesos")
+    }
 }

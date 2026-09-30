@@ -47,19 +47,11 @@ final class CPUSampler {
         }
     }
 
-    static func localizedCluster(_ name: String) -> String {
-        switch name {
-        case "Performance": String(localized: "de rendimiento")
-        case "Efficiency": String(localized: "de eficiencia")
-        case "Super": String(localized: "Súper")
-        default: name
-        }
-    }
-
     /// Cluster type per logical CPU from the device tree; names from `hw.perflevelN.name`.
     static func readTopology() -> [(kind: String, name: String)] {
-        let pName = localizedCluster(Sysctl.string("hw.perflevel0.name") ?? "Performance")
-        let eName = localizedCluster(Sysctl.string("hw.perflevel1.name") ?? "Efficiency")
+        // Apple's cluster names ("Super", "Performance", "Efficiency") stay in English in every language.
+        let pName = Sysctl.string("hw.perflevel0.name") ?? "Performance"
+        let eName = Sysctl.string("hw.perflevel1.name") ?? "Efficiency"
         var kinds: [String] = []
         let cpus = IORegistryEntryFromPath(kIOMainPortDefault, "IODeviceTree:/cpus")
         defer { IOObjectRelease(cpus) }

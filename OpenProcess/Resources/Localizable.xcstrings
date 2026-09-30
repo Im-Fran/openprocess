@@ -1,0 +1,2597 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "% CPU" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "% CPU"
+          }
+        }
+      }
+    },
+    "% GPU" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "% GPU"
+          }
+        }
+      }
+    },
+    "% P-Cores" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "% P-Cores"
+          }
+        }
+      }
+    },
+    "%@ %%" : {
+      "shouldTranslate" : false
+    },
+    "%@ (%@)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ (%2$@)"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "%@ (%@)…" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ (%2$@)…"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "%@ Cores · %lld" : {
+      "shouldTranslate" : false
+    },
+    "%@ of %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ of %2$@"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ de %@"
+          }
+        }
+      }
+    },
+    "%@ · %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ · %2$@"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "%lld %%" : {
+      "shouldTranslate" : false
+    },
+    "%lld cores, average %@, peak %@" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld core, average %@, peak %@"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld cores, average %@, peak %@"
+                }
+              }
+            }
+          }
+        },
+        "es-419" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld núcleo, media %@, máximo %@"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld núcleos, media %@, máximo %@"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "%lld processes" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld process"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld processes"
+                }
+              }
+            }
+          }
+        },
+        "es-419" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld proceso"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld procesos"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "%lld threads" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld thread"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld threads"
+                }
+              }
+            }
+          }
+        },
+        "es-419" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld hilo"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld hilos"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "A native activity monitor for your Mac." : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un monitor de actividad nativo para tu Mac."
+          }
+        }
+      }
+    },
+    "A summary always in view. You can close the window and keep OpenProcess in the menu bar only." : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un resumen siempre a la vista. Puedes cerrar la ventana y dejar OpenProcess solo en la barra de menús."
+          }
+        }
+      }
+    },
+    "Active" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activo"
+          }
+        }
+      }
+    },
+    "Activity" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Actividad"
+          }
+        }
+      }
+    },
+    "All Processes" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todos los procesos"
+          }
+        }
+      }
+    },
+    "All processes" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todos los procesos"
+          }
+        }
+      }
+    },
+    "Apple" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple"
+          }
+        }
+      }
+    },
+    "Apps" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apps"
+          }
+        }
+      }
+    },
+    "Are you sure you want to quit %@?" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Seguro que quieres salir de %@?"
+          }
+        }
+      }
+    },
+    "Arguments" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Argumentos"
+          }
+        }
+      }
+    },
+    "Ascending Order" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Orden ascendente"
+          }
+        }
+      }
+    },
+    "Ask the process to quit (SIGTERM); it can save its data first" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pedir al proceso que se cierre (SIGTERM); puede guardar sus datos antes"
+          }
+        }
+      }
+    },
+    "Ask the selected processes to quit; you’re asked to confirm first (⌥⌘Q)" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pedir a los procesos seleccionados que se cierren; se pide confirmación antes (⌥⌘Q)"
+          }
+        }
+      }
+    },
+    "Battery" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Batería"
+          }
+        }
+      }
+    },
+    "Breakdown" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Distribución"
+          }
+        }
+      }
+    },
+    "Bytes" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bytes"
+          }
+        }
+      }
+    },
+    "CPU" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CPU"
+          }
+        }
+      }
+    },
+    "CPU (Estimated)" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CPU (estimado)"
+          }
+        }
+      }
+    },
+    "CPU Time" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tiempo de CPU"
+          }
+        }
+      }
+    },
+    "CPU Usage" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uso de CPU"
+          }
+        }
+      }
+    },
+    "CPU energy is the sum of the power reported by each readable process (install the helper to include system processes)." : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La energía de CPU es la suma del consumo informado por cada proceso legible (instala el asistente para incluir procesos del sistema)."
+          }
+        }
+      }
+    },
+    "CPU energy is the sum of the power reported by each readable process." : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La energía de CPU es la suma del consumo informado por cada proceso legible."
+          }
+        }
+      }
+    },
+    "Cached" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En caché"
+          }
+        }
+      }
+    },
+    "Cached Files" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Archivos en caché"
+          }
+        }
+      }
+    },
+    "Charge" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carga"
+          }
+        }
+      }
+    },
+    "Charging" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cargando"
+          }
+        }
+      }
+    },
+    "Check Again" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comprobar de nuevo"
+          }
+        }
+      }
+    },
+    "Check again whether the helper has been approved" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Volver a comprobar si el asistente ya fue aprobado"
+          }
+        }
+      }
+    },
+    "Chip" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chip"
+          }
+        }
+      }
+    },
+    "Choose which processes are shown: all, yours, system, other users’, or only windowed apps" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elegir qué procesos se muestran: todos, los tuyos, los del sistema, los de otros usuarios o solo apps con ventanas"
+          }
+        }
+      }
+    },
+    "Close" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cerrar"
+          }
+        }
+      }
+    },
+    "Close the sample without saving it" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cerrar la muestra sin guardarla"
+          }
+        }
+      }
+    },
+    "Close the welcome screen and start using OpenProcess" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cerrar la bienvenida y empezar a usar OpenProcess"
+          }
+        }
+      }
+    },
+    "Collecting data…" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recopilando datos…"
+          }
+        }
+      }
+    },
+    "Columns" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Columnas"
+          }
+        }
+      }
+    },
+    "Compressed" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comprimida"
+          }
+        }
+      }
+    },
+    "Continue" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continuar"
+          }
+        }
+      }
+    },
+    "Copy Process Info" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copiar información del proceso"
+          }
+        }
+      }
+    },
+    "Core %lld" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Núcleo %lld"
+          }
+        }
+      }
+    },
+    "Core %lld, %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Core %1$lld, %2$@"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Núcleo %lld, %@"
+          }
+        }
+      }
+    },
+    "Couldn’t sample %@. Other users’ processes require privileges." : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se pudo muestrear %@. Los procesos de otros usuarios requieren privilegios."
+          }
+        }
+      }
+    },
+    "Critical" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crítica"
+          }
+        }
+      }
+    },
+    "Cycles" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ciclos"
+          }
+        }
+      }
+    },
+    "Details" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detalles"
+          }
+        }
+      }
+    },
+    "Device" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dispositivo"
+          }
+        }
+      }
+    },
+    "Disk" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disco"
+          }
+        }
+      }
+    },
+    "Disk Activity" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Actividad de disco"
+          }
+        }
+      }
+    },
+    "Disk Read" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lectura disco"
+          }
+        }
+      }
+    },
+    "Disk Write" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escritura disco"
+          }
+        }
+      }
+    },
+    "End the process immediately (SIGKILL); unsaved changes are lost" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terminar el proceso de inmediato (SIGKILL); se pierden los cambios sin guardar"
+          }
+        }
+      }
+    },
+    "Energy" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Energía"
+          }
+        }
+      }
+    },
+    "Find…" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buscar…"
+          }
+        }
+      }
+    },
+    "Flush the disk cache and purgeable memory (runs purge as administrator)" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vaciar la caché de disco y la memoria purgable (ejecuta purge como administrador)"
+          }
+        }
+      }
+    },
+    "Force %@ to quit?" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Forzar la salida de %@?"
+          }
+        }
+      }
+    },
+    "Force Quit" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forzar salida"
+          }
+        }
+      }
+    },
+    "Force Quit…" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forzar salida…"
+          }
+        }
+      }
+    },
+    "Free" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Libre"
+          }
+        }
+      }
+    },
+    "GPU" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GPU"
+          }
+        }
+      }
+    },
+    "GPU Usage" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uso de GPU"
+          }
+        }
+      }
+    },
+    "General" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "General"
+          }
+        }
+      }
+    },
+    "Get Info" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar información"
+          }
+        }
+      }
+    },
+    "Group each process under the process that started it. Only with “All Processes” and no search" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agrupar cada proceso bajo el proceso que lo inició. Solo con “Todos los procesos” y sin búsqueda"
+          }
+        }
+      }
+    },
+    "Hang Up" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colgar"
+          }
+        }
+      }
+    },
+    "How often processes and metrics are read again. More often uses more CPU" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cada cuánto se vuelven a leer los procesos y las métricas. Más frecuente usa más CPU"
+          }
+        }
+      }
+    },
+    "Idle" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inactivo"
+          }
+        }
+      }
+    },
+    "If the process doesn’t respond, you can force it to quit." : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si el proceso no responde, puedes forzar su salida."
+          }
+        }
+      }
+    },
+    "In the menu bar" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En la barra de menús"
+          }
+        }
+      }
+    },
+    "Info" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Información"
+          }
+        }
+      }
+    },
+    "Info and sampling" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Información y muestreo"
+          }
+        }
+      }
+    },
+    "Inspect a process and its open files and ports, or take a 3‑second sample to see what it’s busy with." : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inspecciona un proceso, sus archivos y puertos abiertos, o toma una muestra de 3 segundos para ver en qué está ocupado."
+          }
+        }
+      }
+    },
+    "Install Helper…" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instalar asistente…"
+          }
+        }
+      }
+    },
+    "Install it in Settings to see and quit system processes and other users’ processes, and to purge memory." : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instálalo en Ajustes para ver y terminar procesos del sistema y de otros usuarios, y para purgar la memoria."
+          }
+        }
+      }
+    },
+    "Intel (Rosetta)" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intel (Rosetta)"
+          }
+        }
+      }
+    },
+    "Interrupt" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Interrumpir"
+          }
+        }
+      }
+    },
+    "Keep running in the menu bar when the window closes" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seguir solo en la barra de menús al cerrar la ventana"
+          }
+        }
+      }
+    },
+    "Kill" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Matar"
+          }
+        }
+      }
+    },
+    "Kind" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tipo"
+          }
+        }
+      }
+    },
+    "Lets you see metrics for system processes and other users’ processes, quit them, and purge memory. After installing it, approve it in System Settings ▸ General ▸ Login Items." : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Permite ver métricas de procesos del sistema y de otros usuarios, terminarlos y purgar la memoria. Tras instalarlo, apruébalo en Ajustes del Sistema ▸ General ▸ Ítems de inicio."
+          }
+        }
+      }
+    },
+    "List the process’s open files and network connections" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Listar los archivos abiertos y las conexiones de red del proceso"
+          }
+        }
+      }
+    },
+    "Load %@" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carga %@"
+          }
+        }
+      }
+    },
+    "Load Average (1, 5, 15 min)" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carga promedio (1, 5, 15 min)"
+          }
+        }
+      }
+    },
+    "Maximum Capacity" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Capacidad máxima"
+          }
+        }
+      }
+    },
+    "Memory" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memoria"
+          }
+        }
+      }
+    },
+    "Memory Pressure" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Presión de memoria"
+          }
+        }
+      }
+    },
+    "Memory Used" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memoria usada"
+          }
+        }
+      }
+    },
+    "Memory in Use" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memoria en uso"
+          }
+        }
+      }
+    },
+    "Memory pressure history" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Historial de presión de memoria"
+          }
+        }
+      }
+    },
+    "Metrics for other users’ processes are unavailable. Install the helper in Settings." : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Métricas de procesos de otros usuarios no disponibles. Instala el asistente en Ajustes."
+          }
+        }
+      }
+    },
+    "My Processes" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mis procesos"
+          }
+        }
+      }
+    },
+    "Name, PID, user, or path" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre, PID, usuario o ruta"
+          }
+        }
+      }
+    },
+    "Net Received" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Red recibida"
+          }
+        }
+      }
+    },
+    "Net Sent" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Red enviada"
+          }
+        }
+      }
+    },
+    "Network" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Red"
+          }
+        }
+      }
+    },
+    "Network Activity" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Actividad de red"
+          }
+        }
+      }
+    },
+    "No Activity" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin actividad"
+          }
+        }
+      }
+    },
+    "No Processes in This View" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ningún proceso en esta vista"
+          }
+        }
+      }
+    },
+    "No Selection" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin selección"
+          }
+        }
+      }
+    },
+    "No sensors available on this Mac." : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hay sensores disponibles en este Mac."
+          }
+        }
+      }
+    },
+    "Normal" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Normal"
+          }
+        }
+      }
+    },
+    "Normally (5 s)" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Normal (5 s)"
+          }
+        }
+      }
+    },
+    "Not Installed" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No instalado"
+          }
+        }
+      }
+    },
+    "Not available" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No disponible"
+          }
+        }
+      }
+    },
+    "Not available for this process." : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No disponible para este proceso."
+          }
+        }
+      }
+    },
+    "OK" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        }
+      }
+    },
+    "Often (2 s)" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frecuente (2 s)"
+          }
+        }
+      }
+    },
+    "On Performance Cores" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En Performance Cores"
+          }
+        }
+      }
+    },
+    "Open Console" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir Consola"
+          }
+        }
+      }
+    },
+    "Open Disk Utility" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir Utilidad de Discos"
+          }
+        }
+      }
+    },
+    "Open Files and Ports" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Archivos y puertos abiertos"
+          }
+        }
+      }
+    },
+    "Open Login Items…" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir Ítems de inicio…"
+          }
+        }
+      }
+    },
+    "Open OpenProcess" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir OpenProcess"
+          }
+        }
+      }
+    },
+    "Open OpenProcess settings" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir los ajustes de OpenProcess"
+          }
+        }
+      }
+    },
+    "Open System Information" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir Información del Sistema"
+          }
+        }
+      }
+    },
+    "Open System Settings to approve the helper" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir Ajustes del Sistema para aprobar el asistente"
+          }
+        }
+      }
+    },
+    "OpenProcess" : {
+      "shouldTranslate" : false
+    },
+    "OpenProcess, CPU %lld percent" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OpenProcess, CPU %lld por ciento"
+          }
+        }
+      }
+    },
+    "Opens the section" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre la sección"
+          }
+        }
+      }
+    },
+    "Operations/s" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Operaciones/s"
+          }
+        }
+      }
+    },
+    "Other Users" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otros usuarios"
+          }
+        }
+      }
+    },
+    "Overview" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resumen"
+          }
+        }
+      }
+    },
+    "PID %@ · %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "PID %1$@ · %2$@"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "Packets/s" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paquetes/s"
+          }
+        }
+      }
+    },
+    "Parent Process" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Proceso padre"
+          }
+        }
+      }
+    },
+    "Path" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ruta"
+          }
+        }
+      }
+    },
+    "Per-core CPU, GPU, memory and pressure, energy and temperature, disk and network, with live history." : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CPU por núcleo, GPU, memoria y presión, energía y temperatura, disco y red, con historial en vivo."
+          }
+        }
+      }
+    },
+    "Permission denied. Install the helper in Settings to manage other users’ processes." : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Permiso denegado. Instala el asistente en Ajustes para gestionar procesos de otros usuarios."
+          }
+        }
+      }
+    },
+    "Physical Memory" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memoria física"
+          }
+        }
+      }
+    },
+    "Plugged In" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conectado"
+          }
+        }
+      }
+    },
+    "Power" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consumo"
+          }
+        }
+      }
+    },
+    "Pressure" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Presión"
+          }
+        }
+      }
+    },
+    "Privileged Helper" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asistente privilegiado"
+          }
+        }
+      }
+    },
+    "Privileged helper (optional)" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asistente privilegiado (opcional)"
+          }
+        }
+      }
+    },
+    "Process" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Proceso"
+          }
+        }
+      }
+    },
+    "Process CPU history" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Historial de CPU del proceso"
+          }
+        }
+      }
+    },
+    "Process Name" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre del proceso"
+          }
+        }
+      }
+    },
+    "Process control" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Control de procesos"
+          }
+        }
+      }
+    },
+    "Processes" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Procesos"
+          }
+        }
+      }
+    },
+    "Processes may quit or change their behavior when they receive this signal." : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Los procesos pueden terminar o cambiar de comportamiento al recibir esta señal."
+          }
+        }
+      }
+    },
+    "Purge Memory" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Purgar memoria"
+          }
+        }
+      }
+    },
+    "Purgeable" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Purgable"
+          }
+        }
+      }
+    },
+    "Purging memory requires the privileged helper. Install it in Settings." : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Purgar la memoria requiere el asistente privilegiado. Instálalo en Ajustes."
+          }
+        }
+      }
+    },
+    "Quit" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salir"
+          }
+        }
+      }
+    },
+    "Quit OpenProcess completely, including the menu bar icon" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cerrar OpenProcess por completo, incluido el ícono de la barra de menús"
+          }
+        }
+      }
+    },
+    "Quit Process" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salir del proceso"
+          }
+        }
+      }
+    },
+    "Quit Process…" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salir del proceso…"
+          }
+        }
+      }
+    },
+    "Quit a process, force it to quit, or send it any signal. You’re always asked to confirm first." : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sal de un proceso, fuerza su salida o envíale cualquier señal. Siempre se pide confirmación antes."
+          }
+        }
+      }
+    },
+    "Quit…" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salir…"
+          }
+        }
+      }
+    },
+    "Read" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lectura"
+          }
+        }
+      }
+    },
+    "Read Since Boot" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leído desde el arranque"
+          }
+        }
+      }
+    },
+    "Reading open files…" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leyendo archivos abiertos…"
+          }
+        }
+      }
+    },
+    "Reading processes…" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leyendo procesos…"
+          }
+        }
+      }
+    },
+    "Received" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recibido"
+          }
+        }
+      }
+    },
+    "Register the privileged helper; macOS will ask you to approve it" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registrar el asistente privilegiado; macOS pedirá que lo apruebes"
+          }
+        }
+      }
+    },
+    "Remove the privileged helper; metrics for other users and memory purging stop working" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quitar el asistente privilegiado; se pierden las métricas de otros usuarios y la purga de memoria"
+          }
+        }
+      }
+    },
+    "Renderer" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Renderizador"
+          }
+        }
+      }
+    },
+    "Requires Approval" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Requiere aprobación"
+          }
+        }
+      }
+    },
+    "Requires the privileged helper. Install it in Settings" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Requiere el asistente privilegiado. Instálalo en Ajustes"
+          }
+        }
+      }
+    },
+    "Sample" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Muestrear"
+          }
+        }
+      }
+    },
+    "Sample Process" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Muestrear proceso"
+          }
+        }
+      }
+    },
+    "Sample of %@" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Muestra de %@"
+          }
+        }
+      }
+    },
+    "Save the sample as a text file" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guardar la muestra como archivo de texto"
+          }
+        }
+      }
+    },
+    "Save…" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guardar…"
+          }
+        }
+      }
+    },
+    "Select a process to see its details." : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecciona un proceso para ver sus detalles."
+          }
+        }
+      }
+    },
+    "Select the parent process" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seleccionar el proceso padre"
+          }
+        }
+      }
+    },
+    "Send %@" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enviar %@"
+          }
+        }
+      }
+    },
+    "Send %@ to %@?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Send %1$@ to %2$@?"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Enviar %@ a %@?"
+          }
+        }
+      }
+    },
+    "Send Signal" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enviar señal"
+          }
+        }
+      }
+    },
+    "Sent" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enviado"
+          }
+        }
+      }
+    },
+    "Series" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serie"
+          }
+        }
+      }
+    },
+    "Settings…" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajustes…"
+          }
+        }
+      }
+    },
+    "Show" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar"
+          }
+        }
+      }
+    },
+    "Show All Processes" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar todos los procesos"
+          }
+        }
+      }
+    },
+    "Show CPU usage and a system summary in the menu bar" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar el uso de CPU y un resumen del sistema en la barra de menús"
+          }
+        }
+      }
+    },
+    "Show Files and Ports" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar archivos y puertos"
+          }
+        }
+      }
+    },
+    "Show as Tree" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar como árbol"
+          }
+        }
+      }
+    },
+    "Show in Finder" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar en Finder"
+          }
+        }
+      }
+    },
+    "Show in Menu Bar" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar en la barra de menús"
+          }
+        }
+      }
+    },
+    "Show in Processes" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar en Procesos"
+          }
+        }
+      }
+    },
+    "Show or hide the panel with the selected process’s details (⌘I)" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar u ocultar el panel con los detalles del proceso seleccionado (⌘I)"
+          }
+        }
+      }
+    },
+    "Show the main OpenProcess window" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar la ventana principal de OpenProcess"
+          }
+        }
+      }
+    },
+    "SoC Temperature" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Temperatura SoC"
+          }
+        }
+      }
+    },
+    "Sort By" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ordenar por"
+          }
+        }
+      }
+    },
+    "Sort, search, and filter by name, PID, user, or path. View them as a list or a tree and choose the columns." : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ordena, busca y filtra por nombre, PID, usuario o ruta. Míralos en lista o como árbol y elige las columnas."
+          }
+        }
+      }
+    },
+    "Started" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inicio"
+          }
+        }
+      }
+    },
+    "Status" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estado"
+          }
+        }
+      }
+    },
+    "Stop" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pausar"
+          }
+        }
+      }
+    },
+    "Swap" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swap"
+          }
+        }
+      }
+    },
+    "Swap Used" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swap usado"
+          }
+        }
+      }
+    },
+    "System" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sistema"
+          }
+        }
+      }
+    },
+    "System Processes" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Procesos del sistema"
+          }
+        }
+      }
+    },
+    "System metrics" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Métricas del sistema"
+          }
+        }
+      }
+    },
+    "Temperature Sensors" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sensores de temperatura"
+          }
+        }
+      }
+    },
+    "Terminate" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terminar"
+          }
+        }
+      }
+    },
+    "The Process Has Quit" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El proceso terminó"
+          }
+        }
+      }
+    },
+    "The action couldn’t be completed" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se pudo completar la acción"
+          }
+        }
+      }
+    },
+    "The process will be suspended until it receives SIGCONT." : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El proceso quedará suspendido hasta recibir SIGCONT."
+          }
+        }
+      }
+    },
+    "Threads" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hilos"
+          }
+        }
+      }
+    },
+    "Tiler" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tiler"
+          }
+        }
+      }
+    },
+    "Time" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hora"
+          }
+        }
+      }
+    },
+    "Time Remaining" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tiempo restante"
+          }
+        }
+      }
+    },
+    "Top CPU Processes" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Procesos con más CPU"
+          }
+        }
+      }
+    },
+    "Top Download Processes" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Procesos con más descarga"
+          }
+        }
+      }
+    },
+    "Top Energy Processes" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Procesos con más consumo"
+          }
+        }
+      }
+    },
+    "Top GPU Processes" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Procesos con más GPU"
+          }
+        }
+      }
+    },
+    "Top Memory Processes" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Procesos con más memoria"
+          }
+        }
+      }
+    },
+    "Top Reading Processes" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Procesos con más lectura"
+          }
+        }
+      }
+    },
+    "Top Upload Processes" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Procesos con más subida"
+          }
+        }
+      }
+    },
+    "Top Writing Processes" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Procesos con más escritura"
+          }
+        }
+      }
+    },
+    "Total Received" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recibido total"
+          }
+        }
+      }
+    },
+    "Total Sent" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enviado total"
+          }
+        }
+      }
+    },
+    "Tree" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Árbol"
+          }
+        }
+      }
+    },
+    "Uninstall Helper" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desinstalar asistente"
+          }
+        }
+      }
+    },
+    "Unsaved changes will be lost. The process won’t be able to clean up its resources." : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se perderán los cambios sin guardar. El proceso no podrá limpiar sus recursos."
+          }
+        }
+      }
+    },
+    "Update Frequency" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frecuencia de actualización"
+          }
+        }
+      }
+    },
+    "Uptime" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tiempo encendido"
+          }
+        }
+      }
+    },
+    "Usage" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uso"
+          }
+        }
+      }
+    },
+    "Usage per Core" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uso por núcleo"
+          }
+        }
+      }
+    },
+    "Used" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usada"
+          }
+        }
+      }
+    },
+    "User" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usuario"
+          }
+        }
+      }
+    },
+    "User 1" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usuario 1"
+          }
+        }
+      }
+    },
+    "User 2" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usuario 2"
+          }
+        }
+      }
+    },
+    "Utilities" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utilidades"
+          }
+        }
+      }
+    },
+    "Very Often (1 s)" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Muy frecuente (1 s)"
+          }
+        }
+      }
+    },
+    "Wakeups" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activaciones"
+          }
+        }
+      }
+    },
+    "Wakeups/s" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activaciones/s"
+          }
+        }
+      }
+    },
+    "Warning" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Advertencia"
+          }
+        }
+      }
+    },
+    "Welcome to OpenProcess" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Te damos la bienvenida a OpenProcess"
+          }
+        }
+      }
+    },
+    "When the window closes, OpenProcess leaves the Dock and keeps measuring from the menu bar" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Al cerrar la ventana, OpenProcess desaparece del Dock y sigue midiendo desde la barra de menús"
+          }
+        }
+      }
+    },
+    "Windowed Apps" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apps con ventanas"
+          }
+        }
+      }
+    },
+    "Wired" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Residente"
+          }
+        }
+      }
+    },
+    "With the window closed, reopen it from the menu bar icon ▸ Open OpenProcess." : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Con la ventana cerrada, vuelve a abrirla desde el ícono de la barra de menús ▸ Abrir OpenProcess."
+          }
+        }
+      }
+    },
+    "Write" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escritura"
+          }
+        }
+      }
+    },
+    "Written Since Boot" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escrito desde el arranque"
+          }
+        }
+      }
+    },
+    "of %@ · pressure %lld %%" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "of %1$@ · pressure %2$lld %%"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "de %@ · presión %lld %%"
+          }
+        }
+      }
+    },
+    "purge exited with code %d." : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "purge terminó con el código %d."
+          }
+        }
+      }
+    },
+    "“Purge Memory” flushes the file cache and purgeable memory, just like the purge command. It doesn’t quit apps or delete data, but anything that was cached will be read from disk again, so your Mac may be a bit slower for a few seconds. macOS already frees this memory on its own when needed; use it for measuring or diagnosing, not as maintenance." : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“Purgar memoria” vacía la caché de archivos y la memoria purgable, igual que el comando purge. No cierra apps ni borra datos, pero lo que estaba en caché se volverá a leer del disco, así que el Mac puede ir algo más lento durante unos segundos. macOS ya libera esta memoria solo cuando hace falta; úsalo para medir o diagnosticar, no como mantenimiento."
+          }
+        }
+      }
+    },
+    "↓ %@  ↑ %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "↓ %1$@  ↑ %2$@"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    }
+  },
+  "version" : "1.0"
+}

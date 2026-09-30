@@ -4,8 +4,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     /// Keep sampling for the menu bar extra after the main window closes.
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool { false }
 
-    /// "Solo en la barra de menús": drop the Dock icon once the last regular window closes.
-    /// ContentView and the menu bar's "Abrir OpenProcess" bring it back.
+    /// "Menu bar only": drop the Dock icon once the last regular window closes.
+    /// ContentView and the menu bar's "Open OpenProcess" bring it back.
     func applicationDidFinishLaunching(_ notification: Notification) {
         NotificationCenter.default.addObserver(self, selector: #selector(windowWillClose), name: NSWindow.willCloseNotification, object: nil)
     }
@@ -46,7 +46,7 @@ struct OpenProcessApp: App {
             CommandGroup(replacing: .newItem) {} // single-window app
             AppCommands(monitor: monitor, ui: ui)
             CommandGroup(replacing: .help) {
-                Button("Bienvenida a OpenProcess") { UserDefaults.standard.set(false, forKey: "hasSeenOnboarding") }
+                Button("Welcome to OpenProcess") { UserDefaults.standard.set(false, forKey: "hasSeenOnboarding") }
             }
         }
 
@@ -93,7 +93,7 @@ struct ContentView: View {
             .navigationTitle(ui.section.title)
         }
         .frame(minWidth: 820, minHeight: 520)
-        .alert("No se pudo completar la acción", isPresented: Binding { ui.errorMessage != nil } set: { if !$0 { ui.errorMessage = nil } }) {
+        .alert("The action couldn’t be completed", isPresented: Binding { ui.errorMessage != nil } set: { if !$0 { ui.errorMessage = nil } }) {
             Button("OK") {}
         } message: {
             Text(ui.errorMessage ?? "")
@@ -105,37 +105,37 @@ struct ContentView: View {
         ) { request in
             switch request.signal {
             case SIGTERM:
-                Button("Salir") { ui.signal(SIGTERM, request.pids, monitor: monitor) }
+                Button("Quit") { ui.signal(SIGTERM, request.pids, monitor: monitor) }
                     .keyboardShortcut(.defaultAction)
-                Button("Forzar salida", role: .destructive) { ui.signal(SIGKILL, request.pids, monitor: monitor) }
+                Button("Force Quit", role: .destructive) { ui.signal(SIGKILL, request.pids, monitor: monitor) }
             case SIGKILL:
-                Button("Forzar salida", role: .destructive) { ui.signal(SIGKILL, request.pids, monitor: monitor) }
+                Button("Force Quit", role: .destructive) { ui.signal(SIGKILL, request.pids, monitor: monitor) }
             default:
-                Button("Enviar \(SignalMenu.name(of: request.signal))", role: .destructive) {
+                Button("Send \(SignalMenu.name(of: request.signal))", role: .destructive) {
                     ui.signal(request.signal, request.pids, monitor: monitor)
                 }
             }
         } message: { request in
             switch request.signal {
-            case SIGTERM: Text("Si el proceso no responde, puedes forzar su salida.")
-            case SIGKILL: Text("Se perderán los cambios sin guardar. El proceso no podrá limpiar sus recursos.")
-            case SIGSTOP: Text("El proceso quedará suspendido hasta recibir SIGCONT.")
-            default: Text("Los procesos pueden terminar o cambiar de comportamiento al recibir esta señal.")
+            case SIGTERM: Text("If the process doesn’t respond, you can force it to quit.")
+            case SIGKILL: Text("Unsaved changes will be lost. The process won’t be able to clean up its resources.")
+            case SIGSTOP: Text("The process will be suspended until it receives SIGCONT.")
+            default: Text("Processes may quit or change their behavior when they receive this signal.")
             }
         }
         .sheet(item: $ui.sampleReport) { SampleReportView(report: $0) }
         .sheet(isPresented: Binding { !hasSeenOnboarding } set: { hasSeenOnboarding = !$0 }) { OnboardingView() }
-        .onAppear { NSApp.setActivationPolicy(.regular) } // undo "solo en la barra de menús"
+        .onAppear { NSApp.setActivationPolicy(.regular) } // undo "menu bar only"
     }
 
     private var signalTitle: String {
         guard let request = ui.pendingSignal else { return "" }
         let names = request.pids.compactMap { monitor.process($0)?.name }
-        let target = names.count == 1 ? "“\(names[0])”" : String(localized: "\(request.pids.count) procesos")
+        let target = names.count == 1 ? "“\(names[0])”" : String(localized: "\(request.pids.count) processes")
         return switch request.signal {
-        case SIGTERM: String(localized: "¿Seguro que quieres salir de \(target)?")
-        case SIGKILL: String(localized: "¿Forzar la salida de \(target)?")
-        default: String(localized: "¿Enviar \(SignalMenu.name(of: request.signal)) a \(target)?")
+        case SIGTERM: String(localized: "Are you sure you want to quit \(target)?")
+        case SIGKILL: String(localized: "Force \(target) to quit?")
+        default: String(localized: "Send \(SignalMenu.name(of: request.signal)) to \(target)?")
         }
     }
 }
@@ -155,12 +155,12 @@ struct SampleReportView: View {
             }
             Divider()
             HStack {
-                Text("Muestra de \(report.name)").foregroundStyle(.secondary)
+                Text("Sample of \(report.name)").foregroundStyle(.secondary)
                 Spacer()
-                Button("Guardar…", action: save)
-                    .help("Guardar la muestra como archivo de texto")
-                Button("Cerrar") { dismiss() }.keyboardShortcut(.defaultAction)
-                    .help("Cerrar la muestra sin guardarla")
+                Button("Save…", action: save)
+                    .help("Save the sample as a text file")
+                Button("Close") { dismiss() }.keyboardShortcut(.defaultAction)
+                    .help("Close the sample without saving it")
             }
             .padding()
         }
@@ -169,7 +169,7 @@ struct SampleReportView: View {
 
     private func save() {
         let panel = NSSavePanel()
-        panel.nameFieldStringValue = "Muestra de \(report.name).txt"
+        panel.nameFieldStringValue = String(localized: "Sample of \(report.name)") + ".txt"
         panel.allowedContentTypes = [.plainText]
         guard panel.runModal() == .OK, let url = panel.url else { return }
         do {

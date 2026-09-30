@@ -28,28 +28,28 @@ struct ProcessesView: View {
             },
             menu: contextMenu
         )
-        .searchable(text: $ui.search, isPresented: $ui.searchFocused, placement: .toolbar, prompt: "Nombre, PID, usuario o ruta")
+        .searchable(text: $ui.search, isPresented: $ui.searchFocused, placement: .toolbar, prompt: "Name, PID, user, or path")
         .toolbar { toolbar }
         .inspector(isPresented: $ui.showInspector) {
             Group {
                 if let pid = ui.selectedPID {
                     ProcessInspector(pid: pid)
                 } else {
-                    ContentUnavailableView("Sin selección", systemImage: "info.circle", description: Text("Selecciona un proceso para ver sus detalles."))
+                    ContentUnavailableView("No Selection", systemImage: "info.circle", description: Text("Select a process to see its details."))
                 }
             }
             .inspectorColumnWidth(min: 280, ideal: 320, max: 460)
         }
         .overlay {
             if !monitor.hasSampled {
-                ProgressView("Leyendo procesos…")
+                ProgressView("Reading processes…")
             } else if rows.isEmpty && !ui.search.isEmpty {
                 ContentUnavailableView.search(text: ui.search)
             } else if rows.isEmpty {
                 ContentUnavailableView {
-                    Label("Ningún proceso en esta vista", systemImage: "line.3.horizontal.decrease.circle")
+                    Label("No Processes in This View", systemImage: "line.3.horizontal.decrease.circle")
                 } actions: {
-                    Button("Mostrar todos los procesos") { ui.scope = .all }
+                    Button("Show All Processes") { ui.scope = .all }
                 }
             }
         }
@@ -60,37 +60,37 @@ struct ProcessesView: View {
     private func contextMenu(_ pids: Set<Int32>) -> NSMenu {
         let menu = NSMenu()
         let single = pids.count == 1 ? pids.first : nil
-        menu.addItem(ClosureMenuItem(String(localized: "Salir del proceso…")) { ui.request(SIGTERM, pids) })
-        menu.addItem(ClosureMenuItem(String(localized: "Forzar salida…")) { ui.request(SIGKILL, pids) })
-        let signals = NSMenuItem(title: String(localized: "Enviar señal"), action: nil, keyEquivalent: "")
+        menu.addItem(ClosureMenuItem(String(localized: "Quit Process…")) { ui.request(SIGTERM, pids) })
+        menu.addItem(ClosureMenuItem(String(localized: "Force Quit…")) { ui.request(SIGKILL, pids) })
+        let signals = NSMenuItem(title: String(localized: "Send Signal"), action: nil, keyEquivalent: "")
         signals.submenu = NSMenu()
         for entry in SignalMenu.signals {
-            let title = "\(String(localized: String.LocalizationValue(entry.title))) (\(entry.name))…"
+            let title = "\(String(localized: entry.title)) (\(entry.name))…"
             signals.submenu?.addItem(ClosureMenuItem(title) { ui.request(entry.signal, pids) })
         }
         menu.addItem(signals)
         menu.addItem(.separator())
-        menu.addItem(ClosureMenuItem(String(localized: "Mostrar información"), enabled: single != nil) {
+        menu.addItem(ClosureMenuItem(String(localized: "Get Info"), enabled: single != nil) {
             ui.selection = pids
             ui.showInspector = true
         })
-        menu.addItem(ClosureMenuItem(String(localized: "Muestrear proceso"), enabled: single != nil && ui.samplingPID == nil) {
+        menu.addItem(ClosureMenuItem(String(localized: "Sample Process"), enabled: single != nil && ui.samplingPID == nil) {
             if let single { ui.sample(single, monitor: monitor) }
         })
-        menu.addItem(ClosureMenuItem(String(localized: "Mostrar en Finder")) { ui.revealInFinder(pids, monitor: monitor) })
-        menu.addItem(ClosureMenuItem(String(localized: "Copiar información del proceso")) { ui.copyInfo(pids, monitor: monitor) })
+        menu.addItem(ClosureMenuItem(String(localized: "Show in Finder")) { ui.revealInFinder(pids, monitor: monitor) })
+        menu.addItem(ClosureMenuItem(String(localized: "Copy Process Info")) { ui.copyInfo(pids, monitor: monitor) })
         return menu
     }
 
     @ToolbarContentBuilder private var toolbar: some ToolbarContent {
         @Bindable var ui = ui
         ToolbarItemGroup(placement: .primaryAction) {
-            Button("Salir del proceso", systemImage: "xmark.octagon") { ui.request(SIGTERM, ui.selection) }
-            .help("Pedir a los procesos seleccionados que se cierren; se pide confirmación antes (⌥⌘Q)")
+            Button("Quit Process", systemImage: "xmark.octagon") { ui.request(SIGTERM, ui.selection) }
+            .help("Ask the selected processes to quit; you’re asked to confirm first (⌥⌘Q)")
             .disabled(ui.selection.isEmpty)
             // A Menu, not a menu-style Picker: the toolbar draws the picker's current value blank.
             Menu {
-                Picker("Mostrar", selection: $ui.scope) {
+                Picker("Show", selection: $ui.scope) {
                     ForEach(ProcessScope.allCases) { Text($0.title).tag($0) }
                 }
                 .pickerStyle(.inline)
@@ -99,21 +99,21 @@ struct ProcessesView: View {
                 Label(ui.scope.title, systemImage: "line.3.horizontal.decrease")
                     .labelStyle(.titleAndIcon)
             }
-            .help("Elegir qué procesos se muestran: todos, los tuyos, los del sistema, los de otros usuarios o solo apps con ventanas")
-            Toggle("Árbol", systemImage: "list.bullet.indent", isOn: $ui.treeMode)
-                .help("Agrupar cada proceso bajo el proceso que lo inició. Solo con “Todos los procesos” y sin búsqueda")
-            Button("Información", systemImage: "info.circle") { ui.showInspector.toggle() }
-                .help("Mostrar u ocultar el panel con los detalles del proceso seleccionado (⌘I)")
+            .help("Choose which processes are shown: all, yours, system, other users’, or only windowed apps")
+            Toggle("Tree", systemImage: "list.bullet.indent", isOn: $ui.treeMode)
+                .help("Group each process under the process that started it. Only with “All Processes” and no search")
+            Button("Info", systemImage: "info.circle") { ui.showInspector.toggle() }
+                .help("Show or hide the panel with the selected process’s details (⌘I)")
         }
     }
 
     private var footer: some View {
         let procs = monitor.snapshot.processes
         return HStack(spacing: 16) {
-            Text("\(procs.count) procesos")
-            Text("\(procs.reduce(0) { $0 + $1.threads }) hilos")
+            Text("\(procs.count) processes")
+            Text("\(procs.reduce(0) { $0 + $1.threads }) threads")
             if !monitor.helper.isEnabled && procs.contains(where: { !$0.hasStats }) {
-                Label("Métricas de procesos de otros usuarios no disponibles. Instala el asistente en Ajustes.", systemImage: "lock")
+                Label("Metrics for other users’ processes are unavailable. Install the helper in Settings.", systemImage: "lock")
                     .foregroundStyle(.secondary)
                     .lineLimit(1)
             }

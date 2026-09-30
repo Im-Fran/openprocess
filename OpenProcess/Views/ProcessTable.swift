@@ -19,28 +19,28 @@ struct ProcessColumn {
     }
 
     static let all: [ProcessColumn] = [
-        .init(id: "name", title: String(localized: "Nombre del proceso"), width: 240, numeric: false, needsStats: false,
+        .init(id: "name", title: String(localized: "Process Name"), width: 240, numeric: false, needsStats: false,
               text: \.name, ascending: { $0.name.localizedStandardCompare($1.name) == .orderedAscending }),
         .init(id: "cpu", title: String(localized: "% CPU"), width: 60, text: { Format.cpu($0.cpu) }, ascending: by(\.cpu)),
-        .init(id: "cpuTime", title: String(localized: "Tiempo CPU"), width: 85, text: { Format.duration($0.cpuTime) }, ascending: by(\.cpuTime)),
-        .init(id: "pshare", title: String(localized: "% núcleos P"), width: 75, hiddenByDefault: true,
+        .init(id: "cpuTime", title: String(localized: "CPU Time"), width: 85, text: { Format.duration($0.cpuTime) }, ascending: by(\.cpuTime)),
+        .init(id: "pshare", title: String(localized: "% P-Cores"), width: 75, hiddenByDefault: true,
               text: { $0.pCoreShare.map(Format.percent) ?? "—" }, ascending: by(\.sortablePShare)),
-        .init(id: "threads", title: String(localized: "Hilos"), width: 50, text: { $0.threads.formatted() }, ascending: by(\.threads)),
-        .init(id: "memory", title: String(localized: "Memoria"), width: 80, text: { Format.bytes($0.memory) }, ascending: by(\.memory)),
+        .init(id: "threads", title: String(localized: "Threads"), width: 50, text: { $0.threads.formatted() }, ascending: by(\.threads)),
+        .init(id: "memory", title: String(localized: "Memory"), width: 80, text: { Format.bytes($0.memory) }, ascending: by(\.memory)),
         .init(id: "gpu", title: String(localized: "% GPU"), width: 55, needsStats: false, text: { Format.cpu($0.gpu) }, ascending: by(\.gpu)),
-        .init(id: "power", title: String(localized: "Energía"), width: 65, text: { Format.watts($0.power) }, ascending: by(\.power)),
-        .init(id: "wakeups", title: String(localized: "Activaciones"), width: 80, hiddenByDefault: true,
+        .init(id: "power", title: String(localized: "Energy"), width: 65, text: { Format.watts($0.power) }, ascending: by(\.power)),
+        .init(id: "wakeups", title: String(localized: "Wakeups"), width: 80, hiddenByDefault: true,
               text: { $0.wakeups.formatted(.number.precision(.fractionLength(0))) }, ascending: by(\.wakeups)),
-        .init(id: "diskRead", title: String(localized: "Lectura disco"), width: 90, hiddenByDefault: true,
+        .init(id: "diskRead", title: String(localized: "Disk Read"), width: 90, hiddenByDefault: true,
               text: { Format.rate($0.diskRead) }, ascending: by(\.diskRead)),
-        .init(id: "diskWrite", title: String(localized: "Escritura disco"), width: 90, hiddenByDefault: true,
+        .init(id: "diskWrite", title: String(localized: "Disk Write"), width: 90, hiddenByDefault: true,
               text: { Format.rate($0.diskWrite) }, ascending: by(\.diskWrite)),
-        .init(id: "netIn", title: String(localized: "Red recibida"), width: 90, hiddenByDefault: true, needsStats: false,
+        .init(id: "netIn", title: String(localized: "Net Received"), width: 90, hiddenByDefault: true, needsStats: false,
               text: { Format.rate($0.netIn) }, ascending: by(\.netIn)),
-        .init(id: "netOut", title: String(localized: "Red enviada"), width: 90, hiddenByDefault: true, needsStats: false,
+        .init(id: "netOut", title: String(localized: "Net Sent"), width: 90, hiddenByDefault: true, needsStats: false,
               text: { Format.rate($0.netOut) }, ascending: by(\.netOut)),
         .init(id: "pid", title: "PID", width: 60, needsStats: false, text: { String($0.pid) }, ascending: by(\.pid)),
-        .init(id: "user", title: String(localized: "Usuario"), width: 90, numeric: false, needsStats: false,
+        .init(id: "user", title: String(localized: "User"), width: 90, numeric: false, needsStats: false,
               text: \.user, ascending: { $0.user < $1.user }),
     ]
 }
@@ -98,7 +98,7 @@ struct ProcessTable: NSViewRepresentable {
         outline.delegate = context.coordinator
         outline.target = context.coordinator
         outline.doubleAction = #selector(Coordinator.doubleClicked(_:))
-        outline.setAccessibilityLabel(String(localized: "Procesos"))
+        outline.setAccessibilityLabel(String(localized: "Processes"))
 
         let scroll = NSScrollView()
         scroll.documentView = outline
@@ -240,7 +240,7 @@ struct ProcessTable: NSViewRepresentable {
             if isName && row.isTranslated { text += " (Intel)" }
             cell.textField?.stringValue = text
             cell.textField?.textColor = readable ? .labelColor : .secondaryLabelColor
-            cell.textField?.setAccessibilityValueDescription(readable ? nil : String(localized: "No disponible"))
+            cell.textField?.setAccessibilityValueDescription(readable ? nil : String(localized: "Not available"))
             if isName { cell.imageView?.image = ProcessIcon.image(for: row.path) }
             return cell
         }

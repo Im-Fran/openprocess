@@ -8,7 +8,7 @@ struct MenuBarLabel: View {
             Image(nsImage: MenuBarGlyph.image(loads: MenuBarGlyph.buckets(s.cpu.cores)))
             Text("\(Int((s.cpu.total * 100).rounded())) %").monospacedDigit()
         }
-        .accessibilityLabel("OpenProcess, CPU \(Int(s.cpu.total * 100)) por ciento")
+        .accessibilityLabel("OpenProcess, CPU \(Int(s.cpu.total * 100)) percent")
     }
 }
 
@@ -67,20 +67,20 @@ struct MenuBarView: View {
                     Text(Format.percent(s.gpu.device)).monospacedDigit()
                 }
                 GridRow {
-                    Text("Memoria").foregroundStyle(.secondary)
+                    Text("Memory").foregroundStyle(.secondary)
                     ProgressView(value: Double(s.memory.used), total: Double(max(1, s.memory.total))).accessibilityHidden(true)
                     Text(Format.bytes(s.memory.used)).monospacedDigit()
                 }
                 GridRow {
-                    Text("Presión").foregroundStyle(.secondary)
+                    Text("Pressure").foregroundStyle(.secondary)
                     PressureLabel(pressure: s.memory.pressure).gridCellColumns(2)
                 }
                 GridRow {
-                    Text("Red").foregroundStyle(.secondary)
+                    Text("Network").foregroundStyle(.secondary)
                     Text("↓ \(Format.rate(s.network.inRate))  ↑ \(Format.rate(s.network.outRate))").monospacedDigit().gridCellColumns(2)
                 }
                 GridRow {
-                    Text("Energía").foregroundStyle(.secondary)
+                    Text("Energy").foregroundStyle(.secondary)
                     Text("\(Format.watts(s.power.system ?? s.power.cpuFromProcesses)) · \(Format.celsius(s.power.socTemperature))").monospacedDigit().gridCellColumns(2)
                 }
             }
@@ -94,11 +94,11 @@ struct MenuBarView: View {
                 }
             }
             .accessibilityElement(children: .ignore)
-            .accessibilityLabel("Uso por núcleo")
+            .accessibilityLabel("Usage per Core")
             .accessibilityValue(coreSummary(s.cpu.cores))
 
             Divider()
-            Text("Procesos con más CPU").font(.caption).foregroundStyle(.secondary)
+            Text("Top CPU Processes").font(.caption).foregroundStyle(.secondary)
             ForEach(s.processes.sorted { $0.cpu > $1.cpu }.prefix(5)) { p in
                 HStack {
                     Image(nsImage: ProcessIcon.image(for: p.path)).resizable().frame(width: 16, height: 16).accessibilityHidden(true)
@@ -109,7 +109,7 @@ struct MenuBarView: View {
             }
             Divider()
             HStack {
-                Button("Abrir OpenProcess") {
+                Button("Open OpenProcess") {
                     NSApp.setActivationPolicy(.regular)
                     if let window = NSApp.windows.first(where: { $0.isVisible && $0.canBecomeMain }) {
                         window.makeKeyAndOrderFront(nil)
@@ -118,12 +118,12 @@ struct MenuBarView: View {
                     }
                     NSApp.activate()
                 }
-                .help("Mostrar la ventana principal de OpenProcess")
+                .help("Show the main OpenProcess window")
                 Spacer()
-                SettingsLink { Text("Ajustes…") }
-                    .help("Abrir los ajustes de OpenProcess")
-                Button("Salir") { NSApp.terminate(nil) }
-                    .help("Cerrar OpenProcess por completo, incluido el ícono de la barra de menús")
+                SettingsLink { Text("Settings…") }
+                    .help("Open OpenProcess settings")
+                Button("Quit") { NSApp.terminate(nil) }
+                    .help("Quit OpenProcess completely, including the menu bar icon")
             }
         }
         .padding()
@@ -134,6 +134,6 @@ struct MenuBarView: View {
         let loads = cores.map(\.total)
         guard let peak = loads.max() else { return "" }
         let mean = loads.reduce(0, +) / Double(loads.count)
-        return String(localized: "\(cores.count) núcleos, media \(Format.percent(mean)), máximo \(Format.percent(peak))")
+        return String(localized: "\(cores.count) cores, average \(Format.percent(mean)), peak \(Format.percent(peak))")
     }
 }

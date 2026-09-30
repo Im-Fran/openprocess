@@ -25,11 +25,11 @@ struct HistoryChart: View {
                 ForEach(points) { point in
                     if let v = s.value(point.value) {
                         if stacked {
-                            AreaMark(x: .value("Hora", point.date), y: .value(s.label, v), stacking: .standard)
-                                .foregroundStyle(by: .value("Serie", s.label))
+                            AreaMark(x: .value("Time", point.date), y: .value(s.label, v), stacking: .standard)
+                                .foregroundStyle(by: .value("Series", s.label))
                         } else {
-                            LineMark(x: .value("Hora", point.date), y: .value(s.label, v))
-                                .foregroundStyle(by: .value("Serie", s.label))
+                            LineMark(x: .value("Time", point.date), y: .value(s.label, v))
+                                .foregroundStyle(by: .value("Series", s.label))
                                 .lineStyle(StrokeStyle(lineWidth: 2, dash: differentiateWithoutColor ? Self.dashes[i % Self.dashes.count] : []))
                                 .interpolationMethod(.monotone)
                         }
@@ -104,7 +104,7 @@ struct TopProcesses: View {
         let top = monitor.snapshot.processes.filter { value($0) > 0 }.sorted { value($0) > value($1) }.prefix(count)
         Card(title: title) {
             if top.isEmpty {
-                Text("Sin actividad").foregroundStyle(.secondary)
+                Text("No Activity").foregroundStyle(.secondary)
             }
             ForEach(Array(top)) { p in
                 Button {
@@ -122,7 +122,7 @@ struct TopProcesses: View {
                     .contentShape(.rect)
                 }
                 .buttonStyle(.plain)
-                .help("Mostrar en Procesos")
+                .help("Show in Processes")
             }
         }
     }
@@ -175,8 +175,8 @@ extension MemoryPressure {
     var title: LocalizedStringKey {
         switch self {
         case .normal: "Normal"
-        case .warning: "Advertencia"
-        case .critical: "Crítica"
+        case .warning: "Warning"
+        case .critical: "Critical"
         }
     }
 

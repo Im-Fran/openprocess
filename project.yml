@@ -4,7 +4,7 @@ options:
   deploymentTarget:
     macOS: "26.0"
   createIntermediateGroups: true
-  developmentLanguage: es
+  developmentLanguage: en
 settings:
   base:
     SWIFT_VERSION: "6.0"

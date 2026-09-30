@@ -10,51 +10,51 @@ struct SettingsView: View {
         @Bindable var monitor = monitor
         Form {
             Section {
-                Picker("Frecuencia de actualización", selection: $monitor.interval) {
-                    Text("Muy frecuente (1 s)").tag(1.0)
-                    Text("Frecuente (2 s)").tag(2.0)
-                    Text("Normal (5 s)").tag(5.0)
+                Picker("Update Frequency", selection: $monitor.interval) {
+                    Text("Very Often (1 s)").tag(1.0)
+                    Text("Often (2 s)").tag(2.0)
+                    Text("Normally (5 s)").tag(5.0)
                 }
-                .help("Cada cuánto se vuelven a leer los procesos y las métricas. Más frecuente usa más CPU")
-                Toggle("Mostrar en la barra de menús", isOn: $showMenuBarExtra)
-                    .help("Mostrar el uso de CPU y un resumen del sistema en la barra de menús")
-                Toggle("Seguir solo en la barra de menús al cerrar la ventana", isOn: $menuBarOnly)
+                .help("How often processes and metrics are read again. More often uses more CPU")
+                Toggle("Show in Menu Bar", isOn: $showMenuBarExtra)
+                    .help("Show CPU usage and a system summary in the menu bar")
+                Toggle("Keep running in the menu bar when the window closes", isOn: $menuBarOnly)
                     .disabled(!showMenuBarExtra)
-                    .help("Al cerrar la ventana, OpenProcess desaparece del Dock y sigue midiendo desde la barra de menús")
+                    .help("When the window closes, OpenProcess leaves the Dock and keeps measuring from the menu bar")
             } header: {
                 Text("General")
             } footer: {
-                Text("Con la ventana cerrada, vuelve a abrirla desde el ícono de la barra de menús ▸ Abrir OpenProcess.")
+                Text("With the window closed, reopen it from the menu bar icon ▸ Open OpenProcess.")
                     .foregroundStyle(.secondary)
             }
             Section {
-                LabeledContent("Estado") {
+                LabeledContent("Status") {
                     switch monitor.helper.state {
-                    case .enabled: StatusLabel("Activo", symbol: "checkmark.circle.fill", color: .green)
-                    case .requiresApproval: StatusLabel("Requiere aprobación", symbol: "exclamationmark.triangle.fill", color: .yellow)
-                    case .notInstalled: StatusLabel("No instalado", symbol: "circle", color: .secondary)
+                    case .enabled: StatusLabel("Active", symbol: "checkmark.circle.fill", color: .green)
+                    case .requiresApproval: StatusLabel("Requires Approval", symbol: "exclamationmark.triangle.fill", color: .yellow)
+                    case .notInstalled: StatusLabel("Not Installed", symbol: "circle", color: .secondary)
                     case .unavailable(let error): StatusLabel(LocalizedStringKey(error), symbol: "xmark.octagon.fill", color: .red)
                     }
                 }
                 HStack {
                     switch monitor.helper.state {
                     case .enabled:
-                        Button("Desinstalar asistente") { monitor.helper.uninstall() }
-                            .help("Quitar el asistente privilegiado; se pierden las métricas de otros usuarios y la purga de memoria")
+                        Button("Uninstall Helper") { monitor.helper.uninstall() }
+                            .help("Remove the privileged helper; metrics for other users and memory purging stop working")
                     case .requiresApproval:
-                        Button("Abrir Ítems de inicio…") { SMAppService.openSystemSettingsLoginItems() }
-                            .help("Abrir Ajustes del Sistema para aprobar el asistente")
-                        Button("Comprobar de nuevo") { monitor.helper.refresh() }
-                            .help("Volver a comprobar si el asistente ya fue aprobado")
+                        Button("Open Login Items…") { SMAppService.openSystemSettingsLoginItems() }
+                            .help("Open System Settings to approve the helper")
+                        Button("Check Again") { monitor.helper.refresh() }
+                            .help("Check again whether the helper has been approved")
                     default:
-                        Button("Instalar asistente…") { monitor.helper.install() }
-                            .help("Registrar el asistente privilegiado; macOS pedirá que lo apruebes")
+                        Button("Install Helper…") { monitor.helper.install() }
+                            .help("Register the privileged helper; macOS will ask you to approve it")
                     }
                 }
             } header: {
-                Text("Asistente privilegiado")
+                Text("Privileged Helper")
             } footer: {
-                Text("Permite ver métricas de procesos del sistema y de otros usuarios, terminarlos y purgar la memoria. Tras instalarlo, apruébalo en Ajustes del Sistema ▸ General ▸ Ítems de inicio.")
+                Text("Lets you see metrics for system processes and other users’ processes, quit them, and purge memory. After installing it, approve it in System Settings ▸ General ▸ Login Items.")
                     .foregroundStyle(.secondary)
             }
         }

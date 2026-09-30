@@ -43,23 +43,23 @@ struct ProcessInspector: View {
                         }
                     }
                     HStack {
-                        Button("Salir…") { ui.request(SIGTERM, [pid]) }
-                            .help("Pedir al proceso que se cierre (SIGTERM); puede guardar sus datos antes")
-                        Button("Forzar salida…") { ui.request(SIGKILL, [pid]) }
-                            .help("Terminar el proceso de inmediato (SIGKILL); se pierden los cambios sin guardar")
+                        Button("Quit…") { ui.request(SIGTERM, [pid]) }
+                            .help("Ask the process to quit (SIGTERM); it can save its data first")
+                        Button("Force Quit…") { ui.request(SIGKILL, [pid]) }
+                            .help("End the process immediately (SIGKILL); unsaved changes are lost")
                         Spacer()
                         Button {
                             ui.sample(pid, monitor: monitor)
                         } label: {
-                            if ui.samplingPID == pid { ProgressView().controlSize(.small) } else { Text("Muestrear") }
+                            if ui.samplingPID == pid { ProgressView().controlSize(.small) } else { Text("Sample") }
                         }
                         .disabled(ui.samplingPID != nil)
                     }
                 }
 
-                Section("Actividad") {
+                Section("Activity") {
                     Chart(monitor.processHistory.points) { point in
-                        LineMark(x: .value("Hora", point.date), y: .value("% CPU", point.value.cpu))
+                        LineMark(x: .value("Time", point.date), y: .value("% CPU", point.value.cpu))
                             .foregroundStyle(Color.accentColor)
                     }
                     .chartYScale(domain: 0...max(100, monitor.processHistory.points.map(\.value.cpu).max() ?? 0))
@@ -67,51 +67,51 @@ struct ProcessInspector: View {
                     .frame(height: 80)
                     .overlay {
                         if monitor.processHistory.points.count < 2 {
-                            Text("Recopilando datos…").font(.caption).foregroundStyle(.secondary)
+                            Text("Collecting data…").font(.caption).foregroundStyle(.secondary)
                         }
                     }
-                    .accessibilityLabel("Historial de CPU del proceso")
+                    .accessibilityLabel("Process CPU history")
                     .accessibilityValue("\(Format.cpu(p.cpu)) %")
                     LabeledContent("% CPU", value: p.hasStats ? Format.cpu(p.cpu) : "—")
-                    LabeledContent("Tiempo de CPU", value: p.hasStats ? Format.duration(p.cpuTime) : "—")
-                    LabeledContent("En núcleos de rendimiento", value: p.pCoreShare.map(Format.percent) ?? "—")
-                    LabeledContent("Hilos", value: p.hasStats ? p.threads.formatted() : "—")
-                    LabeledContent("Memoria", value: p.hasStats ? Format.bytes(p.memory) : "—")
+                    LabeledContent("CPU Time", value: p.hasStats ? Format.duration(p.cpuTime) : "—")
+                    LabeledContent("On Performance Cores", value: p.pCoreShare.map(Format.percent) ?? "—")
+                    LabeledContent("Threads", value: p.hasStats ? p.threads.formatted() : "—")
+                    LabeledContent("Memory", value: p.hasStats ? Format.bytes(p.memory) : "—")
                     LabeledContent("% GPU", value: Format.cpu(p.gpu))
-                    LabeledContent("Energía", value: p.hasStats ? Format.watts(p.power) : "—")
-                    LabeledContent("Activaciones/s", value: p.hasStats ? p.wakeups.formatted(.number.precision(.fractionLength(0))) : "—")
-                    LabeledContent("Disco", value: "↓ \(Format.rate(p.diskRead))  ↑ \(Format.rate(p.diskWrite))")
-                    LabeledContent("Red", value: "↓ \(Format.rate(p.netIn))  ↑ \(Format.rate(p.netOut))")
+                    LabeledContent("Energy", value: p.hasStats ? Format.watts(p.power) : "—")
+                    LabeledContent("Wakeups/s", value: p.hasStats ? p.wakeups.formatted(.number.precision(.fractionLength(0))) : "—")
+                    LabeledContent("Disk", value: "↓ \(Format.rate(p.diskRead))  ↑ \(Format.rate(p.diskWrite))")
+                    LabeledContent("Network", value: "↓ \(Format.rate(p.netIn))  ↑ \(Format.rate(p.netOut))")
                 }
 
-                Section("Detalles") {
-                    LabeledContent("Proceso padre") {
+                Section("Details") {
+                    LabeledContent("Parent Process") {
                         if let parent = monitor.process(p.ppid) {
                             Button("\(parent.name) (\(String(parent.pid)))") { ui.selection = [parent.pid] }
-                                .help("Seleccionar el proceso padre")
+                                .help("Select the parent process")
                                 .buttonStyle(.link)
                         } else {
                             Text(String(p.ppid))
                         }
                     }
-                    LabeledContent("Tipo", value: p.isTranslated ? String(localized: "Intel (Rosetta)") : String(localized: "Apple"))
-                    LabeledContent("Inicio", value: p.startTime.formatted(date: .abbreviated, time: .standard))
+                    LabeledContent("Kind", value: p.isTranslated ? String(localized: "Intel (Rosetta)") : String(localized: "Apple"))
+                    LabeledContent("Started", value: p.startTime.formatted(date: .abbreviated, time: .standard))
                     if let path = p.path {
-                        LabeledContent("Ruta") {
+                        LabeledContent("Path") {
                             Text(path).textSelection(.enabled).lineLimit(3).truncationMode(.middle)
                         }
                     }
                     if !arguments.isEmpty {
-                        LabeledContent("Argumentos") {
+                        LabeledContent("Arguments") {
                             Text(arguments.joined(separator: " ")).textSelection(.enabled).lineLimit(6)
                         }
                     }
                 }
 
-                Section("Archivos y puertos abiertos") {
+                Section("Open Files and Ports") {
                     if let openFiles {
                         if openFiles.isEmpty {
-                            Text("No disponible para este proceso.").foregroundStyle(.secondary)
+                            Text("Not available for this process.").foregroundStyle(.secondary)
                         }
                         ForEach(openFiles.prefix(300)) { file in
                             LabeledContent {
@@ -122,10 +122,10 @@ struct ProcessInspector: View {
                         }
                     } else {
                         if loadingFiles {
-                            ProgressView("Leyendo archivos abiertos…").controlSize(.small)
+                            ProgressView("Reading open files…").controlSize(.small)
                         } else {
-                            Button("Mostrar archivos y puertos") { loadOpenFiles() }
-                                .help("Listar los archivos abiertos y las conexiones de red del proceso")
+                            Button("Show Files and Ports") { loadOpenFiles() }
+                                .help("List the process’s open files and network connections")
                         }
                     }
                 }
@@ -137,7 +137,7 @@ struct ProcessInspector: View {
                 arguments = await Task.detached { ProcessDetails.arguments(pid: pid) }.value
             }
         } else {
-            ContentUnavailableView("El proceso terminó", systemImage: "xmark.circle")
+            ContentUnavailableView("The Process Has Quit", systemImage: "xmark.circle")
         }
     }
 
